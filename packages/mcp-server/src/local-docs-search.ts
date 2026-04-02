@@ -66,6 +66,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           'curl https://api.example.com/api/Auth/token \\\n    -X POST \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
+      php: {
+        method: 'api->auth->createToken',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->auth->createToken(\n  email: 'email', role: 'role', secret: 'secret', tenant: 'tenant'\n);\n\nvar_dump($result);",
+      },
       typescript: {
         method: 'client.api.auth.createToken',
         example:
@@ -88,6 +93,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
       http: {
         example:
           'curl https://api.example.com/api/Catalog/categories \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+      },
+      php: {
+        method: 'api->catalog->listCategories',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->catalog->listCategories(limit: 0, page: 0);\n\nvar_dump($result);",
       },
       typescript: {
         method: 'client.api.catalog.listCategories',
@@ -112,6 +122,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           'curl https://api.example.com/api/Catalog/search/products \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
+      php: {
+        method: 'api->catalog->search->listProducts',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->catalog->search->listProducts(\n  id: 'id', adhoc: 'adhoc', limit: 0, page: 0\n);\n\nvar_dump($result);",
+      },
       typescript: {
         method: 'client.api.catalog.search.listProducts',
         example:
@@ -134,6 +149,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
       http: {
         example:
           'curl https://api.example.com/api/Catalog/search/product/$PRODUCT_ID \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+      },
+      php: {
+        method: 'api->catalog->search->retrieveProduct',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->catalog->search->retrieveProduct('productId');\n\nvar_dump($result);",
       },
       typescript: {
         method: 'client.api.catalog.search.retrieveProduct',
@@ -158,6 +178,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           'curl https://api.example.com/api/Catalog/category/tree \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
+      php: {
+        method: 'api->catalog->category->getTree',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->catalog->category->getTree(\n  groupCode: 'groupCode', groupOnly: true\n);\n\nvar_dump($result);",
+      },
       typescript: {
         method: 'client.api.catalog.category.getTree',
         example:
@@ -181,6 +206,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           'curl https://api.example.com/api/Catalog/category/$CATEGORY_ID \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
+      php: {
+        method: 'api->catalog->category->retrieve',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->catalog->category->retrieve('categoryId');\n\nvar_dump($result);",
+      },
       typescript: {
         method: 'client.api.catalog.category.retrieve',
         example:
@@ -203,6 +233,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
       http: {
         example:
           'curl https://api.example.com/api/Catalog/products/category/$CATEGORY_CODE \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+      },
+      php: {
+        method: 'api->catalog->products->listByCategory',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->catalog->products->listByCategory(\n  'categoryCode', descendants: true, limit: 0, page: 0\n);\n\nvar_dump($result);",
       },
       typescript: {
         method: 'client.api.catalog.products.listByCategory',
@@ -242,6 +277,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           'curl https://api.example.com/api/Crm/search/accounts \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
+      php: {
+        method: 'api->crm->search->listAccounts',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->crm->search->listAccounts(\n  bCycle: 'BCycle',\n  category: 'Category',\n  class: 'Class',\n  fName: 'FName',\n  id: 'Id',\n  idNum: 'IdNum',\n  idType: 'IdType',\n  limit: 0,\n  lName: 'LName',\n  name: 'Name',\n  page: 0,\n  relID: 'RelId',\n  state: 'State',\n  type: 'Type',\n);\n\nvar_dump($result);",
+      },
       typescript: {
         method: 'client.api.crm.search.listAccounts',
         example:
@@ -275,6 +315,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           'curl https://api.example.com/api/Crm/create/contact \\\n    -X POST \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
+      php: {
+        method: 'api->crm->create->createContact',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->crm->create->createContact(\n  address: [\n    [\n      'addressType' => AddressType::POSTAL,\n      'buildingName' => 'buildingName',\n      'buildingNo' => 'buildingNo',\n      'city' => 'city',\n      'country' => 'country',\n      'latitude' => 'latitude',\n      'longitude' => 'longitude',\n      'oneLineAddress' => 'oneLineAddress',\n      'postCode' => 'postCode',\n      'referredType' => 'referredType',\n      'stateOrProvince' => 'stateOrProvince',\n      'streetName' => 'streetName',\n      'streetNo' => 'streetNo',\n      'suburb' => 'suburb',\n    ],\n  ],\n  detail: [\n    'additionalInfo' => ['string'],\n    'birthDate' => new \\DateTimeImmutable('2019-12-27T18:11:19.117Z'),\n    'firstname' => 'firstname',\n    'gdprConsent' => true,\n    'gender' => 'F',\n    'idNumber' => 'idNumber',\n    'lastname' => 'lastname',\n    'middlename' => 'middlename',\n    'organization' => [\n      'department' => 'department',\n      'name' => 'name',\n      'office' => 'office',\n      'position' => 'position',\n    ],\n    'password' => 'password',\n    'title' => 'title',\n  ],\n  email: [\n    [\n      'displayOrder' => 0,\n      'emailAddress' => 'emailAddress',\n      'referredType' => 'referredType',\n    ],\n  ],\n  externalReference: 'externalReference',\n  name: 'name',\n  personType: 'personType',\n  phone: [\n    [\n      'contactType' => ContactType::MOBILE_NO,\n      'displayOrder' => 0,\n      'phoneNumber' => 'phoneNumber',\n      'referredType' => 'referredType',\n    ],\n  ],\n  propertyOption: [\n    [\n      'id' => 'id',\n      'defaultOption' => 'defaultOption',\n      'name' => 'name',\n      'option' => [['id' => 'id', 'name' => 'name']],\n    ],\n  ],\n  referredType: 'referredType',\n);\n\nvar_dump($result);",
+      },
       typescript: {
         method: 'client.api.crm.create.createContact',
         example:
@@ -306,6 +351,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
       http: {
         example:
           'curl https://api.example.com/api/Crm/create/account/customer \\\n    -X POST \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+      },
+      php: {
+        method: 'api->crm->create->account->createCustomer',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->crm->create->account->createCustomer(\n  address: [\n    [\n      'addressType' => AddressType::POSTAL,\n      'city' => 'city',\n      'country' => 'country',\n      'postCode' => 'postCode',\n      'stateOrProvince' => 'stateOrProvince',\n      'streetName' => 'streetName',\n      'streetNo' => 'streetNo',\n      'suburb' => 'suburb',\n    ],\n  ],\n  collectionPlan: ['id' => 'id'],\n  contact: [\n    'isAccountOwner' => true,\n    'isServiceOwner' => true,\n    'primaryContactRole' => 'primaryContactRole',\n    'useParentAddressType' => AddressType::POSTAL,\n  ],\n  customer: [\n    'address' => [\n      [\n        'addressType' => AddressType::POSTAL,\n        'city' => 'city',\n        'country' => 'country',\n        'postCode' => 'postCode',\n        'stateOrProvince' => 'stateOrProvince',\n        'streetName' => 'streetName',\n        'streetNo' => 'streetNo',\n        'suburb' => 'suburb',\n      ],\n    ],\n    'detail' => [\n      'firstname' => 'firstname',\n      'lastname' => 'lastname',\n      'requireSecurityQuestions' => true,\n    ],\n    'isResidential' => true,\n  ],\n  detail: [\n    'billMedia' => [\n      'emailAddress' => 'emailAddress',\n      'generationLevel' => 'ACCOUNT',\n      'language' => 'language',\n      'mediaType' => 'SMS',\n    ],\n    'creditLimit' => 0,\n    'firstname' => 'firstname',\n    'hasDeposit' => true,\n    'identification' => ['idNumber' => 'idNumber', 'idType' => 'ID'],\n    'lastname' => 'lastname',\n    'title' => 'title',\n  ],\n  isResidential: true,\n  phone: [\n    'contactType' => ContactType::MOBILE_NO, 'phoneNumber' => 'phoneNumber'\n  ],\n  taxScheme: ['id' => 'id'],\n);\n\nvar_dump($result);",
       },
       typescript: {
         method: 'client.api.crm.create.account.createCustomer',
@@ -339,6 +389,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           'curl https://api.example.com/api/Crm/store/account/customer \\\n    -X POST \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
+      php: {
+        method: 'api->crm->store->account->createCustomer',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->crm->store->account->createCustomer(\n  address: [\n    [\n      'addressType' => AddressType::POSTAL,\n      'city' => 'city',\n      'country' => 'country',\n      'postCode' => 'postCode',\n      'stateOrProvince' => 'stateOrProvince',\n      'streetName' => 'streetName',\n      'streetNo' => 'streetNo',\n      'suburb' => 'suburb',\n    ],\n  ],\n  collectionPlan: ['id' => 'id'],\n  contact: [\n    'isAccountOwner' => true,\n    'isServiceOwner' => true,\n    'primaryContactRole' => 'primaryContactRole',\n    'useParentAddressType' => AddressType::POSTAL,\n  ],\n  customer: [\n    'address' => [\n      [\n        'addressType' => AddressType::POSTAL,\n        'city' => 'city',\n        'country' => 'country',\n        'postCode' => 'postCode',\n        'stateOrProvince' => 'stateOrProvince',\n        'streetName' => 'streetName',\n        'streetNo' => 'streetNo',\n        'suburb' => 'suburb',\n      ],\n    ],\n    'detail' => [\n      'firstname' => 'firstname',\n      'lastname' => 'lastname',\n      'requireSecurityQuestions' => true,\n    ],\n    'isResidential' => true,\n  ],\n  detail: [\n    'billMedia' => [\n      'emailAddress' => 'emailAddress',\n      'generationLevel' => 'ACCOUNT',\n      'language' => 'language',\n      'mediaType' => 'SMS',\n    ],\n    'creditLimit' => 0,\n    'firstname' => 'firstname',\n    'hasDeposit' => true,\n    'identification' => ['idNumber' => 'idNumber', 'idType' => 'ID'],\n    'lastname' => 'lastname',\n    'title' => 'title',\n  ],\n  isResidential: true,\n  phone: [\n    'contactType' => ContactType::MOBILE_NO, 'phoneNumber' => 'phoneNumber'\n  ],\n  taxScheme: ['id' => 'id'],\n);\n\nvar_dump($result);",
+      },
       typescript: {
         method: 'client.api.crm.store.account.createCustomer',
         example:
@@ -361,6 +416,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           'curl https://api.example.com/api/Crm/account/customer \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
+      php: {
+        method: 'api->crm->account->customer->retrieve',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->crm->account->customer->retrieve();\n\nvar_dump($result);",
+      },
       typescript: {
         method: 'client.api.crm.account.customer.retrieve',
         example:
@@ -382,6 +442,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
       http: {
         example:
           'curl https://api.example.com/api/Crm/account/customer/section \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+      },
+      php: {
+        method: 'api->crm->account->customer->getSection',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->crm->account->customer->getSection();\n\nvar_dump($result);",
       },
       typescript: {
         method: 'client.api.crm.account.customer.getSection',
@@ -409,6 +474,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
       http: {
         example:
           'curl https://api.example.com/api/Crm/update/customer \\\n    -X PATCH \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+      },
+      php: {
+        method: 'api->crm->update->updateCustomer',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->crm->update->updateCustomer(\n  address: [\n    [\n      'addressType' => AddressType::POSTAL,\n      'city' => 'city',\n      'country' => 'country',\n      'postCode' => 'postCode',\n      'stateOrProvince' => 'stateOrProvince',\n      'streetName' => 'streetName',\n      'streetNo' => 'streetNo',\n      'suburb' => 'suburb',\n    ],\n  ],\n  detail: [\n    'firstname' => 'firstname',\n    'lastname' => 'lastname',\n    'requireSecurityQuestions' => true,\n  ],\n  isResidential: true,\n);\n\nvar_dump($result);",
       },
       typescript: {
         method: 'client.api.crm.update.updateCustomer',
@@ -439,6 +509,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           'curl https://api.example.com/api/Mvnx/webhook \\\n    -X POST \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
+      php: {
+        method: 'api->mvnx->createWebhook',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->mvnx->createWebhook(\n  id: 'id',\n  data: [\n    'iccid' => 'iccid',\n    'message' => 'message',\n    'msisdn' => 'msisdn',\n    'ocsid' => 'ocsid',\n    'portID' => 'portId',\n    'portMsisdn' => 'portMsisdn',\n    'status' => 'status',\n    'statusName' => 'statusName',\n    'subscriberID' => 'subscriberId',\n  ],\n  receivedOn: new \\DateTimeImmutable('2019-12-27T18:11:19.117Z'),\n  sentOn: new \\DateTimeImmutable('2019-12-27T18:11:19.117Z'),\n  type: 'type',\n);\n\nvar_dump($result);",
+      },
       typescript: {
         method: 'client.api.mvnx.createWebhook',
         example:
@@ -462,6 +537,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           'curl https://api.example.com/api/Mvnx/port \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY" \\\n    -d \'{\n          "newMsisdn": "x",\n          "oldMsisdn": "x"\n        }\'',
       },
+      php: {
+        method: 'api->mvnx->createPort',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->mvnx->createPort(\n  newMsisdn: 'x',\n  oldMsisdn: 'x',\n  portedAt: new \\DateTimeImmutable('2019-12-27T18:11:19.117Z'),\n  reference: 'reference',\n);\n\nvar_dump($result);",
+      },
       typescript: {
         method: 'client.api.mvnx.createPort',
         example:
@@ -483,6 +563,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
       http: {
         example:
           'curl https://api.example.com/api/Mvnx/history \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+      },
+      php: {
+        method: 'api->mvnx->history->list',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->mvnx->history->list();\n\nvar_dump($result);",
       },
       typescript: {
         method: 'client.api.mvnx.history.list',
@@ -507,6 +592,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           'curl https://api.example.com/api/Mvnx/history/$MSISDN \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
+      php: {
+        method: 'api->mvnx->history->retrieveByMsisdn',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->mvnx->history->retrieveByMsisdn('msisdn');\n\nvar_dump($result);",
+      },
       typescript: {
         method: 'client.api.mvnx.history.retrieveByMsisdn',
         example:
@@ -529,6 +619,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
       http: {
         example:
           'curl https://api.example.com/api/Order/create \\\n    -X POST \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+      },
+      php: {
+        method: 'api->order->create',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->order->create(\n  msisdn: 'msisdn', products: [['id' => 'id', 'amount' => 0]]\n);\n\nvar_dump($result);",
       },
       typescript: {
         method: 'client.api.order.create',
@@ -558,6 +653,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           'curl https://api.example.com/api/Order/pending \\\n    -X POST \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
+      php: {
+        method: 'api->order->pending->create',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->order->pending->create(\n  msisdn: 'msisdn',\n  paymentReference: 'paymentReference',\n  productAmount: 0,\n  productID: 'productId',\n);\n\nvar_dump($result);",
+      },
       typescript: {
         method: 'client.api.order.pending.create',
         example:
@@ -580,6 +680,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
       http: {
         example:
           'curl https://api.example.com/api/Order/pending/$MSISDN \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+      },
+      php: {
+        method: 'api->order->pending->retrieveByMsisdn',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->order->pending->retrieveByMsisdn('msisdn');\n\nvar_dump($result);",
       },
       typescript: {
         method: 'client.api.order.pending.retrieveByMsisdn',
@@ -604,6 +709,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           'curl https://api.example.com/api/Order/pending/$MSISDN/process \\\n    -X POST \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
+      php: {
+        method: 'api->order->pending->process',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->order->pending->process('msisdn');\n\nvar_dump($result);",
+      },
       typescript: {
         method: 'client.api.order.pending.process',
         example:
@@ -626,6 +736,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
       http: {
         example:
           'curl https://api.example.com/api/Payment/transactions \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+      },
+      php: {
+        method: 'api->payment->listTransactions',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->payment->listTransactions(limit: 0);\n\nvar_dump($result);",
       },
       typescript: {
         method: 'client.api.payment.listTransactions',
@@ -650,6 +765,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           'curl https://api.example.com/api/Payment/refund \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY" \\\n    -d \'{\n          "reason": "x",\n          "transactionReference": "x"\n        }\'',
       },
+      php: {
+        method: 'api->payment->refund',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->payment->refund(\n  reason: 'x', transactionReference: 'x', amountInCents: 0\n);\n\nvar_dump($result);",
+      },
       typescript: {
         method: 'client.api.payment.refund',
         example:
@@ -673,6 +793,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           'curl https://api.example.com/api/Payment/paystack/initialize \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY" \\\n    -d \'{\n          "amount": 1,\n          "productId": "x"\n        }\'',
       },
+      php: {
+        method: 'api->payment->paystack->initialize',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->payment->paystack->initialize(\n  amount: 1, productID: 'x', msisdn: 'msisdn'\n);\n\nvar_dump($result);",
+      },
       typescript: {
         method: 'client.api.payment.paystack.initialize',
         example:
@@ -695,6 +820,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
       http: {
         example:
           'curl https://api.example.com/api/Payment/paystack/initialize-combo \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY" \\\n    -d \'{\n          "amount": 1,\n          "productId": "x"\n        }\'',
+      },
+      php: {
+        method: 'api->payment->paystack->initializeCombo',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->payment->paystack->initializeCombo(\n  amount: 1, productID: 'x', msisdn: 'msisdn'\n);\n\nvar_dump($result);",
       },
       typescript: {
         method: 'client.api.payment.paystack.initializeCombo',
@@ -723,6 +853,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           'curl https://api.example.com/api/Payment/paystack/verify \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY" \\\n    -d \'{\n          "reference": "x"\n        }\'',
       },
+      php: {
+        method: 'api->payment->paystack->verify',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->payment->paystack->verify(\n  reference: 'x',\n  metadata: [\n    'customerName' => 'customerName',\n    'customerPhone' => 'customerPhone',\n    'msisdn' => 'msisdn',\n    'productID' => 'productId',\n    'productName' => 'productName',\n    'shippingAddress' => 'shippingAddress',\n  ],\n  saveCard: true,\n);\n\nvar_dump($result);",
+      },
       typescript: {
         method: 'client.api.payment.paystack.verify',
         example:
@@ -745,6 +880,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
       http: {
         example:
           'curl https://api.example.com/api/Payment/paystack/link-transaction \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY" \\\n    -d \'{\n          "orderId": "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n          "transactionReference": "x"\n        }\'',
+      },
+      php: {
+        method: 'api->payment->paystack->linkTransaction',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->payment->paystack->linkTransaction(\n  orderID: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', transactionReference: 'x'\n);\n\nvar_dump($result);",
       },
       typescript: {
         method: 'client.api.payment.paystack.linkTransaction',
@@ -769,6 +909,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           'curl https://api.example.com/api/Payment/paystack/link-transaction-to-services \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY" \\\n    -d \'{\n          "serviceIds": [\n            "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"\n          ],\n          "transactionReference": "x"\n        }\'',
       },
+      php: {
+        method: 'api->payment->paystack->linkTransactionToServices',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->payment->paystack->linkTransactionToServices(\n  serviceIDs: ['182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e'],\n  transactionReference: 'x',\n);\n\nvar_dump($result);",
+      },
       typescript: {
         method: 'client.api.payment.paystack.linkTransactionToServices',
         example:
@@ -791,6 +936,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
       http: {
         example:
           'curl https://api.example.com/api/Payment/paystack/charge \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY" \\\n    -d \'{\n          "amount": 1,\n          "paymentMethodId": "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"\n        }\'',
+      },
+      php: {
+        method: 'api->payment->paystack->charge',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->payment->paystack->charge(\n  amount: 1, paymentMethodID: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e'\n);\n\nvar_dump($result);",
       },
       typescript: {
         method: 'client.api.payment.paystack.charge',
@@ -815,6 +965,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           'curl https://api.example.com/api/Payment/paystack/subscribe \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY" \\\n    -d \'{\n          "msisdn": "x",\n          "paymentMethodId": "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n          "productId": "x"\n        }\'',
       },
+      php: {
+        method: 'api->payment->paystack->subscribe',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->payment->paystack->subscribe(\n  msisdn: 'x',\n  paymentMethodID: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  productID: 'x',\n);\n\nvar_dump($result);",
+      },
       typescript: {
         method: 'client.api.payment.paystack.subscribe',
         example:
@@ -838,6 +993,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           'curl https://api.example.com/api/Payment/paystack/subscription/$ID \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
+      php: {
+        method: 'api->payment->paystack->retrieveSubscription',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->payment->paystack->retrieveSubscription(\n  '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e'\n);\n\nvar_dump($result);",
+      },
       typescript: {
         method: 'client.api.payment.paystack.retrieveSubscription',
         example:
@@ -859,6 +1019,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
       http: {
         example:
           'curl https://api.example.com/api/Payment/paystack/subscriptions \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+      },
+      php: {
+        method: 'api->payment->paystack->listSubscriptions',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->payment->paystack->listSubscriptions();\n\nvar_dump($result);",
       },
       typescript: {
         method: 'client.api.payment.paystack.listSubscriptions',
@@ -883,6 +1048,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           'curl https://api.example.com/api/Payment/paystack/cancel-subscription \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY" \\\n    -d \'{\n          "msisdn": "x",\n          "productId": "x"\n        }\'',
       },
+      php: {
+        method: 'api->payment->paystack->cancelSubscription',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->payment->paystack->cancelSubscription(\n  msisdn: 'x', productID: 'x'\n);\n\nvar_dump($result);",
+      },
       typescript: {
         method: 'client.api.payment.paystack.cancelSubscription',
         example:
@@ -904,6 +1074,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
       http: {
         example:
           'curl https://api.example.com/api/Payment/paystack/webhook \\\n    -X POST \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+      },
+      php: {
+        method: 'api->payment->paystack->webhook',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->payment->paystack->webhook();\n\nvar_dump($result);",
       },
       typescript: {
         method: 'client.api.payment.paystack.webhook',
@@ -927,6 +1102,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           'curl https://api.example.com/api/Payment/paystack/cards \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
+      php: {
+        method: 'api->payment->paystack->cards->list',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->payment->paystack->cards->list();\n\nvar_dump($result);",
+      },
       typescript: {
         method: 'client.api.payment.paystack.cards.list',
         example:
@@ -949,6 +1129,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
       http: {
         example:
           'curl https://api.example.com/api/Payment/paystack/cards/$ID \\\n    -X DELETE \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+      },
+      php: {
+        method: 'api->payment->paystack->cards->delete',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->payment->paystack->cards->delete(\n  '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e'\n);\n\nvar_dump($result);",
       },
       typescript: {
         method: 'client.api.payment.paystack.cards.delete',
@@ -977,6 +1162,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           'curl https://api.example.com/api/Payment/dynamic-services/initialize \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY" \\\n    -d \'{\n          "services": [\n            {}\n          ]\n        }\'',
       },
+      php: {
+        method: 'api->payment->dynamicServices->initialize',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->payment->dynamicServices->initialize(\n  services: [\n    [\n      'definitionCode' => 'VOICE',\n      'expiryDate' => 'expiryDate',\n      'priceInCents' => 0,\n      'transactionID' => 'transactionId',\n      'value' => 0,\n    ],\n  ],\n  msisdn: 'msisdn',\n  shippingCostInCents: 0,\n);\n\nvar_dump($result);",
+      },
       typescript: {
         method: 'client.api.payment.dynamicServices.initialize',
         example:
@@ -1004,6 +1194,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           'curl https://api.example.com/api/Payment/dynamic-services/recurring \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY" \\\n    -d \'{\n          "msisdn": "x",\n          "paymentMethodId": "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n          "services": [\n            {}\n          ]\n        }\'',
       },
+      php: {
+        method: 'api->payment->dynamicServices->recurring',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->payment->dynamicServices->recurring(\n  msisdn: 'x',\n  paymentMethodID: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  services: [\n    [\n      'definitionCode' => 'VOICE',\n      'expiryDate' => 'expiryDate',\n      'priceInCents' => 0,\n      'transactionID' => 'transactionId',\n      'value' => 0,\n    ],\n  ],\n);\n\nvar_dump($result);",
+      },
       typescript: {
         method: 'client.api.payment.dynamicServices.recurring',
         example:
@@ -1026,6 +1221,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
       http: {
         example:
           'curl https://api.example.com/api/Payment/combo-bundle/recurring \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY" \\\n    -d \'{\n          "amount": 0,\n          "msisdn": "x",\n          "paymentMethodId": "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n          "productId": "x"\n        }\'',
+      },
+      php: {
+        method: 'api->payment->comboBundle->recurring',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->payment->comboBundle->recurring(\n  amount: 0,\n  msisdn: 'x',\n  paymentMethodID: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  productID: 'x',\n);\n\nvar_dump($result);",
       },
       typescript: {
         method: 'client.api.payment.comboBundle.recurring',
@@ -1059,6 +1259,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           'curl https://api.example.com/api/Resources/inventory/sim/search \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
+      php: {
+        method: 'api->resources->inventory->sim->search',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->resources->inventory->sim->search(\n  id: 'id',\n  accessNo: 'accessNo',\n  dealer: 'dealer',\n  imsi: 'imsi',\n  limit: 0,\n  page: 0,\n  status: 'status',\n  subStatus: 'subStatus',\n);\n\nvar_dump($result);",
+      },
       typescript: {
         method: 'client.api.resources.inventory.sim.search',
         example:
@@ -1081,6 +1286,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
       http: {
         example:
           'curl https://api.example.com/api/Rica/document/$TYPE \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+      },
+      php: {
+        method: 'api->rica->retrieveDocument',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->rica->retrieveDocument('type');\n\nvar_dump($result);",
       },
       typescript: {
         method: 'client.api.rica.retrieveDocument',
@@ -1105,6 +1315,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           'curl https://api.example.com/api/Rica/upload/id \\\n    -X POST \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
+      php: {
+        method: 'api->rica->upload->uploadID',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->rica->upload->uploadID(file: 'file');\n\nvar_dump($result);",
+      },
       typescript: {
         method: 'client.api.rica.upload.uploadID',
         example:
@@ -1128,6 +1343,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           'curl https://api.example.com/api/Rica/upload/poa \\\n    -X POST \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
+      php: {
+        method: 'api->rica->upload->uploadPoa',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->rica->upload->uploadPoa(file: 'file');\n\nvar_dump($result);",
+      },
       typescript: {
         method: 'client.api.rica.upload.uploadPoa',
         example:
@@ -1150,6 +1370,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
       http: {
         example:
           'curl https://api.example.com/api/Subscriber/$MSISDN/activate \\\n    -X POST \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+      },
+      php: {
+        method: 'api->subscriber->activate',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->subscriber->activate('msisdn');\n\nvar_dump($result);",
       },
       typescript: {
         method: 'client.api.subscriber.activate',
@@ -1182,6 +1407,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           'curl https://api.example.com/api/Subscriber/create \\\n    -X POST \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
+      php: {
+        method: 'api->subscriber->create',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->subscriber->create(\n  accountID: 'accountId',\n  address: [\n    [\n      'addressType' => AddressType::POSTAL,\n      'city' => 'city',\n      'country' => 'country',\n      'postCode' => 'postCode',\n      'stateOrProvince' => 'stateOrProvince',\n      'streetName' => 'streetName',\n      'streetNo' => 'streetNo',\n      'suburb' => 'suburb',\n    ],\n  ],\n  eSim: true,\n  iccid: 'iccid',\n  productID: 'productId',\n  relatedParty: [\n    [\n      'id' => 'id',\n      'address' => [\n        [\n          'addressType' => AddressType::POSTAL,\n          'city' => 'city',\n          'country' => 'country',\n          'oneLineAddress' => 'oneLineAddress',\n          'postCode' => 'postCode',\n          'referredType' => 'referredType',\n          'stateOrProvince' => 'stateOrProvince',\n          'streetName' => 'streetName',\n          'streetNo' => 'streetNo',\n          'suburb' => 'suburb',\n        ],\n      ],\n      'detail' => [\n        'birthDate' => new \\DateTimeImmutable('2019-12-27T18:11:19.117Z'),\n        'firstname' => 'firstname',\n        'gdprConsent' => true,\n        'gender' => 'gender',\n        'idNumber' => 'idNumber',\n        'lastname' => 'lastname',\n        'title' => 'title',\n      ],\n      'email' => [\n        [\n          'displayOrder' => 0,\n          'emailAddress' => 'emailAddress',\n          'referredType' => 'referredType',\n        ],\n      ],\n      'isAccountOwner' => true,\n      'isServiceOwner' => true,\n      'name' => 'name',\n      'personType' => 'personType',\n      'phone' => [\n        [\n          'contactType' => ContactType::MOBILE_NO,\n          'displayOrder' => 0,\n          'phoneNumber' => 'phoneNumber',\n          'referredType' => 'referredType',\n        ],\n      ],\n      'primaryContactRole' => 'primaryContactRole',\n      'referredType' => 'referredType',\n      'useParentAddressType' => 'useParentAddressType',\n    ],\n  ],\n  transactionID: 'transactionId',\n);\n\nvar_dump($result);",
+      },
       typescript: {
         method: 'client.api.subscriber.create',
         example:
@@ -1205,6 +1435,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           'curl https://api.example.com/api/Subscriber/$MSISDN \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
+      php: {
+        method: 'api->subscriber->retrieve',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->subscriber->retrieve('msisdn');\n\nvar_dump($result);",
+      },
       typescript: {
         method: 'client.api.subscriber.retrieve',
         example:
@@ -1227,6 +1462,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
       http: {
         example:
           'curl https://api.example.com/api/Subscriber/$MSISDN/balance \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+      },
+      php: {
+        method: 'api->subscriber->getBalance',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->subscriber->getBalance('msisdn');\n\nvar_dump($result);",
       },
       typescript: {
         method: 'client.api.subscriber.getBalance',
@@ -1272,6 +1512,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           'curl https://api.example.com/api/Subscriber/search \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
+      php: {
+        method: 'api->subscriber->search',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->subscriber->search(\n  accountID: 'AccountId',\n  active: 'Active',\n  addressID: 'AddressId',\n  catalogProductID: 'CatalogProductId',\n  completeOrder: 'CompleteOrder',\n  customerID: 'CustomerId',\n  iccid: 'Iccid',\n  id: 'Id',\n  isVisible: 'IsVisible',\n  limit: 0,\n  msisdn: 'Msisdn',\n  ocsid: 'Ocsid',\n  orderID: 'OrderId',\n  orderState: 'OrderState',\n  page: 0,\n  productType: 'ProductType',\n  serviceType: 'ServiceType',\n  state: 'State',\n  status: 'Status',\n  waybill: 'Waybill',\n);\n\nvar_dump($result);",
+      },
       typescript: {
         method: 'client.api.subscriber.search',
         example:
@@ -1295,6 +1540,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           'curl https://api.example.com/api/Subscriber/user \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
+      php: {
+        method: 'api->subscriber->getUser',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->subscriber->getUser(limit: 0, page: 0);\n\nvar_dump($result);",
+      },
       typescript: {
         method: 'client.api.subscriber.getUser',
         example:
@@ -1317,6 +1567,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
       http: {
         example:
           'curl https://api.example.com/api/Subscriber/$MSISDN/is-active \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+      },
+      php: {
+        method: 'api->subscriber->isActive',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->subscriber->isActive('msisdn');\n\nvar_dump($result);",
       },
       typescript: {
         method: 'client.api.subscriber.isActive',
@@ -1343,6 +1598,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
       http: {
         example:
           'curl https://api.example.com/api/Subscriber/$MSISDN/service/dynamic \\\n    -X POST \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+      },
+      php: {
+        method: 'api->subscriber->service->dynamic->create',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->subscriber->service->dynamic->create(\n  'msisdn',\n  services: [\n    [\n      'definitionCode' => 'VOICE',\n      'expiryDate' => 'expiryDate',\n      'priceInCents' => 0,\n      'transactionID' => 'transactionId',\n      'value' => 0,\n    ],\n  ],\n);\n\nvar_dump($result);",
       },
       typescript: {
         method: 'client.api.subscriber.service.dynamic.create',
@@ -1374,6 +1634,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           'curl https://api.example.com/api/Subscriber/$MSISDN/service/dynamic/pending \\\n    -X POST \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
+      php: {
+        method: 'api->subscriber->service->dynamic->pending->create',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->subscriber->service->dynamic->pending->create(\n  'msisdn',\n  definitionCode: 'definitionCode',\n  expiryDate: '2019-12-27',\n  paymentReference: 'paymentReference',\n  priceInCents: 0,\n  value: 0,\n);\n\nvar_dump($result);",
+      },
       typescript: {
         method: 'client.api.subscriber.service.dynamic.pending.create',
         example:
@@ -1396,6 +1661,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
       http: {
         example:
           'curl https://api.example.com/api/Subscriber/$MSISDN/service/dynamic/pending \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+      },
+      php: {
+        method: 'api->subscriber->service->dynamic->pending->list',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->subscriber->service->dynamic->pending->list('msisdn');\n\nvar_dump($result);",
       },
       typescript: {
         method: 'client.api.subscriber.service.dynamic.pending.list',
@@ -1420,6 +1690,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           'curl https://api.example.com/api/Subscriber/$MSISDN/service/dynamic/pending/process \\\n    -X POST \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
+      php: {
+        method: 'api->subscriber->service->dynamic->pending->process',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->subscriber->service->dynamic->pending->process(\n  'msisdn'\n);\n\nvar_dump($result);",
+      },
       typescript: {
         method: 'client.api.subscriber.service.dynamic.pending.process',
         example:
@@ -1443,6 +1718,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           'curl https://api.example.com/api/Subscriber/$MSISDN/swap/msisdn/$TO_MSISDN \\\n    -X POST \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
+      php: {
+        method: 'api->subscriber->swap->msisdn',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->subscriber->swap->msisdn(\n  'toMsisdn', msisdn: 'msisdn', port: true\n);\n\nvar_dump($result);",
+      },
       typescript: {
         method: 'client.api.subscriber.swap.msisdn',
         example:
@@ -1464,6 +1744,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
       http: {
         example:
           'curl https://api.example.com/api/User \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+      },
+      php: {
+        method: 'api->user->list',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->user->list();\n\nvar_dump($result);",
       },
       typescript: {
         method: 'client.api.user.list',
@@ -1494,6 +1779,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           'curl https://api.example.com/api/User/register \\\n    -X POST \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
+      php: {
+        method: 'api->user->register',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->user->register(\n  emailAddress: 'emailAddress',\n  externalID: 'externalId',\n  firstName: 'firstName',\n  lastName: 'lastName',\n  tenant: 'tenant',\n);\n\nvar_dump($result);",
+      },
       typescript: {
         method: 'client.api.user.register',
         example:
@@ -1516,6 +1806,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           'curl https://api.example.com/api/User/activate \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
+      php: {
+        method: 'api->user->activate',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->user->activate();\n\nvar_dump($result);",
+      },
       typescript: {
         method: 'client.api.user.activate',
         example:
@@ -1537,6 +1832,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
       http: {
         example:
           'curl https://api.example.com/api/User/has-account \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+      },
+      php: {
+        method: 'api->user->hasAccount',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->user->hasAccount();\n\nvar_dump($result);",
       },
       typescript: {
         method: 'client.api.user.hasAccount',
@@ -1561,6 +1861,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           'curl https://api.example.com/api/User/sim-description \\\n    -X PATCH \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY" \\\n    -d \'{\n          "msisdn": "msisdn"\n        }\'',
       },
+      php: {
+        method: 'api->user->updateSimDescription',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->user->updateSimDescription(\n  msisdn: 'msisdn', simDescription: 'simDescription'\n);\n\nvar_dump($result);",
+      },
       typescript: {
         method: 'client.api.user.updateSimDescription',
         example:
@@ -1583,6 +1888,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
       http: {
         example:
           'curl https://api.example.com/api/Warehouse/tracking/$ORDER_ID/pod \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+      },
+      php: {
+        method: 'api->warehouse->tracking->getPod',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->warehouse->tracking->getPod('orderId');\n\nvar_dump($result);",
       },
       typescript: {
         method: 'client.api.warehouse.tracking.getPod',
@@ -1607,6 +1917,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           'curl https://api.example.com/api/Warehouse/tracking/$ORDER_ID/events \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
+      php: {
+        method: 'api->warehouse->tracking->getEvents',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->warehouse->tracking->getEvents('orderId');\n\nvar_dump($result);",
+      },
       typescript: {
         method: 'client.api.warehouse.tracking.getEvents',
         example:
@@ -1630,6 +1945,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           'curl https://api.example.com/api/Warehouse/tracking/msisdn/$MSISDN/events \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
+      php: {
+        method: 'api->warehouse->tracking->msisdn->getEvents',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->warehouse->tracking->msisdn->getEvents('msisdn');\n\nvar_dump($result);",
+      },
       typescript: {
         method: 'client.api.warehouse.tracking.msisdn.getEvents',
         example:
@@ -1650,6 +1970,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     perLanguage: {
       http: {
         example: 'curl https://api.example.com/health \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+      },
+      php: {
+        method: 'health->check',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->health->check();\n\nvar_dump($result);",
       },
       typescript: {
         method: 'client.health.check',
@@ -1673,6 +1998,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           'curl https://api.example.com/health/db \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
+      php: {
+        method: 'health->checkDB',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->health->checkDB();\n\nvar_dump($result);",
+      },
       typescript: {
         method: 'client.health.checkDB',
         example:
@@ -1687,6 +2017,11 @@ const EMBEDDED_READMES: { language: string; content: string }[] = [
     language: 'typescript',
     content:
       "# SDK Limes TypeScript API Library\n\n[![NPM version](https://img.shields.io/npm/v/sdk-limes.svg?label=npm%20(stable))](https://npmjs.org/package/sdk-limes) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/sdk-limes)\n\nThis library provides convenient access to the SDK Limes REST API from server-side TypeScript or JavaScript.\n\n\n\nThe full API of this library can be found in [api.md](api.md).\n\nIt is generated with [Stainless](https://www.stainless.com/).\n\n## MCP Server\n\nUse the SDK Limes MCP Server to enable AI assistants to interact with this API, allowing them to explore endpoints, make test requests, and use documentation to help integrate this SDK into your application.\n\n[![Add to Cursor](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/en-US/install-mcp?name=sdk-limes-mcp&config=eyJjb21tYW5kIjoibnB4IiwiYXJncyI6WyIteSIsInNkay1saW1lcy1tY3AiXSwiZW52Ijp7IlNES19MSU1FU19BUElfS0VZIjoiTXkgQVBJIEtleSJ9fQ)\n[![Install in VS Code](https://img.shields.io/badge/_-Add_to_VS_Code-blue?style=for-the-badge&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCA0MCA0MCI+PHBhdGggZmlsbD0iI0VFRSIgZmlsbC1ydWxlPSJldmVub2RkIiBkPSJNMzAuMjM1IDM5Ljg4NGEyLjQ5MSAyLjQ5MSAwIDAgMS0xLjc4MS0uNzNMMTIuNyAyNC43OGwtMy40NiAyLjYyNC0zLjQwNiAyLjU4MmExLjY2NSAxLjY2NSAwIDAgMS0xLjA4Mi4zMzggMS42NjQgMS42NjQgMCAwIDEtMS4wNDYtLjQzMWwtMi4yLTJhMS42NjYgMS42NjYgMCAwIDEgMC0yLjQ2M0w3LjQ1OCAyMCA0LjY3IDE3LjQ1MyAxLjUwNyAxNC41N2ExLjY2NSAxLjY2NSAwIDAgMSAwLTIuNDYzbDIuMi0yYTEuNjY1IDEuNjY1IDAgMCAxIDIuMTMtLjA5N2w2Ljg2MyA1LjIwOUwyOC40NTIuODQ0YTIuNDg4IDIuNDg4IDAgMCAxIDEuODQxLS43MjljLjM1MS4wMDkuNjk5LjA5MSAxLjAxOS4yNDVsOC4yMzYgMy45NjFhMi41IDIuNSAwIDAgMSAxLjQxNSAyLjI1M3YuMDk5LS4wNDVWMzMuMzd2LS4wNDUuMDk1YTIuNTAxIDIuNTAxIDAgMCAxLTEuNDE2IDIuMjU3bC04LjIzNSAzLjk2MWEyLjQ5MiAyLjQ5MiAwIDAgMS0xLjA3Ny4yNDZabS43MTYtMjguOTQ3LTExLjk0OCA5LjA2MiAxMS45NTIgOS4wNjUtLjAwNC0xOC4xMjdaIi8+PC9zdmc+)](https://vscode.stainless.com/mcp/%7B%22name%22%3A%22sdk-limes-mcp%22%2C%22command%22%3A%22npx%22%2C%22args%22%3A%5B%22-y%22%2C%22sdk-limes-mcp%22%5D%2C%22env%22%3A%7B%22SDK_LIMES_API_KEY%22%3A%22My%20API%20Key%22%7D%7D)\n\n> Note: You may need to set environment variables in your MCP client.\n\n## Installation\n\n```sh\nnpm install git+ssh://git@github.com:stainless-sdks/sdk-limes-typescript.git\n```\n> [!NOTE]\n> Once this package is [published to npm](https://www.stainless.com/docs/guides/publish), this will become: `npm install sdk-limes`\n\n\n\n## Usage\n\nThe full API of this library can be found in [api.md](api.md).\n\n<!-- prettier-ignore -->\n```js\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.auth.createToken();\n```\n\n\n\n### Request & Response types\n\nThis library includes TypeScript definitions for all request params and response fields. You may import and use them like so:\n\n<!-- prettier-ignore -->\n```ts\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.auth.createToken();\n```\n\nDocumentation for each method, request param, and response field are available in docstrings and will appear on hover in most modern editors.\n\n## File uploads\n\nRequest parameters that correspond to file uploads can be passed in many different forms:\n- `File` (or an object with the same structure)\n- a `fetch` `Response` (or an object with the same structure)\n- an `fs.ReadStream`\n- the return value of our `toFile` helper\n\n```ts\nimport fs from 'fs';\nimport SDKLimes, { toFile } from 'sdk-limes';\n\nconst client = new SDKLimes();\n\n// If you have access to Node `fs` we recommend using `fs.createReadStream()`:\nawait client.api.rica.upload.uploadID({ file: fs.createReadStream('/path/to/file') });\n\n// Or if you have the web `File` API you can pass a `File` instance:\nawait client.api.rica.upload.uploadID({ file: new File(['my bytes'], 'file') });\n\n// You can also pass a `fetch` `Response`:\nawait client.api.rica.upload.uploadID({ file: await fetch('https://somesite/file') });\n\n// Finally, if none of the above are convenient, you can use our `toFile` helper:\nawait client.api.rica.upload.uploadID({ file: await toFile(Buffer.from('my bytes'), 'file') });\nawait client.api.rica.upload.uploadID({ file: await toFile(new Uint8Array([0, 1, 2]), 'file') });\n```\n\n\n\n## Handling errors\n\nWhen the library is unable to connect to the API,\nor if the API returns a non-success status code (i.e., 4xx or 5xx response),\na subclass of `APIError` will be thrown:\n\n<!-- prettier-ignore -->\n```ts\nconst response = await client.api.auth.createToken().catch(async (err) => {\n  if (err instanceof SDKLimes.APIError) {\n    console.log(err.status); // 400\n    console.log(err.name); // BadRequestError\n    console.log(err.headers); // {server: 'nginx', ...}\n  } else {\n    throw err;\n  }\n});\n```\n\nError codes are as follows:\n\n| Status Code | Error Type                 |\n| ----------- | -------------------------- |\n| 400         | `BadRequestError`          |\n| 401         | `AuthenticationError`      |\n| 403         | `PermissionDeniedError`    |\n| 404         | `NotFoundError`            |\n| 422         | `UnprocessableEntityError` |\n| 429         | `RateLimitError`           |\n| >=500       | `InternalServerError`      |\n| N/A         | `APIConnectionError`       |\n\n### Retries\n\nCertain errors will be automatically retried 2 times by default, with a short exponential backoff.\nConnection errors (for example, due to a network connectivity problem), 408 Request Timeout, 409 Conflict,\n429 Rate Limit, and >=500 Internal errors will all be retried by default.\n\nYou can use the `maxRetries` option to configure or disable this:\n\n<!-- prettier-ignore -->\n```js\n// Configure the default for all requests:\nconst client = new SDKLimes({\n  maxRetries: 0, // default is 2\n});\n\n// Or, configure per-request:\nawait client.api.auth.createToken({\n  maxRetries: 5,\n});\n```\n\n### Timeouts\n\nRequests time out after 1 minute by default. You can configure this with a `timeout` option:\n\n<!-- prettier-ignore -->\n```ts\n// Configure the default for all requests:\nconst client = new SDKLimes({\n  timeout: 20 * 1000, // 20 seconds (default is 1 minute)\n});\n\n// Override per-request:\nawait client.api.auth.createToken({\n  timeout: 5 * 1000,\n});\n```\n\nOn timeout, an `APIConnectionTimeoutError` is thrown.\n\nNote that requests which time out will be [retried twice by default](#retries).\n\n\n\n\n\n## Advanced Usage\n\n### Accessing raw Response data (e.g., headers)\n\nThe \"raw\" `Response` returned by `fetch()` can be accessed through the `.asResponse()` method on the `APIPromise` type that all methods return.\nThis method returns as soon as the headers for a successful response are received and does not consume the response body, so you are free to write custom parsing or streaming logic.\n\nYou can also use the `.withResponse()` method to get the raw `Response` along with the parsed data.\nUnlike `.asResponse()` this method consumes the body, returning once it is parsed.\n\n<!-- prettier-ignore -->\n```ts\nconst client = new SDKLimes();\n\nconst response = await client.api.auth.createToken().asResponse();\nconsole.log(response.headers.get('X-My-Header'));\nconsole.log(response.statusText); // access the underlying Response object\n\nconst { data: result, response: raw } = await client.api.auth.createToken().withResponse();\nconsole.log(raw.headers.get('X-My-Header'));\nconsole.log(result);\n```\n\n### Logging\n\n> [!IMPORTANT]\n> All log messages are intended for debugging only. The format and content of log messages\n> may change between releases.\n\n#### Log levels\n\nThe log level can be configured in two ways:\n\n1. Via the `SDK_LIMES_LOG` environment variable\n2. Using the `logLevel` client option (overrides the environment variable if set)\n\n```ts\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  logLevel: 'debug', // Show all log messages\n});\n```\n\nAvailable log levels, from most to least verbose:\n\n- `'debug'` - Show debug messages, info, warnings, and errors\n- `'info'` - Show info messages, warnings, and errors\n- `'warn'` - Show warnings and errors (default)\n- `'error'` - Show only errors\n- `'off'` - Disable all logging\n\nAt the `'debug'` level, all HTTP requests and responses are logged, including headers and bodies.\nSome authentication-related headers are redacted, but sensitive data in request and response bodies\nmay still be visible.\n\n#### Custom logger\n\nBy default, this library logs to `globalThis.console`. You can also provide a custom logger.\nMost logging libraries are supported, including [pino](https://www.npmjs.com/package/pino), [winston](https://www.npmjs.com/package/winston), [bunyan](https://www.npmjs.com/package/bunyan), [consola](https://www.npmjs.com/package/consola), [signale](https://www.npmjs.com/package/signale), and [@std/log](https://jsr.io/@std/log). If your logger doesn't work, please open an issue.\n\nWhen providing a custom logger, the `logLevel` option still controls which messages are emitted, messages\nbelow the configured level will not be sent to your logger.\n\n```ts\nimport SDKLimes from 'sdk-limes';\nimport pino from 'pino';\n\nconst logger = pino();\n\nconst client = new SDKLimes({\n  logger: logger.child({ name: 'SDKLimes' }),\n  logLevel: 'debug', // Send all messages to pino, allowing it to filter\n});\n```\n\n### Making custom/undocumented requests\n\nThis library is typed for convenient access to the documented API. If you need to access undocumented\nendpoints, params, or response properties, the library can still be used.\n\n#### Undocumented endpoints\n\nTo make requests to undocumented endpoints, you can use `client.get`, `client.post`, and other HTTP verbs.\nOptions on the client, such as retries, will be respected when making these requests.\n\n```ts\nawait client.post('/some/path', {\n  body: { some_prop: 'foo' },\n  query: { some_query_arg: 'bar' },\n});\n```\n\n#### Undocumented request params\n\nTo make requests using undocumented parameters, you may use `// @ts-expect-error` on the undocumented\nparameter. This library doesn't validate at runtime that the request matches the type, so any extra values you\nsend will be sent as-is.\n\n```ts\nclient.api.auth.createToken({\n  // ...\n  // @ts-expect-error baz is not yet public\n  baz: 'undocumented option',\n});\n```\n\nFor requests with the `GET` verb, any extra params will be in the query, all other requests will send the\nextra param in the body.\n\nIf you want to explicitly send an extra argument, you can do so with the `query`, `body`, and `headers` request\noptions.\n\n#### Undocumented response properties\n\nTo access undocumented response properties, you may access the response object with `// @ts-expect-error` on\nthe response object, or cast the response object to the requisite type. Like the request params, we do not\nvalidate or strip extra properties from the response from the API.\n\n### Customizing the fetch client\n\nBy default, this library expects a global `fetch` function is defined.\n\nIf you want to use a different `fetch` function, you can either polyfill the global:\n\n```ts\nimport fetch from 'my-fetch';\n\nglobalThis.fetch = fetch;\n```\n\nOr pass it to the client:\n\n```ts\nimport SDKLimes from 'sdk-limes';\nimport fetch from 'my-fetch';\n\nconst client = new SDKLimes({ fetch });\n```\n\n### Fetch options\n\nIf you want to set custom `fetch` options without overriding the `fetch` function, you can provide a `fetchOptions` object when instantiating the client or making a request. (Request-specific options override client options.)\n\n```ts\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  fetchOptions: {\n    // `RequestInit` options\n  },\n});\n```\n\n#### Configuring proxies\n\nTo modify proxy behavior, you can provide custom `fetchOptions` that add runtime-specific proxy\noptions to requests:\n\n<img src=\"https://raw.githubusercontent.com/stainless-api/sdk-assets/refs/heads/main/node.svg\" align=\"top\" width=\"18\" height=\"21\"> **Node** <sup>[[docs](https://github.com/nodejs/undici/blob/main/docs/docs/api/ProxyAgent.md#example---proxyagent-with-fetch)]</sup>\n\n```ts\nimport SDKLimes from 'sdk-limes';\nimport * as undici from 'undici';\n\nconst proxyAgent = new undici.ProxyAgent('http://localhost:8888');\nconst client = new SDKLimes({\n  fetchOptions: {\n    dispatcher: proxyAgent,\n  },\n});\n```\n\n<img src=\"https://raw.githubusercontent.com/stainless-api/sdk-assets/refs/heads/main/bun.svg\" align=\"top\" width=\"18\" height=\"21\"> **Bun** <sup>[[docs](https://bun.sh/guides/http/proxy)]</sup>\n\n```ts\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  fetchOptions: {\n    proxy: 'http://localhost:8888',\n  },\n});\n```\n\n<img src=\"https://raw.githubusercontent.com/stainless-api/sdk-assets/refs/heads/main/deno.svg\" align=\"top\" width=\"18\" height=\"21\"> **Deno** <sup>[[docs](https://docs.deno.com/api/deno/~/Deno.createHttpClient)]</sup>\n\n```ts\nimport SDKLimes from 'npm:sdk-limes';\n\nconst httpClient = Deno.createHttpClient({ proxy: { url: 'http://localhost:8888' } });\nconst client = new SDKLimes({\n  fetchOptions: {\n    client: httpClient,\n  },\n});\n```\n\n## Frequently Asked Questions\n\n## Semantic versioning\n\nThis package generally follows [SemVer](https://semver.org/spec/v2.0.0.html) conventions, though certain backwards-incompatible changes may be released as minor versions:\n\n1. Changes that only affect static types, without breaking runtime behavior.\n2. Changes to library internals which are technically public but not intended or documented for external use. _(Please open a GitHub issue to let us know if you are relying on such internals.)_\n3. Changes that we do not expect to impact the vast majority of users in practice.\n\nWe take backwards-compatibility seriously and work hard to ensure you can rely on a smooth upgrade experience.\n\nWe are keen for your feedback; please open an [issue](https://www.github.com/stainless-sdks/sdk-limes-typescript/issues) with questions, bugs, or suggestions.\n\n## Requirements\n\nTypeScript >= 4.9 is supported.\n\nThe following runtimes are supported:\n\n- Web browsers (Up-to-date Chrome, Firefox, Safari, Edge, and more)\n- Node.js 20 LTS or later ([non-EOL](https://endoflife.date/nodejs)) versions.\n- Deno v1.28.0 or higher.\n- Bun 1.0 or later.\n- Cloudflare Workers.\n- Vercel Edge Runtime.\n- Jest 28 or greater with the `\"node\"` environment (`\"jsdom\"` is not supported at this time).\n- Nitro v2.6 or greater.\n\nNote that React Native is not supported at this time.\n\nIf you are interested in other runtime environments, please open or upvote an issue on GitHub.\n\n## Contributing\n\nSee [the contributing documentation](./CONTRIBUTING.md).\n",
+  },
+  {
+    language: 'php',
+    content:
+      '# SDK Limes PHP API Library\n\nThe SDK Limes PHP library provides convenient access to the SDK Limes REST API from any PHP 8.1.0+ application.\n\n## Installation\n\nTo use this package, install via Composer by adding the following to your application\'s `composer.json`:\n\n<!-- x-release-please-start-version -->\n```json\n{\n  "repositories": [\n    {\n      "type": "vcs",\n      "url": "git@github.com:imtiyaazsalie/sdk-limes-php.git"\n    }\n  ],\n  "require": {\n    "org-placeholder/sdk-limes": "dev-main"\n  }\n}\n```\n<!-- x-release-please-end -->\n\n## Usage\n\n```php\n<?php\n\n$client = new Client(apiKey: getenv(\'SDK_LIMES_API_KEY\') ?: \'My API Key\');\n\n$result = $client->api->auth->createToken();\n\nvar_dump($result);\n```',
   },
 ];
 
