@@ -20,11 +20,8 @@ Use the SDK Limes MCP Server to enable AI assistants to interact with this API, 
 ## Installation
 
 ```sh
-npm install git+ssh://git@github.com:imtiyaazsalie/sdk-limes-typescript.git
+npm install sdk-limes
 ```
-
-> [!NOTE]
-> Once this package is [published to npm](https://www.stainless.com/docs/guides/publish), this will become: `npm install sdk-limes`
 
 ## Usage
 
