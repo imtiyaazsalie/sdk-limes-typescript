@@ -8,9 +8,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/stainless-sdks/sdk-limes-typescript.git"
+    "url": "git+https://github.com/imtiyaazsalie/sdk-limes-typescript.git"
   },
-  "homepage": "https://github.com/stainless-sdks/sdk-limes-typescript/tree/main/packages/mcp-server#readme",
+  "homepage": "https://github.com/imtiyaazsalie/sdk-limes-typescript/tree/main/packages/mcp-server#readme",
   "server": {
     "type": "node",
     "entry_point": "index.js",
