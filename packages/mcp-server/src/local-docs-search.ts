@@ -1318,7 +1318,7 @@ const EMBEDDED_METHODS: MethodEntry[] = [
       php: {
         method: 'api->rica->upload->uploadID',
         example:
-          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->rica->upload->uploadID(file: 'file');\n\nvar_dump($result);",
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->rica->upload->uploadID(\n  file: FileParam::fromString('Example data', filename: uniqid('file-upload-', true)),\n);\n\nvar_dump($result);",
       },
       typescript: {
         method: 'client.api.rica.upload.uploadID',
@@ -1346,7 +1346,7 @@ const EMBEDDED_METHODS: MethodEntry[] = [
       php: {
         method: 'api->rica->upload->uploadPoa',
         example:
-          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->rica->upload->uploadPoa(file: 'file');\n\nvar_dump($result);",
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->rica->upload->uploadPoa(\n  file: FileParam::fromString('Example data', filename: uniqid('file-upload-', true)),\n);\n\nvar_dump($result);",
       },
       typescript: {
         method: 'client.api.rica.upload.uploadPoa',
