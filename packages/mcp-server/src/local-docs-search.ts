@@ -1323,7 +1323,7 @@ const EMBEDDED_METHODS: MethodEntry[] = [
       typescript: {
         method: 'client.api.rica.upload.uploadID',
         example:
-          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.rica.upload.uploadID();",
+          "import fs from 'fs';\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.rica.upload.uploadID();",
       },
     },
   },
@@ -1351,7 +1351,7 @@ const EMBEDDED_METHODS: MethodEntry[] = [
       typescript: {
         method: 'client.api.rica.upload.uploadPoa',
         example:
-          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.rica.upload.uploadPoa();",
+          "import fs from 'fs';\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.rica.upload.uploadPoa();",
       },
     },
   },
