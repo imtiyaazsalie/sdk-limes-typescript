@@ -62,19 +62,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## create_token\n\n`client.api.auth.createToken(email?: string, role?: string, secret?: string, tenant?: string): void`\n\n**post** `/api/Auth/token`\n\n### Parameters\n\n- `email?: string`\n\n- `role?: string`\n\n- `secret?: string`\n\n- `tenant?: string`\n\n### Example\n\n```typescript\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes();\n\nawait client.api.auth.createToken()\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.api.auth.createToken',
         example:
-          'curl https://api.example.com/api/Auth/token \\\n    -X POST \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.auth.createToken();",
       },
       php: {
         method: 'api->auth->createToken',
         example:
           "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->auth->createToken(\n  email: 'email', role: 'role', secret: 'secret', tenant: 'tenant'\n);\n\nvar_dump($result);",
       },
-      typescript: {
-        method: 'client.api.auth.createToken',
+      http: {
         example:
-          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.auth.createToken();",
+          'curl https://api.example.com/api/Auth/token \\\n    -X POST \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
     },
   },
@@ -90,19 +90,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## list_categories\n\n`client.api.catalog.listCategories(limit?: number, page?: number): void`\n\n**get** `/api/Catalog/categories`\n\n### Parameters\n\n- `limit?: number`\n\n- `page?: number`\n\n### Example\n\n```typescript\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes();\n\nawait client.api.catalog.listCategories()\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.api.catalog.listCategories',
         example:
-          'curl https://api.example.com/api/Catalog/categories \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.catalog.listCategories();",
       },
       php: {
         method: 'api->catalog->listCategories',
         example:
           "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->catalog->listCategories(limit: 0, page: 0);\n\nvar_dump($result);",
       },
-      typescript: {
-        method: 'client.api.catalog.listCategories',
+      http: {
         example:
-          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.catalog.listCategories();",
+          'curl https://api.example.com/api/Catalog/categories \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
     },
   },
@@ -118,19 +118,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## list_products\n\n`client.api.catalog.search.listProducts(id?: string, adhoc?: string, limit?: number, page?: number): void`\n\n**get** `/api/Catalog/search/products`\n\n### Parameters\n\n- `id?: string`\n\n- `adhoc?: string`\n\n- `limit?: number`\n\n- `page?: number`\n\n### Example\n\n```typescript\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes();\n\nawait client.api.catalog.search.listProducts()\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.api.catalog.search.listProducts',
         example:
-          'curl https://api.example.com/api/Catalog/search/products \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.catalog.search.listProducts();",
       },
       php: {
         method: 'api->catalog->search->listProducts',
         example:
           "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->catalog->search->listProducts(\n  id: 'id', adhoc: 'adhoc', limit: 0, page: 0\n);\n\nvar_dump($result);",
       },
-      typescript: {
-        method: 'client.api.catalog.search.listProducts',
+      http: {
         example:
-          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.catalog.search.listProducts();",
+          'curl https://api.example.com/api/Catalog/search/products \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
     },
   },
@@ -146,19 +146,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## retrieve_product\n\n`client.api.catalog.search.retrieveProduct(productId: string): void`\n\n**get** `/api/Catalog/search/product/{productId}`\n\n### Parameters\n\n- `productId: string`\n\n### Example\n\n```typescript\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes();\n\nawait client.api.catalog.search.retrieveProduct('productId')\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.api.catalog.search.retrieveProduct',
         example:
-          'curl https://api.example.com/api/Catalog/search/product/$PRODUCT_ID \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.catalog.search.retrieveProduct('productId');",
       },
       php: {
         method: 'api->catalog->search->retrieveProduct',
         example:
           "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->catalog->search->retrieveProduct('productId');\n\nvar_dump($result);",
       },
-      typescript: {
-        method: 'client.api.catalog.search.retrieveProduct',
+      http: {
         example:
-          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.catalog.search.retrieveProduct('productId');",
+          'curl https://api.example.com/api/Catalog/search/product/$PRODUCT_ID \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
     },
   },
@@ -174,19 +174,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## get_tree\n\n`client.api.catalog.category.getTree(groupCode?: string, groupOnly?: boolean): void`\n\n**get** `/api/Catalog/category/tree`\n\n### Parameters\n\n- `groupCode?: string`\n\n- `groupOnly?: boolean`\n\n### Example\n\n```typescript\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes();\n\nawait client.api.catalog.category.getTree()\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.api.catalog.category.getTree',
         example:
-          'curl https://api.example.com/api/Catalog/category/tree \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.catalog.category.getTree();",
       },
       php: {
         method: 'api->catalog->category->getTree',
         example:
           "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->catalog->category->getTree(\n  groupCode: 'groupCode', groupOnly: true\n);\n\nvar_dump($result);",
       },
-      typescript: {
-        method: 'client.api.catalog.category.getTree',
+      http: {
         example:
-          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.catalog.category.getTree();",
+          'curl https://api.example.com/api/Catalog/category/tree \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
     },
   },
@@ -202,19 +202,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## retrieve\n\n`client.api.catalog.category.retrieve(categoryId: string): void`\n\n**get** `/api/Catalog/category/{categoryId}`\n\n### Parameters\n\n- `categoryId: string`\n\n### Example\n\n```typescript\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes();\n\nawait client.api.catalog.category.retrieve('categoryId')\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.api.catalog.category.retrieve',
         example:
-          'curl https://api.example.com/api/Catalog/category/$CATEGORY_ID \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.catalog.category.retrieve('categoryId');",
       },
       php: {
         method: 'api->catalog->category->retrieve',
         example:
           "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->catalog->category->retrieve('categoryId');\n\nvar_dump($result);",
       },
-      typescript: {
-        method: 'client.api.catalog.category.retrieve',
+      http: {
         example:
-          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.catalog.category.retrieve('categoryId');",
+          'curl https://api.example.com/api/Catalog/category/$CATEGORY_ID \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
     },
   },
@@ -230,19 +230,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## list_by_category\n\n`client.api.catalog.products.listByCategory(categoryCode: string, descendants?: boolean, limit?: number, page?: number): void`\n\n**get** `/api/Catalog/products/category/{categoryCode}`\n\n### Parameters\n\n- `categoryCode: string`\n\n- `descendants?: boolean`\n\n- `limit?: number`\n\n- `page?: number`\n\n### Example\n\n```typescript\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes();\n\nawait client.api.catalog.products.listByCategory('categoryCode')\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.api.catalog.products.listByCategory',
         example:
-          'curl https://api.example.com/api/Catalog/products/category/$CATEGORY_CODE \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.catalog.products.listByCategory('categoryCode');",
       },
       php: {
         method: 'api->catalog->products->listByCategory',
         example:
           "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->catalog->products->listByCategory(\n  'categoryCode', descendants: true, limit: 0, page: 0\n);\n\nvar_dump($result);",
       },
-      typescript: {
-        method: 'client.api.catalog.products.listByCategory',
+      http: {
         example:
-          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.catalog.products.listByCategory('categoryCode');",
+          'curl https://api.example.com/api/Catalog/products/category/$CATEGORY_CODE \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
     },
   },
@@ -273,19 +273,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## list_accounts\n\n`client.api.crm.search.listAccounts(BCycle?: string, Category?: string, Class?: string, FName?: string, Id?: string, IdNum?: string, IdType?: string, Limit?: number, LName?: string, Name?: string, Page?: number, RelId?: string, State?: string, Type?: string): void`\n\n**get** `/api/Crm/search/accounts`\n\n### Parameters\n\n- `BCycle?: string`\n\n- `Category?: string`\n\n- `Class?: string`\n\n- `FName?: string`\n\n- `Id?: string`\n\n- `IdNum?: string`\n\n- `IdType?: string`\n\n- `Limit?: number`\n\n- `LName?: string`\n\n- `Name?: string`\n\n- `Page?: number`\n\n- `RelId?: string`\n\n- `State?: string`\n\n- `Type?: string`\n\n### Example\n\n```typescript\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes();\n\nawait client.api.crm.search.listAccounts()\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.api.crm.search.listAccounts',
         example:
-          'curl https://api.example.com/api/Crm/search/accounts \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.crm.search.listAccounts();",
       },
       php: {
         method: 'api->crm->search->listAccounts',
         example:
           "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->crm->search->listAccounts(\n  bCycle: 'BCycle',\n  category: 'Category',\n  class: 'Class',\n  fName: 'FName',\n  id: 'Id',\n  idNum: 'IdNum',\n  idType: 'IdType',\n  limit: 0,\n  lName: 'LName',\n  name: 'Name',\n  page: 0,\n  relID: 'RelId',\n  state: 'State',\n  type: 'Type',\n);\n\nvar_dump($result);",
       },
-      typescript: {
-        method: 'client.api.crm.search.listAccounts',
+      http: {
         example:
-          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.crm.search.listAccounts();",
+          'curl https://api.example.com/api/Crm/search/accounts \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
     },
   },
@@ -311,19 +311,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## create_contact\n\n`client.api.crm.create.createContact(address?: { addressType?: 'POSTAL' | 'BILLING' | 'CORRESPONDENCE' | 'REGISTERED' | 'INSTALLATION'; buildingName?: string; buildingNo?: string; city?: string; country?: string; latitude?: string; longitude?: string; oneLineAddress?: string; postCode?: string; referredType?: string; stateOrProvince?: string; streetName?: string; streetNo?: string; suburb?: string; }[], detail?: { additionalInfo?: string[]; birthDate?: string; firstname?: string; gdprConsent?: boolean; gender?: 'F' | 'M' | 'X'; idNumber?: string; lastname?: string; middlename?: string; organization?: { department?: string; name?: string; office?: string; position?: string; }; password?: string; title?: string; }, email?: { displayOrder?: number; emailAddress?: string; referredType?: string; }[], externalReference?: string, name?: string, personType?: string, phone?: { contactType?: 'MOBILE_NO' | 'HOME_NO' | 'BUSINESS' | 'FAX_NO'; displayOrder?: number; phoneNumber?: string; referredType?: string; }[], propertyOption?: { id?: string; defaultOption?: string; name?: string; option?: { id?: string; name?: string; }[]; }[], referredType?: string): void`\n\n**post** `/api/Crm/create/contact`\n\n### Parameters\n\n- `address?: { addressType?: 'POSTAL' | 'BILLING' | 'CORRESPONDENCE' | 'REGISTERED' | 'INSTALLATION'; buildingName?: string; buildingNo?: string; city?: string; country?: string; latitude?: string; longitude?: string; oneLineAddress?: string; postCode?: string; referredType?: string; stateOrProvince?: string; streetName?: string; streetNo?: string; suburb?: string; }[]`\n\n- `detail?: { additionalInfo?: string[]; birthDate?: string; firstname?: string; gdprConsent?: boolean; gender?: 'F' | 'M' | 'X'; idNumber?: string; lastname?: string; middlename?: string; organization?: { department?: string; name?: string; office?: string; position?: string; }; password?: string; title?: string; }`\n  - `additionalInfo?: string[]`\n  - `birthDate?: string`\n  - `firstname?: string`\n  - `gdprConsent?: boolean`\n  - `gender?: 'F' | 'M' | 'X'`\n  - `idNumber?: string`\n  - `lastname?: string`\n  - `middlename?: string`\n  - `organization?: { department?: string; name?: string; office?: string; position?: string; }`\n  - `password?: string`\n  - `title?: string`\n\n- `email?: { displayOrder?: number; emailAddress?: string; referredType?: string; }[]`\n\n- `externalReference?: string`\n\n- `name?: string`\n\n- `personType?: string`\n\n- `phone?: { contactType?: 'MOBILE_NO' | 'HOME_NO' | 'BUSINESS' | 'FAX_NO'; displayOrder?: number; phoneNumber?: string; referredType?: string; }[]`\n\n- `propertyOption?: { id?: string; defaultOption?: string; name?: string; option?: { id?: string; name?: string; }[]; }[]`\n\n- `referredType?: string`\n\n### Example\n\n```typescript\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes();\n\nawait client.api.crm.create.createContact()\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.api.crm.create.createContact',
         example:
-          'curl https://api.example.com/api/Crm/create/contact \\\n    -X POST \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.crm.create.createContact();",
       },
       php: {
         method: 'api->crm->create->createContact',
         example:
           "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->crm->create->createContact(\n  address: [\n    [\n      'addressType' => AddressType::POSTAL,\n      'buildingName' => 'buildingName',\n      'buildingNo' => 'buildingNo',\n      'city' => 'city',\n      'country' => 'country',\n      'latitude' => 'latitude',\n      'longitude' => 'longitude',\n      'oneLineAddress' => 'oneLineAddress',\n      'postCode' => 'postCode',\n      'referredType' => 'referredType',\n      'stateOrProvince' => 'stateOrProvince',\n      'streetName' => 'streetName',\n      'streetNo' => 'streetNo',\n      'suburb' => 'suburb',\n    ],\n  ],\n  detail: [\n    'additionalInfo' => ['string'],\n    'birthDate' => new \\DateTimeImmutable('2019-12-27T18:11:19.117Z'),\n    'firstname' => 'firstname',\n    'gdprConsent' => true,\n    'gender' => 'F',\n    'idNumber' => 'idNumber',\n    'lastname' => 'lastname',\n    'middlename' => 'middlename',\n    'organization' => [\n      'department' => 'department',\n      'name' => 'name',\n      'office' => 'office',\n      'position' => 'position',\n    ],\n    'password' => 'password',\n    'title' => 'title',\n  ],\n  email: [\n    [\n      'displayOrder' => 0,\n      'emailAddress' => 'emailAddress',\n      'referredType' => 'referredType',\n    ],\n  ],\n  externalReference: 'externalReference',\n  name: 'name',\n  personType: 'personType',\n  phone: [\n    [\n      'contactType' => ContactType::MOBILE_NO,\n      'displayOrder' => 0,\n      'phoneNumber' => 'phoneNumber',\n      'referredType' => 'referredType',\n    ],\n  ],\n  propertyOption: [\n    [\n      'id' => 'id',\n      'defaultOption' => 'defaultOption',\n      'name' => 'name',\n      'option' => [['id' => 'id', 'name' => 'name']],\n    ],\n  ],\n  referredType: 'referredType',\n);\n\nvar_dump($result);",
       },
-      typescript: {
-        method: 'client.api.crm.create.createContact',
+      http: {
         example:
-          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.crm.create.createContact();",
+          'curl https://api.example.com/api/Crm/create/contact \\\n    -X POST \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
     },
   },
@@ -348,19 +348,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## create_customer\n\n`client.api.crm.create.account.createCustomer(address?: { addressType?: address_type; city?: string; country?: string; postCode?: string; stateOrProvince?: string; streetName?: string; streetNo?: string; suburb?: string; }[], collectionPlan?: { id?: string; }, contact?: { isAccountOwner?: boolean; isServiceOwner?: boolean; primaryContactRole?: string; useParentAddressType?: 'POSTAL' | 'BILLING' | 'CORRESPONDENCE' | 'REGISTERED' | 'INSTALLATION'; }, customer?: { address?: account_address[]; detail?: object; isResidential?: boolean; }, detail?: { billMedia?: { emailAddress?: string; generationLevel?: 'ACCOUNT' | 'PODEMAND' | 'PURCHORDER'; language?: string; mediaType?: 'SMS' | 'EMAIL'; }; creditLimit?: number; firstname?: string; hasDeposit?: boolean; identification?: { idNumber?: string; idType?: 'ID' | 'PASSPORT'; }; lastname?: string; title?: string; }, isResidential?: boolean, phone?: { contactType?: 'MOBILE_NO' | 'HOME_NO' | 'BUSINESS' | 'FAX_NO'; phoneNumber?: string; }, taxScheme?: { id?: string; }): void`\n\n**post** `/api/Crm/create/account/customer`\n\n### Parameters\n\n- `address?: { addressType?: 'POSTAL' | 'BILLING' | 'CORRESPONDENCE' | 'REGISTERED' | 'INSTALLATION'; city?: string; country?: string; postCode?: string; stateOrProvince?: string; streetName?: string; streetNo?: string; suburb?: string; }[]`\n\n- `collectionPlan?: { id?: string; }`\n  - `id?: string`\n\n- `contact?: { isAccountOwner?: boolean; isServiceOwner?: boolean; primaryContactRole?: string; useParentAddressType?: 'POSTAL' | 'BILLING' | 'CORRESPONDENCE' | 'REGISTERED' | 'INSTALLATION'; }`\n  - `isAccountOwner?: boolean`\n  - `isServiceOwner?: boolean`\n  - `primaryContactRole?: string`\n  - `useParentAddressType?: 'POSTAL' | 'BILLING' | 'CORRESPONDENCE' | 'REGISTERED' | 'INSTALLATION'`\n\n- `customer?: { address?: { addressType?: address_type; city?: string; country?: string; postCode?: string; stateOrProvince?: string; streetName?: string; streetNo?: string; suburb?: string; }[]; detail?: { firstname?: string; lastname?: string; requireSecurityQuestions?: boolean; }; isResidential?: boolean; }`\n  - `address?: { addressType?: 'POSTAL' | 'BILLING' | 'CORRESPONDENCE' | 'REGISTERED' | 'INSTALLATION'; city?: string; country?: string; postCode?: string; stateOrProvince?: string; streetName?: string; streetNo?: string; suburb?: string; }[]`\n  - `detail?: { firstname?: string; lastname?: string; requireSecurityQuestions?: boolean; }`\n  - `isResidential?: boolean`\n\n- `detail?: { billMedia?: { emailAddress?: string; generationLevel?: 'ACCOUNT' | 'PODEMAND' | 'PURCHORDER'; language?: string; mediaType?: 'SMS' | 'EMAIL'; }; creditLimit?: number; firstname?: string; hasDeposit?: boolean; identification?: { idNumber?: string; idType?: 'ID' | 'PASSPORT'; }; lastname?: string; title?: string; }`\n  - `billMedia?: { emailAddress?: string; generationLevel?: 'ACCOUNT' | 'PODEMAND' | 'PURCHORDER'; language?: string; mediaType?: 'SMS' | 'EMAIL'; }`\n  - `creditLimit?: number`\n  - `firstname?: string`\n  - `hasDeposit?: boolean`\n  - `identification?: { idNumber?: string; idType?: 'ID' | 'PASSPORT'; }`\n  - `lastname?: string`\n  - `title?: string`\n\n- `isResidential?: boolean`\n\n- `phone?: { contactType?: 'MOBILE_NO' | 'HOME_NO' | 'BUSINESS' | 'FAX_NO'; phoneNumber?: string; }`\n  - `contactType?: 'MOBILE_NO' | 'HOME_NO' | 'BUSINESS' | 'FAX_NO'`\n  - `phoneNumber?: string`\n\n- `taxScheme?: { id?: string; }`\n  - `id?: string`\n\n### Example\n\n```typescript\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes();\n\nawait client.api.crm.create.account.createCustomer()\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.api.crm.create.account.createCustomer',
         example:
-          'curl https://api.example.com/api/Crm/create/account/customer \\\n    -X POST \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.crm.create.account.createCustomer();",
       },
       php: {
         method: 'api->crm->create->account->createCustomer',
         example:
           "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->crm->create->account->createCustomer(\n  address: [\n    [\n      'addressType' => AddressType::POSTAL,\n      'city' => 'city',\n      'country' => 'country',\n      'postCode' => 'postCode',\n      'stateOrProvince' => 'stateOrProvince',\n      'streetName' => 'streetName',\n      'streetNo' => 'streetNo',\n      'suburb' => 'suburb',\n    ],\n  ],\n  collectionPlan: ['id' => 'id'],\n  contact: [\n    'isAccountOwner' => true,\n    'isServiceOwner' => true,\n    'primaryContactRole' => 'primaryContactRole',\n    'useParentAddressType' => AddressType::POSTAL,\n  ],\n  customer: [\n    'address' => [\n      [\n        'addressType' => AddressType::POSTAL,\n        'city' => 'city',\n        'country' => 'country',\n        'postCode' => 'postCode',\n        'stateOrProvince' => 'stateOrProvince',\n        'streetName' => 'streetName',\n        'streetNo' => 'streetNo',\n        'suburb' => 'suburb',\n      ],\n    ],\n    'detail' => [\n      'firstname' => 'firstname',\n      'lastname' => 'lastname',\n      'requireSecurityQuestions' => true,\n    ],\n    'isResidential' => true,\n  ],\n  detail: [\n    'billMedia' => [\n      'emailAddress' => 'emailAddress',\n      'generationLevel' => 'ACCOUNT',\n      'language' => 'language',\n      'mediaType' => 'SMS',\n    ],\n    'creditLimit' => 0,\n    'firstname' => 'firstname',\n    'hasDeposit' => true,\n    'identification' => ['idNumber' => 'idNumber', 'idType' => 'ID'],\n    'lastname' => 'lastname',\n    'title' => 'title',\n  ],\n  isResidential: true,\n  phone: [\n    'contactType' => ContactType::MOBILE_NO, 'phoneNumber' => 'phoneNumber'\n  ],\n  taxScheme: ['id' => 'id'],\n);\n\nvar_dump($result);",
       },
-      typescript: {
-        method: 'client.api.crm.create.account.createCustomer',
+      http: {
         example:
-          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.crm.create.account.createCustomer();",
+          'curl https://api.example.com/api/Crm/create/account/customer \\\n    -X POST \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
     },
   },
@@ -385,19 +385,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## create_customer\n\n`client.api.crm.store.account.createCustomer(address?: { addressType?: address_type; city?: string; country?: string; postCode?: string; stateOrProvince?: string; streetName?: string; streetNo?: string; suburb?: string; }[], collectionPlan?: { id?: string; }, contact?: { isAccountOwner?: boolean; isServiceOwner?: boolean; primaryContactRole?: string; useParentAddressType?: 'POSTAL' | 'BILLING' | 'CORRESPONDENCE' | 'REGISTERED' | 'INSTALLATION'; }, customer?: { address?: account_address[]; detail?: object; isResidential?: boolean; }, detail?: { billMedia?: { emailAddress?: string; generationLevel?: 'ACCOUNT' | 'PODEMAND' | 'PURCHORDER'; language?: string; mediaType?: 'SMS' | 'EMAIL'; }; creditLimit?: number; firstname?: string; hasDeposit?: boolean; identification?: { idNumber?: string; idType?: 'ID' | 'PASSPORT'; }; lastname?: string; title?: string; }, isResidential?: boolean, phone?: { contactType?: 'MOBILE_NO' | 'HOME_NO' | 'BUSINESS' | 'FAX_NO'; phoneNumber?: string; }, taxScheme?: { id?: string; }): void`\n\n**post** `/api/Crm/store/account/customer`\n\n### Parameters\n\n- `address?: { addressType?: 'POSTAL' | 'BILLING' | 'CORRESPONDENCE' | 'REGISTERED' | 'INSTALLATION'; city?: string; country?: string; postCode?: string; stateOrProvince?: string; streetName?: string; streetNo?: string; suburb?: string; }[]`\n\n- `collectionPlan?: { id?: string; }`\n  - `id?: string`\n\n- `contact?: { isAccountOwner?: boolean; isServiceOwner?: boolean; primaryContactRole?: string; useParentAddressType?: 'POSTAL' | 'BILLING' | 'CORRESPONDENCE' | 'REGISTERED' | 'INSTALLATION'; }`\n  - `isAccountOwner?: boolean`\n  - `isServiceOwner?: boolean`\n  - `primaryContactRole?: string`\n  - `useParentAddressType?: 'POSTAL' | 'BILLING' | 'CORRESPONDENCE' | 'REGISTERED' | 'INSTALLATION'`\n\n- `customer?: { address?: { addressType?: address_type; city?: string; country?: string; postCode?: string; stateOrProvince?: string; streetName?: string; streetNo?: string; suburb?: string; }[]; detail?: { firstname?: string; lastname?: string; requireSecurityQuestions?: boolean; }; isResidential?: boolean; }`\n  - `address?: { addressType?: 'POSTAL' | 'BILLING' | 'CORRESPONDENCE' | 'REGISTERED' | 'INSTALLATION'; city?: string; country?: string; postCode?: string; stateOrProvince?: string; streetName?: string; streetNo?: string; suburb?: string; }[]`\n  - `detail?: { firstname?: string; lastname?: string; requireSecurityQuestions?: boolean; }`\n  - `isResidential?: boolean`\n\n- `detail?: { billMedia?: { emailAddress?: string; generationLevel?: 'ACCOUNT' | 'PODEMAND' | 'PURCHORDER'; language?: string; mediaType?: 'SMS' | 'EMAIL'; }; creditLimit?: number; firstname?: string; hasDeposit?: boolean; identification?: { idNumber?: string; idType?: 'ID' | 'PASSPORT'; }; lastname?: string; title?: string; }`\n  - `billMedia?: { emailAddress?: string; generationLevel?: 'ACCOUNT' | 'PODEMAND' | 'PURCHORDER'; language?: string; mediaType?: 'SMS' | 'EMAIL'; }`\n  - `creditLimit?: number`\n  - `firstname?: string`\n  - `hasDeposit?: boolean`\n  - `identification?: { idNumber?: string; idType?: 'ID' | 'PASSPORT'; }`\n  - `lastname?: string`\n  - `title?: string`\n\n- `isResidential?: boolean`\n\n- `phone?: { contactType?: 'MOBILE_NO' | 'HOME_NO' | 'BUSINESS' | 'FAX_NO'; phoneNumber?: string; }`\n  - `contactType?: 'MOBILE_NO' | 'HOME_NO' | 'BUSINESS' | 'FAX_NO'`\n  - `phoneNumber?: string`\n\n- `taxScheme?: { id?: string; }`\n  - `id?: string`\n\n### Example\n\n```typescript\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes();\n\nawait client.api.crm.store.account.createCustomer()\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.api.crm.store.account.createCustomer',
         example:
-          'curl https://api.example.com/api/Crm/store/account/customer \\\n    -X POST \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.crm.store.account.createCustomer();",
       },
       php: {
         method: 'api->crm->store->account->createCustomer',
         example:
           "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->crm->store->account->createCustomer(\n  address: [\n    [\n      'addressType' => AddressType::POSTAL,\n      'city' => 'city',\n      'country' => 'country',\n      'postCode' => 'postCode',\n      'stateOrProvince' => 'stateOrProvince',\n      'streetName' => 'streetName',\n      'streetNo' => 'streetNo',\n      'suburb' => 'suburb',\n    ],\n  ],\n  collectionPlan: ['id' => 'id'],\n  contact: [\n    'isAccountOwner' => true,\n    'isServiceOwner' => true,\n    'primaryContactRole' => 'primaryContactRole',\n    'useParentAddressType' => AddressType::POSTAL,\n  ],\n  customer: [\n    'address' => [\n      [\n        'addressType' => AddressType::POSTAL,\n        'city' => 'city',\n        'country' => 'country',\n        'postCode' => 'postCode',\n        'stateOrProvince' => 'stateOrProvince',\n        'streetName' => 'streetName',\n        'streetNo' => 'streetNo',\n        'suburb' => 'suburb',\n      ],\n    ],\n    'detail' => [\n      'firstname' => 'firstname',\n      'lastname' => 'lastname',\n      'requireSecurityQuestions' => true,\n    ],\n    'isResidential' => true,\n  ],\n  detail: [\n    'billMedia' => [\n      'emailAddress' => 'emailAddress',\n      'generationLevel' => 'ACCOUNT',\n      'language' => 'language',\n      'mediaType' => 'SMS',\n    ],\n    'creditLimit' => 0,\n    'firstname' => 'firstname',\n    'hasDeposit' => true,\n    'identification' => ['idNumber' => 'idNumber', 'idType' => 'ID'],\n    'lastname' => 'lastname',\n    'title' => 'title',\n  ],\n  isResidential: true,\n  phone: [\n    'contactType' => ContactType::MOBILE_NO, 'phoneNumber' => 'phoneNumber'\n  ],\n  taxScheme: ['id' => 'id'],\n);\n\nvar_dump($result);",
       },
-      typescript: {
-        method: 'client.api.crm.store.account.createCustomer',
+      http: {
         example:
-          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.crm.store.account.createCustomer();",
+          'curl https://api.example.com/api/Crm/store/account/customer \\\n    -X POST \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
     },
   },
@@ -412,19 +412,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## retrieve\n\n`client.api.crm.account.customer.retrieve(): void`\n\n**get** `/api/Crm/account/customer`\n\n### Example\n\n```typescript\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes();\n\nawait client.api.crm.account.customer.retrieve()\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.api.crm.account.customer.retrieve',
         example:
-          'curl https://api.example.com/api/Crm/account/customer \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.crm.account.customer.retrieve();",
       },
       php: {
         method: 'api->crm->account->customer->retrieve',
         example:
           "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->crm->account->customer->retrieve();\n\nvar_dump($result);",
       },
-      typescript: {
-        method: 'client.api.crm.account.customer.retrieve',
+      http: {
         example:
-          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.crm.account.customer.retrieve();",
+          'curl https://api.example.com/api/Crm/account/customer \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
     },
   },
@@ -439,19 +439,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## get_section\n\n`client.api.crm.account.customer.getSection(): void`\n\n**get** `/api/Crm/account/customer/section`\n\n### Example\n\n```typescript\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes();\n\nawait client.api.crm.account.customer.getSection()\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.api.crm.account.customer.getSection',
         example:
-          'curl https://api.example.com/api/Crm/account/customer/section \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.crm.account.customer.getSection();",
       },
       php: {
         method: 'api->crm->account->customer->getSection',
         example:
           "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->crm->account->customer->getSection();\n\nvar_dump($result);",
       },
-      typescript: {
-        method: 'client.api.crm.account.customer.getSection',
+      http: {
         example:
-          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.crm.account.customer.getSection();",
+          'curl https://api.example.com/api/Crm/account/customer/section \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
     },
   },
@@ -471,19 +471,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## update_customer\n\n`client.api.crm.update.updateCustomer(address?: { addressType?: address_type; city?: string; country?: string; postCode?: string; stateOrProvince?: string; streetName?: string; streetNo?: string; suburb?: string; }[], detail?: { firstname?: string; lastname?: string; requireSecurityQuestions?: boolean; }, isResidential?: boolean): void`\n\n**patch** `/api/Crm/update/customer`\n\n### Parameters\n\n- `address?: { addressType?: 'POSTAL' | 'BILLING' | 'CORRESPONDENCE' | 'REGISTERED' | 'INSTALLATION'; city?: string; country?: string; postCode?: string; stateOrProvince?: string; streetName?: string; streetNo?: string; suburb?: string; }[]`\n\n- `detail?: { firstname?: string; lastname?: string; requireSecurityQuestions?: boolean; }`\n  - `firstname?: string`\n  - `lastname?: string`\n  - `requireSecurityQuestions?: boolean`\n\n- `isResidential?: boolean`\n\n### Example\n\n```typescript\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes();\n\nawait client.api.crm.update.updateCustomer()\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.api.crm.update.updateCustomer',
         example:
-          'curl https://api.example.com/api/Crm/update/customer \\\n    -X PATCH \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.crm.update.updateCustomer();",
       },
       php: {
         method: 'api->crm->update->updateCustomer',
         example:
           "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->crm->update->updateCustomer(\n  address: [\n    [\n      'addressType' => AddressType::POSTAL,\n      'city' => 'city',\n      'country' => 'country',\n      'postCode' => 'postCode',\n      'stateOrProvince' => 'stateOrProvince',\n      'streetName' => 'streetName',\n      'streetNo' => 'streetNo',\n      'suburb' => 'suburb',\n    ],\n  ],\n  detail: [\n    'firstname' => 'firstname',\n    'lastname' => 'lastname',\n    'requireSecurityQuestions' => true,\n  ],\n  isResidential: true,\n);\n\nvar_dump($result);",
       },
-      typescript: {
-        method: 'client.api.crm.update.updateCustomer',
+      http: {
         example:
-          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.crm.update.updateCustomer();",
+          'curl https://api.example.com/api/Crm/update/customer \\\n    -X PATCH \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
     },
   },
@@ -505,19 +505,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## create_webhook\n\n`client.api.mvnx.createWebhook(id?: string, data?: { iccid?: string; message?: string; msisdn?: string; ocsid?: string; portId?: string; portMsisdn?: string; status?: string; statusName?: string; subscriberId?: string; }, receivedOn?: string, sentOn?: string, type?: string): void`\n\n**post** `/api/Mvnx/webhook`\n\n### Parameters\n\n- `id?: string`\n\n- `data?: { iccid?: string; message?: string; msisdn?: string; ocsid?: string; portId?: string; portMsisdn?: string; status?: string; statusName?: string; subscriberId?: string; }`\n  - `iccid?: string`\n  - `message?: string`\n  - `msisdn?: string`\n  - `ocsid?: string`\n  - `portId?: string`\n  - `portMsisdn?: string`\n  - `status?: string`\n  - `statusName?: string`\n  - `subscriberId?: string`\n\n- `receivedOn?: string`\n\n- `sentOn?: string`\n\n- `type?: string`\n\n### Example\n\n```typescript\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes();\n\nawait client.api.mvnx.createWebhook()\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.api.mvnx.createWebhook',
         example:
-          'curl https://api.example.com/api/Mvnx/webhook \\\n    -X POST \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.mvnx.createWebhook();",
       },
       php: {
         method: 'api->mvnx->createWebhook',
         example:
           "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->mvnx->createWebhook(\n  id: 'id',\n  data: [\n    'iccid' => 'iccid',\n    'message' => 'message',\n    'msisdn' => 'msisdn',\n    'ocsid' => 'ocsid',\n    'portID' => 'portId',\n    'portMsisdn' => 'portMsisdn',\n    'status' => 'status',\n    'statusName' => 'statusName',\n    'subscriberID' => 'subscriberId',\n  ],\n  receivedOn: new \\DateTimeImmutable('2019-12-27T18:11:19.117Z'),\n  sentOn: new \\DateTimeImmutable('2019-12-27T18:11:19.117Z'),\n  type: 'type',\n);\n\nvar_dump($result);",
       },
-      typescript: {
-        method: 'client.api.mvnx.createWebhook',
+      http: {
         example:
-          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.mvnx.createWebhook();",
+          'curl https://api.example.com/api/Mvnx/webhook \\\n    -X POST \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
     },
   },
@@ -533,19 +533,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## create_port\n\n`client.api.mvnx.createPort(newMsisdn: string, oldMsisdn: string, portedAt?: string, reference?: string): void`\n\n**post** `/api/Mvnx/port`\n\n### Parameters\n\n- `newMsisdn: string`\n\n- `oldMsisdn: string`\n\n- `portedAt?: string`\n\n- `reference?: string`\n\n### Example\n\n```typescript\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes();\n\nawait client.api.mvnx.createPort({ newMsisdn: 'x', oldMsisdn: 'x' })\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.api.mvnx.createPort',
         example:
-          'curl https://api.example.com/api/Mvnx/port \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY" \\\n    -d \'{\n          "newMsisdn": "x",\n          "oldMsisdn": "x"\n        }\'',
+          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.mvnx.createPort({ newMsisdn: 'x', oldMsisdn: 'x' });",
       },
       php: {
         method: 'api->mvnx->createPort',
         example:
           "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->mvnx->createPort(\n  newMsisdn: 'x',\n  oldMsisdn: 'x',\n  portedAt: new \\DateTimeImmutable('2019-12-27T18:11:19.117Z'),\n  reference: 'reference',\n);\n\nvar_dump($result);",
       },
-      typescript: {
-        method: 'client.api.mvnx.createPort',
+      http: {
         example:
-          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.mvnx.createPort({ newMsisdn: 'x', oldMsisdn: 'x' });",
+          'curl https://api.example.com/api/Mvnx/port \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY" \\\n    -d \'{\n          "newMsisdn": "x",\n          "oldMsisdn": "x"\n        }\'',
       },
     },
   },
@@ -560,19 +560,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## list\n\n`client.api.mvnx.history.list(): void`\n\n**get** `/api/Mvnx/history`\n\n### Example\n\n```typescript\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes();\n\nawait client.api.mvnx.history.list()\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.api.mvnx.history.list',
         example:
-          'curl https://api.example.com/api/Mvnx/history \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.mvnx.history.list();",
       },
       php: {
         method: 'api->mvnx->history->list',
         example:
           "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->mvnx->history->list();\n\nvar_dump($result);",
       },
-      typescript: {
-        method: 'client.api.mvnx.history.list',
+      http: {
         example:
-          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.mvnx.history.list();",
+          'curl https://api.example.com/api/Mvnx/history \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
     },
   },
@@ -588,19 +588,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## retrieve_by_msisdn\n\n`client.api.mvnx.history.retrieveByMsisdn(msisdn: string): void`\n\n**get** `/api/Mvnx/history/{msisdn}`\n\n### Parameters\n\n- `msisdn: string`\n\n### Example\n\n```typescript\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes();\n\nawait client.api.mvnx.history.retrieveByMsisdn('msisdn')\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.api.mvnx.history.retrieveByMsisdn',
         example:
-          'curl https://api.example.com/api/Mvnx/history/$MSISDN \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.mvnx.history.retrieveByMsisdn('msisdn');",
       },
       php: {
         method: 'api->mvnx->history->retrieveByMsisdn',
         example:
           "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->mvnx->history->retrieveByMsisdn('msisdn');\n\nvar_dump($result);",
       },
-      typescript: {
-        method: 'client.api.mvnx.history.retrieveByMsisdn',
+      http: {
         example:
-          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.mvnx.history.retrieveByMsisdn('msisdn');",
+          'curl https://api.example.com/api/Mvnx/history/$MSISDN \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
     },
   },
@@ -616,19 +616,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## create\n\n`client.api.order.create(msisdn?: string, products?: { id?: string; amount?: number; }[]): void`\n\n**post** `/api/Order/create`\n\n### Parameters\n\n- `msisdn?: string`\n\n- `products?: { id?: string; amount?: number; }[]`\n\n### Example\n\n```typescript\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes();\n\nawait client.api.order.create()\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.api.order.create',
         example:
-          'curl https://api.example.com/api/Order/create \\\n    -X POST \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.order.create();",
       },
       php: {
         method: 'api->order->create',
         example:
           "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->order->create(\n  msisdn: 'msisdn', products: [['id' => 'id', 'amount' => 0]]\n);\n\nvar_dump($result);",
       },
-      typescript: {
-        method: 'client.api.order.create',
+      http: {
         example:
-          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.order.create();",
+          'curl https://api.example.com/api/Order/create \\\n    -X POST \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
     },
   },
@@ -649,19 +649,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## create\n\n`client.api.order.pending.create(msisdn?: string, paymentReference?: string, productAmount?: number, productId?: string): void`\n\n**post** `/api/Order/pending`\n\n### Parameters\n\n- `msisdn?: string`\n\n- `paymentReference?: string`\n\n- `productAmount?: number`\n\n- `productId?: string`\n\n### Example\n\n```typescript\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes();\n\nawait client.api.order.pending.create()\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.api.order.pending.create',
         example:
-          'curl https://api.example.com/api/Order/pending \\\n    -X POST \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.order.pending.create();",
       },
       php: {
         method: 'api->order->pending->create',
         example:
           "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->order->pending->create(\n  msisdn: 'msisdn',\n  paymentReference: 'paymentReference',\n  productAmount: 0,\n  productID: 'productId',\n);\n\nvar_dump($result);",
       },
-      typescript: {
-        method: 'client.api.order.pending.create',
+      http: {
         example:
-          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.order.pending.create();",
+          'curl https://api.example.com/api/Order/pending \\\n    -X POST \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
     },
   },
@@ -677,19 +677,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## retrieve_by_msisdn\n\n`client.api.order.pending.retrieveByMsisdn(msisdn: string): void`\n\n**get** `/api/Order/pending/{msisdn}`\n\n### Parameters\n\n- `msisdn: string`\n\n### Example\n\n```typescript\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes();\n\nawait client.api.order.pending.retrieveByMsisdn('msisdn')\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.api.order.pending.retrieveByMsisdn',
         example:
-          'curl https://api.example.com/api/Order/pending/$MSISDN \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.order.pending.retrieveByMsisdn('msisdn');",
       },
       php: {
         method: 'api->order->pending->retrieveByMsisdn',
         example:
           "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->order->pending->retrieveByMsisdn('msisdn');\n\nvar_dump($result);",
       },
-      typescript: {
-        method: 'client.api.order.pending.retrieveByMsisdn',
+      http: {
         example:
-          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.order.pending.retrieveByMsisdn('msisdn');",
+          'curl https://api.example.com/api/Order/pending/$MSISDN \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
     },
   },
@@ -705,19 +705,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## process\n\n`client.api.order.pending.process(msisdn: string): void`\n\n**post** `/api/Order/pending/{msisdn}/process`\n\n### Parameters\n\n- `msisdn: string`\n\n### Example\n\n```typescript\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes();\n\nawait client.api.order.pending.process('msisdn')\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.api.order.pending.process',
         example:
-          'curl https://api.example.com/api/Order/pending/$MSISDN/process \\\n    -X POST \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.order.pending.process('msisdn');",
       },
       php: {
         method: 'api->order->pending->process',
         example:
           "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->order->pending->process('msisdn');\n\nvar_dump($result);",
       },
-      typescript: {
-        method: 'client.api.order.pending.process',
+      http: {
         example:
-          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.order.pending.process('msisdn');",
+          'curl https://api.example.com/api/Order/pending/$MSISDN/process \\\n    -X POST \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
     },
   },
@@ -733,19 +733,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## list_transactions\n\n`client.api.payment.listTransactions(limit?: number): void`\n\n**get** `/api/Payment/transactions`\n\n### Parameters\n\n- `limit?: number`\n\n### Example\n\n```typescript\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes();\n\nawait client.api.payment.listTransactions()\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.api.payment.listTransactions',
         example:
-          'curl https://api.example.com/api/Payment/transactions \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.payment.listTransactions();",
       },
       php: {
         method: 'api->payment->listTransactions',
         example:
           "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->payment->listTransactions(limit: 0);\n\nvar_dump($result);",
       },
-      typescript: {
-        method: 'client.api.payment.listTransactions',
+      http: {
         example:
-          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.payment.listTransactions();",
+          'curl https://api.example.com/api/Payment/transactions \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
     },
   },
@@ -761,19 +761,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## refund\n\n`client.api.payment.refund(reason: string, transactionReference: string, amountInCents?: number): void`\n\n**post** `/api/Payment/refund`\n\n### Parameters\n\n- `reason: string`\n\n- `transactionReference: string`\n\n- `amountInCents?: number`\n\n### Example\n\n```typescript\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes();\n\nawait client.api.payment.refund({ reason: 'x', transactionReference: 'x' })\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.api.payment.refund',
         example:
-          'curl https://api.example.com/api/Payment/refund \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY" \\\n    -d \'{\n          "reason": "x",\n          "transactionReference": "x"\n        }\'',
+          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.payment.refund({ reason: 'x', transactionReference: 'x' });",
       },
       php: {
         method: 'api->payment->refund',
         example:
           "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->payment->refund(\n  reason: 'x', transactionReference: 'x', amountInCents: 0\n);\n\nvar_dump($result);",
       },
-      typescript: {
-        method: 'client.api.payment.refund',
+      http: {
         example:
-          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.payment.refund({ reason: 'x', transactionReference: 'x' });",
+          'curl https://api.example.com/api/Payment/refund \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY" \\\n    -d \'{\n          "reason": "x",\n          "transactionReference": "x"\n        }\'',
       },
     },
   },
@@ -789,19 +789,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## initialize\n\n`client.api.payment.paystack.initialize(amount: number, productId: string, msisdn?: string): void`\n\n**post** `/api/Payment/paystack/initialize`\n\n### Parameters\n\n- `amount: number`\n\n- `productId: string`\n\n- `msisdn?: string`\n\n### Example\n\n```typescript\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes();\n\nawait client.api.payment.paystack.initialize({ amount: 1, productId: 'x' })\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.api.payment.paystack.initialize',
         example:
-          'curl https://api.example.com/api/Payment/paystack/initialize \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY" \\\n    -d \'{\n          "amount": 1,\n          "productId": "x"\n        }\'',
+          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.payment.paystack.initialize({ amount: 1, productId: 'x' });",
       },
       php: {
         method: 'api->payment->paystack->initialize',
         example:
           "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->payment->paystack->initialize(\n  amount: 1, productID: 'x', msisdn: 'msisdn'\n);\n\nvar_dump($result);",
       },
-      typescript: {
-        method: 'client.api.payment.paystack.initialize',
+      http: {
         example:
-          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.payment.paystack.initialize({ amount: 1, productId: 'x' });",
+          'curl https://api.example.com/api/Payment/paystack/initialize \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY" \\\n    -d \'{\n          "amount": 1,\n          "productId": "x"\n        }\'',
       },
     },
   },
@@ -817,19 +817,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## initialize_combo\n\n`client.api.payment.paystack.initializeCombo(amount: number, productId: string, msisdn?: string): void`\n\n**post** `/api/Payment/paystack/initialize-combo`\n\n### Parameters\n\n- `amount: number`\n\n- `productId: string`\n\n- `msisdn?: string`\n\n### Example\n\n```typescript\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes();\n\nawait client.api.payment.paystack.initializeCombo({ amount: 1, productId: 'x' })\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.api.payment.paystack.initializeCombo',
         example:
-          'curl https://api.example.com/api/Payment/paystack/initialize-combo \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY" \\\n    -d \'{\n          "amount": 1,\n          "productId": "x"\n        }\'',
+          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.payment.paystack.initializeCombo({ amount: 1, productId: 'x' });",
       },
       php: {
         method: 'api->payment->paystack->initializeCombo',
         example:
           "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->payment->paystack->initializeCombo(\n  amount: 1, productID: 'x', msisdn: 'msisdn'\n);\n\nvar_dump($result);",
       },
-      typescript: {
-        method: 'client.api.payment.paystack.initializeCombo',
+      http: {
         example:
-          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.payment.paystack.initializeCombo({ amount: 1, productId: 'x' });",
+          'curl https://api.example.com/api/Payment/paystack/initialize-combo \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY" \\\n    -d \'{\n          "amount": 1,\n          "productId": "x"\n        }\'',
       },
     },
   },
@@ -849,19 +849,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## verify\n\n`client.api.payment.paystack.verify(reference: string, metadata?: { customerName?: string; customerPhone?: string; msisdn?: string; productId?: string; productName?: string; shippingAddress?: string; }, saveCard?: boolean): void`\n\n**post** `/api/Payment/paystack/verify`\n\n### Parameters\n\n- `reference: string`\n\n- `metadata?: { customerName?: string; customerPhone?: string; msisdn?: string; productId?: string; productName?: string; shippingAddress?: string; }`\n  - `customerName?: string`\n  - `customerPhone?: string`\n  - `msisdn?: string`\n  - `productId?: string`\n  - `productName?: string`\n  - `shippingAddress?: string`\n\n- `saveCard?: boolean`\n\n### Example\n\n```typescript\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes();\n\nawait client.api.payment.paystack.verify({ reference: 'x' })\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.api.payment.paystack.verify',
         example:
-          'curl https://api.example.com/api/Payment/paystack/verify \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY" \\\n    -d \'{\n          "reference": "x"\n        }\'',
+          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.payment.paystack.verify({ reference: 'x' });",
       },
       php: {
         method: 'api->payment->paystack->verify',
         example:
           "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->payment->paystack->verify(\n  reference: 'x',\n  metadata: [\n    'customerName' => 'customerName',\n    'customerPhone' => 'customerPhone',\n    'msisdn' => 'msisdn',\n    'productID' => 'productId',\n    'productName' => 'productName',\n    'shippingAddress' => 'shippingAddress',\n  ],\n  saveCard: true,\n);\n\nvar_dump($result);",
       },
-      typescript: {
-        method: 'client.api.payment.paystack.verify',
+      http: {
         example:
-          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.payment.paystack.verify({ reference: 'x' });",
+          'curl https://api.example.com/api/Payment/paystack/verify \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY" \\\n    -d \'{\n          "reference": "x"\n        }\'',
       },
     },
   },
@@ -877,19 +877,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## link_transaction\n\n`client.api.payment.paystack.linkTransaction(orderId: string, transactionReference: string): void`\n\n**post** `/api/Payment/paystack/link-transaction`\n\n### Parameters\n\n- `orderId: string`\n\n- `transactionReference: string`\n\n### Example\n\n```typescript\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes();\n\nawait client.api.payment.paystack.linkTransaction({ orderId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', transactionReference: 'x' })\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.api.payment.paystack.linkTransaction',
         example:
-          'curl https://api.example.com/api/Payment/paystack/link-transaction \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY" \\\n    -d \'{\n          "orderId": "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n          "transactionReference": "x"\n        }\'',
+          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.payment.paystack.linkTransaction({\n  orderId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  transactionReference: 'x',\n});",
       },
       php: {
         method: 'api->payment->paystack->linkTransaction',
         example:
           "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->payment->paystack->linkTransaction(\n  orderID: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', transactionReference: 'x'\n);\n\nvar_dump($result);",
       },
-      typescript: {
-        method: 'client.api.payment.paystack.linkTransaction',
+      http: {
         example:
-          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.payment.paystack.linkTransaction({\n  orderId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  transactionReference: 'x',\n});",
+          'curl https://api.example.com/api/Payment/paystack/link-transaction \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY" \\\n    -d \'{\n          "orderId": "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n          "transactionReference": "x"\n        }\'',
       },
     },
   },
@@ -905,19 +905,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## link_transaction_to_services\n\n`client.api.payment.paystack.linkTransactionToServices(serviceIds: string[], transactionReference: string): void`\n\n**post** `/api/Payment/paystack/link-transaction-to-services`\n\n### Parameters\n\n- `serviceIds: string[]`\n\n- `transactionReference: string`\n\n### Example\n\n```typescript\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes();\n\nawait client.api.payment.paystack.linkTransactionToServices({ serviceIds: ['182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e'], transactionReference: 'x' })\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.api.payment.paystack.linkTransactionToServices',
         example:
-          'curl https://api.example.com/api/Payment/paystack/link-transaction-to-services \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY" \\\n    -d \'{\n          "serviceIds": [\n            "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"\n          ],\n          "transactionReference": "x"\n        }\'',
+          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.payment.paystack.linkTransactionToServices({\n  serviceIds: ['182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e'],\n  transactionReference: 'x',\n});",
       },
       php: {
         method: 'api->payment->paystack->linkTransactionToServices',
         example:
           "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->payment->paystack->linkTransactionToServices(\n  serviceIDs: ['182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e'],\n  transactionReference: 'x',\n);\n\nvar_dump($result);",
       },
-      typescript: {
-        method: 'client.api.payment.paystack.linkTransactionToServices',
+      http: {
         example:
-          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.payment.paystack.linkTransactionToServices({\n  serviceIds: ['182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e'],\n  transactionReference: 'x',\n});",
+          'curl https://api.example.com/api/Payment/paystack/link-transaction-to-services \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY" \\\n    -d \'{\n          "serviceIds": [\n            "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"\n          ],\n          "transactionReference": "x"\n        }\'',
       },
     },
   },
@@ -933,19 +933,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## charge\n\n`client.api.payment.paystack.charge(amount: number, paymentMethodId: string): void`\n\n**post** `/api/Payment/paystack/charge`\n\n### Parameters\n\n- `amount: number`\n\n- `paymentMethodId: string`\n\n### Example\n\n```typescript\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes();\n\nawait client.api.payment.paystack.charge({ amount: 1, paymentMethodId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' })\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.api.payment.paystack.charge',
         example:
-          'curl https://api.example.com/api/Payment/paystack/charge \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY" \\\n    -d \'{\n          "amount": 1,\n          "paymentMethodId": "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"\n        }\'',
+          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.payment.paystack.charge({\n  amount: 1,\n  paymentMethodId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n});",
       },
       php: {
         method: 'api->payment->paystack->charge',
         example:
           "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->payment->paystack->charge(\n  amount: 1, paymentMethodID: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e'\n);\n\nvar_dump($result);",
       },
-      typescript: {
-        method: 'client.api.payment.paystack.charge',
+      http: {
         example:
-          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.payment.paystack.charge({\n  amount: 1,\n  paymentMethodId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n});",
+          'curl https://api.example.com/api/Payment/paystack/charge \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY" \\\n    -d \'{\n          "amount": 1,\n          "paymentMethodId": "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"\n        }\'',
       },
     },
   },
@@ -961,19 +961,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## subscribe\n\n`client.api.payment.paystack.subscribe(msisdn: string, paymentMethodId: string, productId: string): void`\n\n**post** `/api/Payment/paystack/subscribe`\n\n### Parameters\n\n- `msisdn: string`\n\n- `paymentMethodId: string`\n\n- `productId: string`\n\n### Example\n\n```typescript\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes();\n\nawait client.api.payment.paystack.subscribe({\n  msisdn: 'x',\n  paymentMethodId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  productId: 'x',\n})\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.api.payment.paystack.subscribe',
         example:
-          'curl https://api.example.com/api/Payment/paystack/subscribe \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY" \\\n    -d \'{\n          "msisdn": "x",\n          "paymentMethodId": "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n          "productId": "x"\n        }\'',
+          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.payment.paystack.subscribe({\n  msisdn: 'x',\n  paymentMethodId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  productId: 'x',\n});",
       },
       php: {
         method: 'api->payment->paystack->subscribe',
         example:
           "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->payment->paystack->subscribe(\n  msisdn: 'x',\n  paymentMethodID: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  productID: 'x',\n);\n\nvar_dump($result);",
       },
-      typescript: {
-        method: 'client.api.payment.paystack.subscribe',
+      http: {
         example:
-          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.payment.paystack.subscribe({\n  msisdn: 'x',\n  paymentMethodId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  productId: 'x',\n});",
+          'curl https://api.example.com/api/Payment/paystack/subscribe \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY" \\\n    -d \'{\n          "msisdn": "x",\n          "paymentMethodId": "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n          "productId": "x"\n        }\'',
       },
     },
   },
@@ -989,19 +989,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## retrieve_subscription\n\n`client.api.payment.paystack.retrieveSubscription(id: string): void`\n\n**get** `/api/Payment/paystack/subscription/{id}`\n\n### Parameters\n\n- `id: string`\n\n### Example\n\n```typescript\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes();\n\nawait client.api.payment.paystack.retrieveSubscription('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e')\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.api.payment.paystack.retrieveSubscription',
         example:
-          'curl https://api.example.com/api/Payment/paystack/subscription/$ID \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.payment.paystack.retrieveSubscription('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');",
       },
       php: {
         method: 'api->payment->paystack->retrieveSubscription',
         example:
           "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->payment->paystack->retrieveSubscription(\n  '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e'\n);\n\nvar_dump($result);",
       },
-      typescript: {
-        method: 'client.api.payment.paystack.retrieveSubscription',
+      http: {
         example:
-          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.payment.paystack.retrieveSubscription('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');",
+          'curl https://api.example.com/api/Payment/paystack/subscription/$ID \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
     },
   },
@@ -1016,19 +1016,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## list_subscriptions\n\n`client.api.payment.paystack.listSubscriptions(): void`\n\n**get** `/api/Payment/paystack/subscriptions`\n\n### Example\n\n```typescript\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes();\n\nawait client.api.payment.paystack.listSubscriptions()\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.api.payment.paystack.listSubscriptions',
         example:
-          'curl https://api.example.com/api/Payment/paystack/subscriptions \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.payment.paystack.listSubscriptions();",
       },
       php: {
         method: 'api->payment->paystack->listSubscriptions',
         example:
           "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->payment->paystack->listSubscriptions();\n\nvar_dump($result);",
       },
-      typescript: {
-        method: 'client.api.payment.paystack.listSubscriptions',
+      http: {
         example:
-          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.payment.paystack.listSubscriptions();",
+          'curl https://api.example.com/api/Payment/paystack/subscriptions \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
     },
   },
@@ -1044,19 +1044,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## cancel_subscription\n\n`client.api.payment.paystack.cancelSubscription(msisdn: string, productId: string): void`\n\n**post** `/api/Payment/paystack/cancel-subscription`\n\n### Parameters\n\n- `msisdn: string`\n\n- `productId: string`\n\n### Example\n\n```typescript\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes();\n\nawait client.api.payment.paystack.cancelSubscription({ msisdn: 'x', productId: 'x' })\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.api.payment.paystack.cancelSubscription',
         example:
-          'curl https://api.example.com/api/Payment/paystack/cancel-subscription \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY" \\\n    -d \'{\n          "msisdn": "x",\n          "productId": "x"\n        }\'',
+          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.payment.paystack.cancelSubscription({ msisdn: 'x', productId: 'x' });",
       },
       php: {
         method: 'api->payment->paystack->cancelSubscription',
         example:
           "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->payment->paystack->cancelSubscription(\n  msisdn: 'x', productID: 'x'\n);\n\nvar_dump($result);",
       },
-      typescript: {
-        method: 'client.api.payment.paystack.cancelSubscription',
+      http: {
         example:
-          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.payment.paystack.cancelSubscription({ msisdn: 'x', productId: 'x' });",
+          'curl https://api.example.com/api/Payment/paystack/cancel-subscription \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY" \\\n    -d \'{\n          "msisdn": "x",\n          "productId": "x"\n        }\'',
       },
     },
   },
@@ -1071,19 +1071,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## webhook\n\n`client.api.payment.paystack.webhook(): void`\n\n**post** `/api/Payment/paystack/webhook`\n\n### Example\n\n```typescript\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes();\n\nawait client.api.payment.paystack.webhook()\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.api.payment.paystack.webhook',
         example:
-          'curl https://api.example.com/api/Payment/paystack/webhook \\\n    -X POST \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.payment.paystack.webhook();",
       },
       php: {
         method: 'api->payment->paystack->webhook',
         example:
           "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->payment->paystack->webhook();\n\nvar_dump($result);",
       },
-      typescript: {
-        method: 'client.api.payment.paystack.webhook',
+      http: {
         example:
-          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.payment.paystack.webhook();",
+          'curl https://api.example.com/api/Payment/paystack/webhook \\\n    -X POST \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
     },
   },
@@ -1098,19 +1098,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## list\n\n`client.api.payment.paystack.cards.list(): void`\n\n**get** `/api/Payment/paystack/cards`\n\n### Example\n\n```typescript\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes();\n\nawait client.api.payment.paystack.cards.list()\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.api.payment.paystack.cards.list',
         example:
-          'curl https://api.example.com/api/Payment/paystack/cards \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.payment.paystack.cards.list();",
       },
       php: {
         method: 'api->payment->paystack->cards->list',
         example:
           "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->payment->paystack->cards->list();\n\nvar_dump($result);",
       },
-      typescript: {
-        method: 'client.api.payment.paystack.cards.list',
+      http: {
         example:
-          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.payment.paystack.cards.list();",
+          'curl https://api.example.com/api/Payment/paystack/cards \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
     },
   },
@@ -1126,19 +1126,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## delete\n\n`client.api.payment.paystack.cards.delete(id: string): void`\n\n**delete** `/api/Payment/paystack/cards/{id}`\n\n### Parameters\n\n- `id: string`\n\n### Example\n\n```typescript\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes();\n\nawait client.api.payment.paystack.cards.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e')\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.api.payment.paystack.cards.delete',
         example:
-          'curl https://api.example.com/api/Payment/paystack/cards/$ID \\\n    -X DELETE \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.payment.paystack.cards.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');",
       },
       php: {
         method: 'api->payment->paystack->cards->delete',
         example:
           "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->payment->paystack->cards->delete(\n  '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e'\n);\n\nvar_dump($result);",
       },
-      typescript: {
-        method: 'client.api.payment.paystack.cards.delete',
+      http: {
         example:
-          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.payment.paystack.cards.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');",
+          'curl https://api.example.com/api/Payment/paystack/cards/$ID \\\n    -X DELETE \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
     },
   },
@@ -1158,19 +1158,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## initialize\n\n`client.api.payment.dynamicServices.initialize(services: { definitionCode?: 'VOICE' | 'DATA' | 'SMS' | 'WHATSAPP' | 'GPA_CREDIT'; expiryDate?: string; priceInCents?: number; transactionId?: string; value?: number; }[], msisdn?: string, shippingCostInCents?: number): void`\n\n**post** `/api/Payment/dynamic-services/initialize`\n\n### Parameters\n\n- `services: { definitionCode?: 'VOICE' | 'DATA' | 'SMS' | 'WHATSAPP' | 'GPA_CREDIT'; expiryDate?: string; priceInCents?: number; transactionId?: string; value?: number; }[]`\n\n- `msisdn?: string`\n\n- `shippingCostInCents?: number`\n\n### Example\n\n```typescript\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes();\n\nawait client.api.payment.dynamicServices.initialize({ services: [{}] })\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.api.payment.dynamicServices.initialize',
         example:
-          'curl https://api.example.com/api/Payment/dynamic-services/initialize \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY" \\\n    -d \'{\n          "services": [\n            {}\n          ]\n        }\'',
+          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.payment.dynamicServices.initialize({ services: [{}] });",
       },
       php: {
         method: 'api->payment->dynamicServices->initialize',
         example:
           "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->payment->dynamicServices->initialize(\n  services: [\n    [\n      'definitionCode' => 'VOICE',\n      'expiryDate' => 'expiryDate',\n      'priceInCents' => 0,\n      'transactionID' => 'transactionId',\n      'value' => 0,\n    ],\n  ],\n  msisdn: 'msisdn',\n  shippingCostInCents: 0,\n);\n\nvar_dump($result);",
       },
-      typescript: {
-        method: 'client.api.payment.dynamicServices.initialize',
+      http: {
         example:
-          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.payment.dynamicServices.initialize({ services: [{}] });",
+          'curl https://api.example.com/api/Payment/dynamic-services/initialize \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY" \\\n    -d \'{\n          "services": [\n            {}\n          ]\n        }\'',
       },
     },
   },
@@ -1190,19 +1190,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## recurring\n\n`client.api.payment.dynamicServices.recurring(msisdn: string, paymentMethodId: string, services: { definitionCode?: 'VOICE' | 'DATA' | 'SMS' | 'WHATSAPP' | 'GPA_CREDIT'; expiryDate?: string; priceInCents?: number; transactionId?: string; value?: number; }[]): void`\n\n**post** `/api/Payment/dynamic-services/recurring`\n\n### Parameters\n\n- `msisdn: string`\n\n- `paymentMethodId: string`\n\n- `services: { definitionCode?: 'VOICE' | 'DATA' | 'SMS' | 'WHATSAPP' | 'GPA_CREDIT'; expiryDate?: string; priceInCents?: number; transactionId?: string; value?: number; }[]`\n\n### Example\n\n```typescript\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes();\n\nawait client.api.payment.dynamicServices.recurring({\n  msisdn: 'x',\n  paymentMethodId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  services: [{}],\n})\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.api.payment.dynamicServices.recurring',
         example:
-          'curl https://api.example.com/api/Payment/dynamic-services/recurring \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY" \\\n    -d \'{\n          "msisdn": "x",\n          "paymentMethodId": "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n          "services": [\n            {}\n          ]\n        }\'',
+          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.payment.dynamicServices.recurring({\n  msisdn: 'x',\n  paymentMethodId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  services: [{}],\n});",
       },
       php: {
         method: 'api->payment->dynamicServices->recurring',
         example:
           "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->payment->dynamicServices->recurring(\n  msisdn: 'x',\n  paymentMethodID: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  services: [\n    [\n      'definitionCode' => 'VOICE',\n      'expiryDate' => 'expiryDate',\n      'priceInCents' => 0,\n      'transactionID' => 'transactionId',\n      'value' => 0,\n    ],\n  ],\n);\n\nvar_dump($result);",
       },
-      typescript: {
-        method: 'client.api.payment.dynamicServices.recurring',
+      http: {
         example:
-          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.payment.dynamicServices.recurring({\n  msisdn: 'x',\n  paymentMethodId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  services: [{}],\n});",
+          'curl https://api.example.com/api/Payment/dynamic-services/recurring \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY" \\\n    -d \'{\n          "msisdn": "x",\n          "paymentMethodId": "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n          "services": [\n            {}\n          ]\n        }\'',
       },
     },
   },
@@ -1218,19 +1218,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## recurring\n\n`client.api.payment.comboBundle.recurring(amount: number, msisdn: string, paymentMethodId: string, productId: string): void`\n\n**post** `/api/Payment/combo-bundle/recurring`\n\n### Parameters\n\n- `amount: number`\n\n- `msisdn: string`\n\n- `paymentMethodId: string`\n\n- `productId: string`\n\n### Example\n\n```typescript\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes();\n\nawait client.api.payment.comboBundle.recurring({\n  amount: 0,\n  msisdn: 'x',\n  paymentMethodId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  productId: 'x',\n})\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.api.payment.comboBundle.recurring',
         example:
-          'curl https://api.example.com/api/Payment/combo-bundle/recurring \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY" \\\n    -d \'{\n          "amount": 0,\n          "msisdn": "x",\n          "paymentMethodId": "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n          "productId": "x"\n        }\'',
+          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.payment.comboBundle.recurring({\n  amount: 0,\n  msisdn: 'x',\n  paymentMethodId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  productId: 'x',\n});",
       },
       php: {
         method: 'api->payment->comboBundle->recurring',
         example:
           "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->payment->comboBundle->recurring(\n  amount: 0,\n  msisdn: 'x',\n  paymentMethodID: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  productID: 'x',\n);\n\nvar_dump($result);",
       },
-      typescript: {
-        method: 'client.api.payment.comboBundle.recurring',
+      http: {
         example:
-          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.payment.comboBundle.recurring({\n  amount: 0,\n  msisdn: 'x',\n  paymentMethodId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  productId: 'x',\n});",
+          'curl https://api.example.com/api/Payment/combo-bundle/recurring \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY" \\\n    -d \'{\n          "amount": 0,\n          "msisdn": "x",\n          "paymentMethodId": "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n          "productId": "x"\n        }\'',
       },
     },
   },
@@ -1255,19 +1255,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## search\n\n`client.api.resources.inventory.sim.search(id?: string, accessNo?: string, dealer?: string, imsi?: string, limit?: number, page?: number, status?: string, subStatus?: string): void`\n\n**get** `/api/Resources/inventory/sim/search`\n\n### Parameters\n\n- `id?: string`\n\n- `accessNo?: string`\n\n- `dealer?: string`\n\n- `imsi?: string`\n\n- `limit?: number`\n\n- `page?: number`\n\n- `status?: string`\n\n- `subStatus?: string`\n\n### Example\n\n```typescript\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes();\n\nawait client.api.resources.inventory.sim.search()\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.api.resources.inventory.sim.search',
         example:
-          'curl https://api.example.com/api/Resources/inventory/sim/search \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.resources.inventory.sim.search();",
       },
       php: {
         method: 'api->resources->inventory->sim->search',
         example:
           "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->resources->inventory->sim->search(\n  id: 'id',\n  accessNo: 'accessNo',\n  dealer: 'dealer',\n  imsi: 'imsi',\n  limit: 0,\n  page: 0,\n  status: 'status',\n  subStatus: 'subStatus',\n);\n\nvar_dump($result);",
       },
-      typescript: {
-        method: 'client.api.resources.inventory.sim.search',
+      http: {
         example:
-          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.resources.inventory.sim.search();",
+          'curl https://api.example.com/api/Resources/inventory/sim/search \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
     },
   },
@@ -1283,19 +1283,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## retrieve_document\n\n`client.api.rica.retrieveDocument(type: string): void`\n\n**get** `/api/Rica/document/{type}`\n\n### Parameters\n\n- `type: string`\n\n### Example\n\n```typescript\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes();\n\nawait client.api.rica.retrieveDocument('type')\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.api.rica.retrieveDocument',
         example:
-          'curl https://api.example.com/api/Rica/document/$TYPE \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.rica.retrieveDocument('type');",
       },
       php: {
         method: 'api->rica->retrieveDocument',
         example:
           "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->rica->retrieveDocument('type');\n\nvar_dump($result);",
       },
-      typescript: {
-        method: 'client.api.rica.retrieveDocument',
+      http: {
         example:
-          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.rica.retrieveDocument('type');",
+          'curl https://api.example.com/api/Rica/document/$TYPE \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
     },
   },
@@ -1311,19 +1311,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## upload_id\n\n`client.api.rica.upload.uploadID(file?: string): void`\n\n**post** `/api/Rica/upload/id`\n\n### Parameters\n\n- `file?: string`\n\n### Example\n\n```typescript\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes();\n\nawait client.api.rica.upload.uploadID()\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.api.rica.upload.uploadID',
         example:
-          'curl https://api.example.com/api/Rica/upload/id \\\n    -X POST \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+          "import fs from 'fs';\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.rica.upload.uploadID();",
       },
       php: {
         method: 'api->rica->upload->uploadID',
         example:
           "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->rica->upload->uploadID(\n  file: FileParam::fromString('Example data', filename: uniqid('file-upload-', true)),\n);\n\nvar_dump($result);",
       },
-      typescript: {
-        method: 'client.api.rica.upload.uploadID',
+      http: {
         example:
-          "import fs from 'fs';\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.rica.upload.uploadID();",
+          'curl https://api.example.com/api/Rica/upload/id \\\n    -X POST \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
     },
   },
@@ -1339,19 +1339,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## upload_poa\n\n`client.api.rica.upload.uploadPoa(file?: string): void`\n\n**post** `/api/Rica/upload/poa`\n\n### Parameters\n\n- `file?: string`\n\n### Example\n\n```typescript\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes();\n\nawait client.api.rica.upload.uploadPoa()\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.api.rica.upload.uploadPoa',
         example:
-          'curl https://api.example.com/api/Rica/upload/poa \\\n    -X POST \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+          "import fs from 'fs';\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.rica.upload.uploadPoa();",
       },
       php: {
         method: 'api->rica->upload->uploadPoa',
         example:
           "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->rica->upload->uploadPoa(\n  file: FileParam::fromString('Example data', filename: uniqid('file-upload-', true)),\n);\n\nvar_dump($result);",
       },
-      typescript: {
-        method: 'client.api.rica.upload.uploadPoa',
+      http: {
         example:
-          "import fs from 'fs';\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.rica.upload.uploadPoa();",
+          'curl https://api.example.com/api/Rica/upload/poa \\\n    -X POST \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
     },
   },
@@ -1367,19 +1367,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## activate\n\n`client.api.subscriber.activate(msisdn: string): void`\n\n**post** `/api/Subscriber/{msisdn}/activate`\n\n### Parameters\n\n- `msisdn: string`\n\n### Example\n\n```typescript\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes();\n\nawait client.api.subscriber.activate('msisdn')\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.api.subscriber.activate',
         example:
-          'curl https://api.example.com/api/Subscriber/$MSISDN/activate \\\n    -X POST \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.subscriber.activate('msisdn');",
       },
       php: {
         method: 'api->subscriber->activate',
         example:
           "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->subscriber->activate('msisdn');\n\nvar_dump($result);",
       },
-      typescript: {
-        method: 'client.api.subscriber.activate',
+      http: {
         example:
-          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.subscriber.activate('msisdn');",
+          'curl https://api.example.com/api/Subscriber/$MSISDN/activate \\\n    -X POST \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
     },
   },
@@ -1403,19 +1403,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## create\n\n`client.api.subscriber.create(accountId?: string, address?: { addressType?: address_type; city?: string; country?: string; postCode?: string; stateOrProvince?: string; streetName?: string; streetNo?: string; suburb?: string; }[], eSim?: boolean, iccid?: string, productId?: string, relatedParty?: { id?: string; address?: { addressType?: address_type; city?: string; country?: string; oneLineAddress?: string; postCode?: string; referredType?: string; stateOrProvince?: string; streetName?: string; streetNo?: string; suburb?: string; }[]; detail?: { birthDate?: string; firstname?: string; gdprConsent?: boolean; gender?: string; idNumber?: string; lastname?: string; title?: string; }; email?: { displayOrder?: number; emailAddress?: string; referredType?: string; }[]; isAccountOwner?: boolean; isServiceOwner?: boolean; name?: string; personType?: string; phone?: { contactType?: contact_type; displayOrder?: number; phoneNumber?: string; referredType?: string; }[]; primaryContactRole?: string; referredType?: string; useParentAddressType?: string; }[], transactionId?: string): void`\n\n**post** `/api/Subscriber/create`\n\n### Parameters\n\n- `accountId?: string`\n\n- `address?: { addressType?: 'POSTAL' | 'BILLING' | 'CORRESPONDENCE' | 'REGISTERED' | 'INSTALLATION'; city?: string; country?: string; postCode?: string; stateOrProvince?: string; streetName?: string; streetNo?: string; suburb?: string; }[]`\n\n- `eSim?: boolean`\n\n- `iccid?: string`\n\n- `productId?: string`\n\n- `relatedParty?: { id?: string; address?: { addressType?: 'POSTAL' | 'BILLING' | 'CORRESPONDENCE' | 'REGISTERED' | 'INSTALLATION'; city?: string; country?: string; oneLineAddress?: string; postCode?: string; referredType?: string; stateOrProvince?: string; streetName?: string; streetNo?: string; suburb?: string; }[]; detail?: { birthDate?: string; firstname?: string; gdprConsent?: boolean; gender?: string; idNumber?: string; lastname?: string; title?: string; }; email?: { displayOrder?: number; emailAddress?: string; referredType?: string; }[]; isAccountOwner?: boolean; isServiceOwner?: boolean; name?: string; personType?: string; phone?: { contactType?: 'MOBILE_NO' | 'HOME_NO' | 'BUSINESS' | 'FAX_NO'; displayOrder?: number; phoneNumber?: string; referredType?: string; }[]; primaryContactRole?: string; referredType?: string; useParentAddressType?: string; }[]`\n\n- `transactionId?: string`\n\n### Example\n\n```typescript\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes();\n\nawait client.api.subscriber.create()\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.api.subscriber.create',
         example:
-          'curl https://api.example.com/api/Subscriber/create \\\n    -X POST \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.subscriber.create();",
       },
       php: {
         method: 'api->subscriber->create',
         example:
           "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->subscriber->create(\n  accountID: 'accountId',\n  address: [\n    [\n      'addressType' => AddressType::POSTAL,\n      'city' => 'city',\n      'country' => 'country',\n      'postCode' => 'postCode',\n      'stateOrProvince' => 'stateOrProvince',\n      'streetName' => 'streetName',\n      'streetNo' => 'streetNo',\n      'suburb' => 'suburb',\n    ],\n  ],\n  eSim: true,\n  iccid: 'iccid',\n  productID: 'productId',\n  relatedParty: [\n    [\n      'id' => 'id',\n      'address' => [\n        [\n          'addressType' => AddressType::POSTAL,\n          'city' => 'city',\n          'country' => 'country',\n          'oneLineAddress' => 'oneLineAddress',\n          'postCode' => 'postCode',\n          'referredType' => 'referredType',\n          'stateOrProvince' => 'stateOrProvince',\n          'streetName' => 'streetName',\n          'streetNo' => 'streetNo',\n          'suburb' => 'suburb',\n        ],\n      ],\n      'detail' => [\n        'birthDate' => new \\DateTimeImmutable('2019-12-27T18:11:19.117Z'),\n        'firstname' => 'firstname',\n        'gdprConsent' => true,\n        'gender' => 'gender',\n        'idNumber' => 'idNumber',\n        'lastname' => 'lastname',\n        'title' => 'title',\n      ],\n      'email' => [\n        [\n          'displayOrder' => 0,\n          'emailAddress' => 'emailAddress',\n          'referredType' => 'referredType',\n        ],\n      ],\n      'isAccountOwner' => true,\n      'isServiceOwner' => true,\n      'name' => 'name',\n      'personType' => 'personType',\n      'phone' => [\n        [\n          'contactType' => ContactType::MOBILE_NO,\n          'displayOrder' => 0,\n          'phoneNumber' => 'phoneNumber',\n          'referredType' => 'referredType',\n        ],\n      ],\n      'primaryContactRole' => 'primaryContactRole',\n      'referredType' => 'referredType',\n      'useParentAddressType' => 'useParentAddressType',\n    ],\n  ],\n  transactionID: 'transactionId',\n);\n\nvar_dump($result);",
       },
-      typescript: {
-        method: 'client.api.subscriber.create',
+      http: {
         example:
-          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.subscriber.create();",
+          'curl https://api.example.com/api/Subscriber/create \\\n    -X POST \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
     },
   },
@@ -1431,19 +1431,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## retrieve\n\n`client.api.subscriber.retrieve(msisdn: string): void`\n\n**get** `/api/Subscriber/{msisdn}`\n\n### Parameters\n\n- `msisdn: string`\n\n### Example\n\n```typescript\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes();\n\nawait client.api.subscriber.retrieve('msisdn')\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.api.subscriber.retrieve',
         example:
-          'curl https://api.example.com/api/Subscriber/$MSISDN \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.subscriber.retrieve('msisdn');",
       },
       php: {
         method: 'api->subscriber->retrieve',
         example:
           "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->subscriber->retrieve('msisdn');\n\nvar_dump($result);",
       },
-      typescript: {
-        method: 'client.api.subscriber.retrieve',
+      http: {
         example:
-          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.subscriber.retrieve('msisdn');",
+          'curl https://api.example.com/api/Subscriber/$MSISDN \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
     },
   },
@@ -1459,19 +1459,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## get_balance\n\n`client.api.subscriber.getBalance(msisdn: string): void`\n\n**get** `/api/Subscriber/{msisdn}/balance`\n\n### Parameters\n\n- `msisdn: string`\n\n### Example\n\n```typescript\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes();\n\nawait client.api.subscriber.getBalance('msisdn')\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.api.subscriber.getBalance',
         example:
-          'curl https://api.example.com/api/Subscriber/$MSISDN/balance \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.subscriber.getBalance('msisdn');",
       },
       php: {
         method: 'api->subscriber->getBalance',
         example:
           "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->subscriber->getBalance('msisdn');\n\nvar_dump($result);",
       },
-      typescript: {
-        method: 'client.api.subscriber.getBalance',
+      http: {
         example:
-          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.subscriber.getBalance('msisdn');",
+          'curl https://api.example.com/api/Subscriber/$MSISDN/balance \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
     },
   },
@@ -1508,19 +1508,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## search\n\n`client.api.subscriber.search(AccountId?: string, Active?: string, AddressId?: string, CatalogProductId?: string, CompleteOrder?: string, CustomerId?: string, Iccid?: string, Id?: string, IsVisible?: string, Limit?: number, Msisdn?: string, Ocsid?: string, OrderId?: string, OrderState?: string, Page?: number, ProductType?: string, ServiceType?: string, State?: string, Status?: string, Waybill?: string): void`\n\n**get** `/api/Subscriber/search`\n\n### Parameters\n\n- `AccountId?: string`\n\n- `Active?: string`\n\n- `AddressId?: string`\n\n- `CatalogProductId?: string`\n\n- `CompleteOrder?: string`\n\n- `CustomerId?: string`\n\n- `Iccid?: string`\n\n- `Id?: string`\n\n- `IsVisible?: string`\n\n- `Limit?: number`\n\n- `Msisdn?: string`\n\n- `Ocsid?: string`\n\n- `OrderId?: string`\n\n- `OrderState?: string`\n\n- `Page?: number`\n\n- `ProductType?: string`\n\n- `ServiceType?: string`\n\n- `State?: string`\n\n- `Status?: string`\n\n- `Waybill?: string`\n\n### Example\n\n```typescript\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes();\n\nawait client.api.subscriber.search()\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.api.subscriber.search',
         example:
-          'curl https://api.example.com/api/Subscriber/search \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.subscriber.search();",
       },
       php: {
         method: 'api->subscriber->search',
         example:
           "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->subscriber->search(\n  accountID: 'AccountId',\n  active: 'Active',\n  addressID: 'AddressId',\n  catalogProductID: 'CatalogProductId',\n  completeOrder: 'CompleteOrder',\n  customerID: 'CustomerId',\n  iccid: 'Iccid',\n  id: 'Id',\n  isVisible: 'IsVisible',\n  limit: 0,\n  msisdn: 'Msisdn',\n  ocsid: 'Ocsid',\n  orderID: 'OrderId',\n  orderState: 'OrderState',\n  page: 0,\n  productType: 'ProductType',\n  serviceType: 'ServiceType',\n  state: 'State',\n  status: 'Status',\n  waybill: 'Waybill',\n);\n\nvar_dump($result);",
       },
-      typescript: {
-        method: 'client.api.subscriber.search',
+      http: {
         example:
-          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.subscriber.search();",
+          'curl https://api.example.com/api/Subscriber/search \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
     },
   },
@@ -1536,19 +1536,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## get_user\n\n`client.api.subscriber.getUser(limit?: number, page?: number): void`\n\n**get** `/api/Subscriber/user`\n\n### Parameters\n\n- `limit?: number`\n\n- `page?: number`\n\n### Example\n\n```typescript\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes();\n\nawait client.api.subscriber.getUser()\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.api.subscriber.getUser',
         example:
-          'curl https://api.example.com/api/Subscriber/user \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.subscriber.getUser();",
       },
       php: {
         method: 'api->subscriber->getUser',
         example:
           "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->subscriber->getUser(limit: 0, page: 0);\n\nvar_dump($result);",
       },
-      typescript: {
-        method: 'client.api.subscriber.getUser',
+      http: {
         example:
-          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.subscriber.getUser();",
+          'curl https://api.example.com/api/Subscriber/user \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
     },
   },
@@ -1564,19 +1564,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## is_active\n\n`client.api.subscriber.isActive(msisdn: string): void`\n\n**get** `/api/Subscriber/{msisdn}/is-active`\n\n### Parameters\n\n- `msisdn: string`\n\n### Example\n\n```typescript\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes();\n\nawait client.api.subscriber.isActive('msisdn')\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.api.subscriber.isActive',
         example:
-          'curl https://api.example.com/api/Subscriber/$MSISDN/is-active \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.subscriber.isActive('msisdn');",
       },
       php: {
         method: 'api->subscriber->isActive',
         example:
           "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->subscriber->isActive('msisdn');\n\nvar_dump($result);",
       },
-      typescript: {
-        method: 'client.api.subscriber.isActive',
+      http: {
         example:
-          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.subscriber.isActive('msisdn');",
+          'curl https://api.example.com/api/Subscriber/$MSISDN/is-active \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
     },
   },
@@ -1595,19 +1595,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## create\n\n`client.api.subscriber.service.dynamic.create(msisdn: string, services?: { definitionCode?: 'VOICE' | 'DATA' | 'SMS' | 'WHATSAPP' | 'GPA_CREDIT'; expiryDate?: string; priceInCents?: number; transactionId?: string; value?: number; }[]): void`\n\n**post** `/api/Subscriber/{msisdn}/service/dynamic`\n\n### Parameters\n\n- `msisdn: string`\n\n- `services?: { definitionCode?: 'VOICE' | 'DATA' | 'SMS' | 'WHATSAPP' | 'GPA_CREDIT'; expiryDate?: string; priceInCents?: number; transactionId?: string; value?: number; }[]`\n\n### Example\n\n```typescript\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes();\n\nawait client.api.subscriber.service.dynamic.create('msisdn')\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.api.subscriber.service.dynamic.create',
         example:
-          'curl https://api.example.com/api/Subscriber/$MSISDN/service/dynamic \\\n    -X POST \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.subscriber.service.dynamic.create('msisdn');",
       },
       php: {
         method: 'api->subscriber->service->dynamic->create',
         example:
           "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->subscriber->service->dynamic->create(\n  'msisdn',\n  services: [\n    [\n      'definitionCode' => 'VOICE',\n      'expiryDate' => 'expiryDate',\n      'priceInCents' => 0,\n      'transactionID' => 'transactionId',\n      'value' => 0,\n    ],\n  ],\n);\n\nvar_dump($result);",
       },
-      typescript: {
-        method: 'client.api.subscriber.service.dynamic.create',
+      http: {
         example:
-          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.subscriber.service.dynamic.create('msisdn');",
+          'curl https://api.example.com/api/Subscriber/$MSISDN/service/dynamic \\\n    -X POST \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
     },
   },
@@ -1630,19 +1630,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## create\n\n`client.api.subscriber.service.dynamic.pending.create(msisdn: string, definitionCode?: string, expiryDate?: string, paymentReference?: string, priceInCents?: number, value?: number): void`\n\n**post** `/api/Subscriber/{msisdn}/service/dynamic/pending`\n\n### Parameters\n\n- `msisdn: string`\n\n- `definitionCode?: string`\n\n- `expiryDate?: string`\n\n- `paymentReference?: string`\n\n- `priceInCents?: number`\n\n- `value?: number`\n\n### Example\n\n```typescript\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes();\n\nawait client.api.subscriber.service.dynamic.pending.create('msisdn')\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.api.subscriber.service.dynamic.pending.create',
         example:
-          'curl https://api.example.com/api/Subscriber/$MSISDN/service/dynamic/pending \\\n    -X POST \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.subscriber.service.dynamic.pending.create('msisdn');",
       },
       php: {
         method: 'api->subscriber->service->dynamic->pending->create',
         example:
           "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->subscriber->service->dynamic->pending->create(\n  'msisdn',\n  definitionCode: 'definitionCode',\n  expiryDate: '2019-12-27',\n  paymentReference: 'paymentReference',\n  priceInCents: 0,\n  value: 0,\n);\n\nvar_dump($result);",
       },
-      typescript: {
-        method: 'client.api.subscriber.service.dynamic.pending.create',
+      http: {
         example:
-          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.subscriber.service.dynamic.pending.create('msisdn');",
+          'curl https://api.example.com/api/Subscriber/$MSISDN/service/dynamic/pending \\\n    -X POST \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
     },
   },
@@ -1658,19 +1658,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## list\n\n`client.api.subscriber.service.dynamic.pending.list(msisdn: string): void`\n\n**get** `/api/Subscriber/{msisdn}/service/dynamic/pending`\n\n### Parameters\n\n- `msisdn: string`\n\n### Example\n\n```typescript\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes();\n\nawait client.api.subscriber.service.dynamic.pending.list('msisdn')\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.api.subscriber.service.dynamic.pending.list',
         example:
-          'curl https://api.example.com/api/Subscriber/$MSISDN/service/dynamic/pending \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.subscriber.service.dynamic.pending.list('msisdn');",
       },
       php: {
         method: 'api->subscriber->service->dynamic->pending->list',
         example:
           "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->subscriber->service->dynamic->pending->list('msisdn');\n\nvar_dump($result);",
       },
-      typescript: {
-        method: 'client.api.subscriber.service.dynamic.pending.list',
+      http: {
         example:
-          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.subscriber.service.dynamic.pending.list('msisdn');",
+          'curl https://api.example.com/api/Subscriber/$MSISDN/service/dynamic/pending \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
     },
   },
@@ -1686,19 +1686,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## process\n\n`client.api.subscriber.service.dynamic.pending.process(msisdn: string): void`\n\n**post** `/api/Subscriber/{msisdn}/service/dynamic/pending/process`\n\n### Parameters\n\n- `msisdn: string`\n\n### Example\n\n```typescript\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes();\n\nawait client.api.subscriber.service.dynamic.pending.process('msisdn')\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.api.subscriber.service.dynamic.pending.process',
         example:
-          'curl https://api.example.com/api/Subscriber/$MSISDN/service/dynamic/pending/process \\\n    -X POST \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.subscriber.service.dynamic.pending.process('msisdn');",
       },
       php: {
         method: 'api->subscriber->service->dynamic->pending->process',
         example:
           "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->subscriber->service->dynamic->pending->process(\n  'msisdn'\n);\n\nvar_dump($result);",
       },
-      typescript: {
-        method: 'client.api.subscriber.service.dynamic.pending.process',
+      http: {
         example:
-          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.subscriber.service.dynamic.pending.process('msisdn');",
+          'curl https://api.example.com/api/Subscriber/$MSISDN/service/dynamic/pending/process \\\n    -X POST \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
     },
   },
@@ -1714,19 +1714,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## msisdn\n\n`client.api.subscriber.swap.msisdn(msisdn: string, toMsisdn: string, port?: boolean): void`\n\n**post** `/api/Subscriber/{msisdn}/swap/msisdn/{toMsisdn}`\n\n### Parameters\n\n- `msisdn: string`\n\n- `toMsisdn: string`\n\n- `port?: boolean`\n\n### Example\n\n```typescript\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes();\n\nawait client.api.subscriber.swap.msisdn('toMsisdn', { msisdn: 'msisdn' })\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.api.subscriber.swap.msisdn',
         example:
-          'curl https://api.example.com/api/Subscriber/$MSISDN/swap/msisdn/$TO_MSISDN \\\n    -X POST \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.subscriber.swap.msisdn('toMsisdn', { msisdn: 'msisdn' });",
       },
       php: {
         method: 'api->subscriber->swap->msisdn',
         example:
           "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->subscriber->swap->msisdn(\n  'toMsisdn', msisdn: 'msisdn', port: true\n);\n\nvar_dump($result);",
       },
-      typescript: {
-        method: 'client.api.subscriber.swap.msisdn',
+      http: {
         example:
-          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.subscriber.swap.msisdn('toMsisdn', { msisdn: 'msisdn' });",
+          'curl https://api.example.com/api/Subscriber/$MSISDN/swap/msisdn/$TO_MSISDN \\\n    -X POST \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
     },
   },
@@ -1741,19 +1741,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## list\n\n`client.api.user.list(): void`\n\n**get** `/api/User`\n\n### Example\n\n```typescript\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes();\n\nawait client.api.user.list()\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.api.user.list',
         example:
-          'curl https://api.example.com/api/User \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.user.list();",
       },
       php: {
         method: 'api->user->list',
         example:
           "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->user->list();\n\nvar_dump($result);",
       },
-      typescript: {
-        method: 'client.api.user.list',
+      http: {
         example:
-          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.user.list();",
+          'curl https://api.example.com/api/User \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
     },
   },
@@ -1775,19 +1775,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## register\n\n`client.api.user.register(emailAddress?: string, externalId?: string, firstName?: string, lastName?: string, tenant?: string): void`\n\n**post** `/api/User/register`\n\n### Parameters\n\n- `emailAddress?: string`\n\n- `externalId?: string`\n\n- `firstName?: string`\n\n- `lastName?: string`\n\n- `tenant?: string`\n\n### Example\n\n```typescript\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes();\n\nawait client.api.user.register()\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.api.user.register',
         example:
-          'curl https://api.example.com/api/User/register \\\n    -X POST \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.user.register();",
       },
       php: {
         method: 'api->user->register',
         example:
           "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->user->register(\n  emailAddress: 'emailAddress',\n  externalID: 'externalId',\n  firstName: 'firstName',\n  lastName: 'lastName',\n  tenant: 'tenant',\n);\n\nvar_dump($result);",
       },
-      typescript: {
-        method: 'client.api.user.register',
+      http: {
         example:
-          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.user.register();",
+          'curl https://api.example.com/api/User/register \\\n    -X POST \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
     },
   },
@@ -1802,19 +1802,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## activate\n\n`client.api.user.activate(): void`\n\n**get** `/api/User/activate`\n\n### Example\n\n```typescript\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes();\n\nawait client.api.user.activate()\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.api.user.activate',
         example:
-          'curl https://api.example.com/api/User/activate \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.user.activate();",
       },
       php: {
         method: 'api->user->activate',
         example:
           "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->user->activate();\n\nvar_dump($result);",
       },
-      typescript: {
-        method: 'client.api.user.activate',
+      http: {
         example:
-          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.user.activate();",
+          'curl https://api.example.com/api/User/activate \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
     },
   },
@@ -1829,19 +1829,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## has_account\n\n`client.api.user.hasAccount(): void`\n\n**get** `/api/User/has-account`\n\n### Example\n\n```typescript\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes();\n\nawait client.api.user.hasAccount()\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.api.user.hasAccount',
         example:
-          'curl https://api.example.com/api/User/has-account \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.user.hasAccount();",
       },
       php: {
         method: 'api->user->hasAccount',
         example:
           "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->user->hasAccount();\n\nvar_dump($result);",
       },
-      typescript: {
-        method: 'client.api.user.hasAccount',
+      http: {
         example:
-          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.user.hasAccount();",
+          'curl https://api.example.com/api/User/has-account \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
     },
   },
@@ -1857,19 +1857,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## update_sim_description\n\n`client.api.user.updateSimDescription(msisdn: string, simDescription?: string): void`\n\n**patch** `/api/User/sim-description`\n\n### Parameters\n\n- `msisdn: string`\n\n- `simDescription?: string`\n\n### Example\n\n```typescript\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes();\n\nawait client.api.user.updateSimDescription({ msisdn: 'msisdn' })\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.api.user.updateSimDescription',
         example:
-          'curl https://api.example.com/api/User/sim-description \\\n    -X PATCH \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY" \\\n    -d \'{\n          "msisdn": "msisdn"\n        }\'',
+          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.user.updateSimDescription({ msisdn: 'msisdn' });",
       },
       php: {
         method: 'api->user->updateSimDescription',
         example:
           "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->user->updateSimDescription(\n  msisdn: 'msisdn', simDescription: 'simDescription'\n);\n\nvar_dump($result);",
       },
-      typescript: {
-        method: 'client.api.user.updateSimDescription',
+      http: {
         example:
-          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.user.updateSimDescription({ msisdn: 'msisdn' });",
+          'curl https://api.example.com/api/User/sim-description \\\n    -X PATCH \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY" \\\n    -d \'{\n          "msisdn": "msisdn"\n        }\'',
       },
     },
   },
@@ -1885,19 +1885,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## get_pod\n\n`client.api.warehouse.tracking.getPod(orderId: string): void`\n\n**get** `/api/Warehouse/tracking/{orderId}/pod`\n\n### Parameters\n\n- `orderId: string`\n\n### Example\n\n```typescript\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes();\n\nawait client.api.warehouse.tracking.getPod('orderId')\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.api.warehouse.tracking.getPod',
         example:
-          'curl https://api.example.com/api/Warehouse/tracking/$ORDER_ID/pod \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.warehouse.tracking.getPod('orderId');",
       },
       php: {
         method: 'api->warehouse->tracking->getPod',
         example:
           "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->warehouse->tracking->getPod('orderId');\n\nvar_dump($result);",
       },
-      typescript: {
-        method: 'client.api.warehouse.tracking.getPod',
+      http: {
         example:
-          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.warehouse.tracking.getPod('orderId');",
+          'curl https://api.example.com/api/Warehouse/tracking/$ORDER_ID/pod \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
     },
   },
@@ -1913,19 +1913,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## get_events\n\n`client.api.warehouse.tracking.getEvents(orderId: string): void`\n\n**get** `/api/Warehouse/tracking/{orderId}/events`\n\n### Parameters\n\n- `orderId: string`\n\n### Example\n\n```typescript\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes();\n\nawait client.api.warehouse.tracking.getEvents('orderId')\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.api.warehouse.tracking.getEvents',
         example:
-          'curl https://api.example.com/api/Warehouse/tracking/$ORDER_ID/events \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.warehouse.tracking.getEvents('orderId');",
       },
       php: {
         method: 'api->warehouse->tracking->getEvents',
         example:
           "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->warehouse->tracking->getEvents('orderId');\n\nvar_dump($result);",
       },
-      typescript: {
-        method: 'client.api.warehouse.tracking.getEvents',
+      http: {
         example:
-          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.warehouse.tracking.getEvents('orderId');",
+          'curl https://api.example.com/api/Warehouse/tracking/$ORDER_ID/events \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
     },
   },
@@ -1941,19 +1941,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## get_events\n\n`client.api.warehouse.tracking.msisdn.getEvents(msisdn: string): void`\n\n**get** `/api/Warehouse/tracking/msisdn/{msisdn}/events`\n\n### Parameters\n\n- `msisdn: string`\n\n### Example\n\n```typescript\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes();\n\nawait client.api.warehouse.tracking.msisdn.getEvents('msisdn')\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.api.warehouse.tracking.msisdn.getEvents',
         example:
-          'curl https://api.example.com/api/Warehouse/tracking/msisdn/$MSISDN/events \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.warehouse.tracking.msisdn.getEvents('msisdn');",
       },
       php: {
         method: 'api->warehouse->tracking->msisdn->getEvents',
         example:
           "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->api->warehouse->tracking->msisdn->getEvents('msisdn');\n\nvar_dump($result);",
       },
-      typescript: {
-        method: 'client.api.warehouse.tracking.msisdn.getEvents',
+      http: {
         example:
-          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.api.warehouse.tracking.msisdn.getEvents('msisdn');",
+          'curl https://api.example.com/api/Warehouse/tracking/msisdn/$MSISDN/events \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
     },
   },
@@ -1968,18 +1968,18 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## check\n\n`client.health.check(): void`\n\n**get** `/health`\n\n### Example\n\n```typescript\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes();\n\nawait client.health.check()\n```",
     perLanguage: {
-      http: {
-        example: 'curl https://api.example.com/health \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+      typescript: {
+        method: 'client.health.check',
+        example:
+          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.health.check();",
       },
       php: {
         method: 'health->check',
         example:
           "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->health->check();\n\nvar_dump($result);",
       },
-      typescript: {
-        method: 'client.health.check',
-        example:
-          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.health.check();",
+      http: {
+        example: 'curl https://api.example.com/health \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
     },
   },
@@ -1994,19 +1994,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## check_db\n\n`client.health.checkDB(): void`\n\n**get** `/health/db`\n\n### Example\n\n```typescript\nimport SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes();\n\nawait client.health.checkDB()\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.health.checkDB',
         example:
-          'curl https://api.example.com/health/db \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
+          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.health.checkDB();",
       },
       php: {
         method: 'health->checkDB',
         example:
           "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->health->checkDB();\n\nvar_dump($result);",
       },
-      typescript: {
-        method: 'client.health.checkDB',
+      http: {
         example:
-          "import SDKLimes from 'sdk-limes';\n\nconst client = new SDKLimes({\n  apiKey: process.env['SDK_LIMES_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.health.checkDB();",
+          'curl https://api.example.com/health/db \\\n    -H "Authorization: Bearer $SDK_LIMES_API_KEY"',
       },
     },
   },
