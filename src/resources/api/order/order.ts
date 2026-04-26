@@ -11,11 +11,7 @@ export class Order extends APIResource {
   pending: PendingAPI.Pending = new PendingAPI.Pending(this._client);
 
   create(body: OrderCreateParams | null | undefined = {}, options?: RequestOptions): APIPromise<void> {
-    return this._client.post('/api/Order/create', {
-      body,
-      ...options,
-      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
-    });
+    return this._client.post('/api/Order/create', { body, ...options, headers: buildHeaders([{Accept: '*/*'}, options?.headers]) });
   }
 }
 
@@ -36,7 +32,12 @@ export namespace OrderCreateParams {
 Order.Pending = Pending;
 
 export declare namespace Order {
-  export { type OrderCreateParams as OrderCreateParams };
+  export {
+    type OrderCreateParams as OrderCreateParams
+  };
 
-  export { Pending as Pending, type PendingCreateParams as PendingCreateParams };
+  export {
+    Pending as Pending,
+    type PendingCreateParams as PendingCreateParams
+  };
 }

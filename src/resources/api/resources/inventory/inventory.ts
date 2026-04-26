@@ -11,5 +11,8 @@ export class Inventory extends APIResource {
 Inventory.Sim = Sim;
 
 export declare namespace Inventory {
-  export { Sim as Sim, type SimSearchParams as SimSearchParams };
+  export {
+    Sim as Sim,
+    type SimSearchParams as SimSearchParams
+  };
 }

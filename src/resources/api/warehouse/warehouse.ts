@@ -11,5 +11,7 @@ export class Warehouse extends APIResource {
 Warehouse.Tracking = Tracking;
 
 export declare namespace Warehouse {
-  export { Tracking as Tracking };
+  export {
+    Tracking as Tracking
+  };
 }

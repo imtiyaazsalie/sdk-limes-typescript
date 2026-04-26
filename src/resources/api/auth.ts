@@ -6,15 +6,8 @@ import { buildHeaders } from '../../internal/headers';
 import { RequestOptions } from '../../internal/request-options';
 
 export class Auth extends APIResource {
-  createToken(
-    body: AuthCreateTokenParams | null | undefined = {},
-    options?: RequestOptions,
-  ): APIPromise<void> {
-    return this._client.post('/api/Auth/token', {
-      body,
-      ...options,
-      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
-    });
+  createToken(body: AuthCreateTokenParams | null | undefined = {}, options?: RequestOptions): APIPromise<void> {
+    return this._client.post('/api/Auth/token', { body, ...options, headers: buildHeaders([{Accept: '*/*'}, options?.headers]) });
   }
 }
 
@@ -29,5 +22,7 @@ export interface AuthCreateTokenParams {
 }
 
 export declare namespace Auth {
-  export { type AuthCreateTokenParams as AuthCreateTokenParams };
+  export {
+    type AuthCreateTokenParams as AuthCreateTokenParams
+  };
 }

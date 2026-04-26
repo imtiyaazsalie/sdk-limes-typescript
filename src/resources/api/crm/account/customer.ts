@@ -7,16 +7,10 @@ import { RequestOptions } from '../../../../internal/request-options';
 
 export class Customer extends APIResource {
   retrieve(options?: RequestOptions): APIPromise<void> {
-    return this._client.get('/api/Crm/account/customer', {
-      ...options,
-      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
-    });
+    return this._client.get('/api/Crm/account/customer', { ...options, headers: buildHeaders([{Accept: '*/*'}, options?.headers]) });
   }
 
   getSection(options?: RequestOptions): APIPromise<void> {
-    return this._client.get('/api/Crm/account/customer/section', {
-      ...options,
-      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
-    });
+    return this._client.get('/api/Crm/account/customer/section', { ...options, headers: buildHeaders([{Accept: '*/*'}, options?.headers]) });
   }
 }

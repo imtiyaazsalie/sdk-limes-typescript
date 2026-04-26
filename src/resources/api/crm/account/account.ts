@@ -11,5 +11,7 @@ export class Account extends APIResource {
 Account.Customer = Customer;
 
 export declare namespace Account {
-  export { Customer as Customer };
+  export {
+    Customer as Customer
+  };
 }

@@ -9,23 +9,11 @@ import { multipartFormRequestOptions } from '../../../internal/uploads';
 
 export class Upload extends APIResource {
   uploadID(body: UploadUploadIDParams | null | undefined = {}, options?: RequestOptions): APIPromise<void> {
-    return this._client.post(
-      '/api/Rica/upload/id',
-      multipartFormRequestOptions(
-        { body, ...options, headers: buildHeaders([{ Accept: '*/*' }, options?.headers]) },
-        this._client,
-      ),
-    );
+    return this._client.post('/api/Rica/upload/id', multipartFormRequestOptions({ body, ...options, headers: buildHeaders([{Accept: '*/*'}, options?.headers]) }, this._client));
   }
 
   uploadPoa(body: UploadUploadPoaParams | null | undefined = {}, options?: RequestOptions): APIPromise<void> {
-    return this._client.post(
-      '/api/Rica/upload/poa',
-      multipartFormRequestOptions(
-        { body, ...options, headers: buildHeaders([{ Accept: '*/*' }, options?.headers]) },
-        this._client,
-      ),
-    );
+    return this._client.post('/api/Rica/upload/poa', multipartFormRequestOptions({ body, ...options, headers: buildHeaders([{Accept: '*/*'}, options?.headers]) }, this._client));
   }
 }
 
@@ -40,6 +28,6 @@ export interface UploadUploadPoaParams {
 export declare namespace Upload {
   export {
     type UploadUploadIDParams as UploadUploadIDParams,
-    type UploadUploadPoaParams as UploadUploadPoaParams,
+    type UploadUploadPoaParams as UploadUploadPoaParams
   };
 }

@@ -59,8 +59,8 @@ function getTSDiagnostics(code: string): string[] {
   const codeWithImport = [
     'import { SDKLimes } from "sdk-limes";',
     functionSource.type === 'declaration' ?
-      `async function run(${functionSource.client}: SDKLimes)`
-    : `const run: (${functionSource.client}: SDKLimes) => Promise<unknown> =`,
+      `async function run(${functionSource.client}: SDKLimes)` :
+      `const run: (${functionSource.client}: SDKLimes) => Promise<unknown> =`,
     functionSource.code,
   ].join('\n');
   const sourcePath = path.resolve('code.ts');
@@ -108,72 +108,72 @@ function getTSDiagnostics(code: string): string[] {
 
 const fuse = new Fuse(
   [
-    'client.api.auth.createToken',
-    'client.api.catalog.listCategories',
-    'client.api.catalog.search.listProducts',
-    'client.api.catalog.search.retrieveProduct',
-    'client.api.catalog.category.getTree',
-    'client.api.catalog.category.retrieve',
-    'client.api.catalog.products.listByCategory',
-    'client.api.crm.search.listAccounts',
-    'client.api.crm.create.createContact',
-    'client.api.crm.create.account.createCustomer',
-    'client.api.crm.store.account.createCustomer',
-    'client.api.crm.account.customer.getSection',
-    'client.api.crm.account.customer.retrieve',
-    'client.api.crm.update.updateCustomer',
-    'client.api.mvnx.createPort',
-    'client.api.mvnx.createWebhook',
-    'client.api.mvnx.history.list',
-    'client.api.mvnx.history.retrieveByMsisdn',
-    'client.api.order.create',
-    'client.api.order.pending.create',
-    'client.api.order.pending.process',
-    'client.api.order.pending.retrieveByMsisdn',
-    'client.api.payment.listTransactions',
-    'client.api.payment.refund',
-    'client.api.payment.paystack.cancelSubscription',
-    'client.api.payment.paystack.charge',
-    'client.api.payment.paystack.initialize',
-    'client.api.payment.paystack.initializeCombo',
-    'client.api.payment.paystack.linkTransaction',
-    'client.api.payment.paystack.linkTransactionToServices',
-    'client.api.payment.paystack.listSubscriptions',
-    'client.api.payment.paystack.retrieveSubscription',
-    'client.api.payment.paystack.subscribe',
-    'client.api.payment.paystack.verify',
-    'client.api.payment.paystack.webhook',
-    'client.api.payment.paystack.cards.delete',
-    'client.api.payment.paystack.cards.list',
-    'client.api.payment.dynamicServices.initialize',
-    'client.api.payment.dynamicServices.recurring',
-    'client.api.payment.comboBundle.recurring',
-    'client.api.resources.inventory.sim.search',
-    'client.api.rica.retrieveDocument',
-    'client.api.rica.upload.uploadID',
-    'client.api.rica.upload.uploadPoa',
-    'client.api.subscriber.activate',
-    'client.api.subscriber.create',
-    'client.api.subscriber.getBalance',
-    'client.api.subscriber.getUser',
-    'client.api.subscriber.isActive',
-    'client.api.subscriber.retrieve',
-    'client.api.subscriber.search',
-    'client.api.subscriber.service.dynamic.create',
-    'client.api.subscriber.service.dynamic.pending.create',
-    'client.api.subscriber.service.dynamic.pending.list',
-    'client.api.subscriber.service.dynamic.pending.process',
-    'client.api.subscriber.swap.msisdn',
-    'client.api.user.activate',
-    'client.api.user.hasAccount',
-    'client.api.user.list',
-    'client.api.user.register',
-    'client.api.user.updateSimDescription',
-    'client.api.warehouse.tracking.getEvents',
-    'client.api.warehouse.tracking.getPod',
-    'client.api.warehouse.tracking.msisdn.getEvents',
-    'client.health.check',
-    'client.health.checkDB',
+    "client.api.auth.createToken",
+    "client.api.catalog.listCategories",
+    "client.api.catalog.search.listProducts",
+    "client.api.catalog.search.retrieveProduct",
+    "client.api.catalog.category.getTree",
+    "client.api.catalog.category.retrieve",
+    "client.api.catalog.products.listByCategory",
+    "client.api.crm.search.listAccounts",
+    "client.api.crm.create.createContact",
+    "client.api.crm.create.account.createCustomer",
+    "client.api.crm.store.account.createCustomer",
+    "client.api.crm.account.customer.getSection",
+    "client.api.crm.account.customer.retrieve",
+    "client.api.crm.update.updateCustomer",
+    "client.api.mvnx.createPort",
+    "client.api.mvnx.createWebhook",
+    "client.api.mvnx.history.list",
+    "client.api.mvnx.history.retrieveByMsisdn",
+    "client.api.order.create",
+    "client.api.order.pending.create",
+    "client.api.order.pending.process",
+    "client.api.order.pending.retrieveByMsisdn",
+    "client.api.payment.listTransactions",
+    "client.api.payment.refund",
+    "client.api.payment.paystack.cancelSubscription",
+    "client.api.payment.paystack.charge",
+    "client.api.payment.paystack.initialize",
+    "client.api.payment.paystack.initializeCombo",
+    "client.api.payment.paystack.linkTransaction",
+    "client.api.payment.paystack.linkTransactionToServices",
+    "client.api.payment.paystack.listSubscriptions",
+    "client.api.payment.paystack.retrieveSubscription",
+    "client.api.payment.paystack.subscribe",
+    "client.api.payment.paystack.verify",
+    "client.api.payment.paystack.webhook",
+    "client.api.payment.paystack.cards.delete",
+    "client.api.payment.paystack.cards.list",
+    "client.api.payment.dynamicServices.initialize",
+    "client.api.payment.dynamicServices.recurring",
+    "client.api.payment.comboBundle.recurring",
+    "client.api.resources.inventory.sim.search",
+    "client.api.rica.retrieveDocument",
+    "client.api.rica.upload.uploadID",
+    "client.api.rica.upload.uploadPoa",
+    "client.api.subscriber.activate",
+    "client.api.subscriber.create",
+    "client.api.subscriber.getBalance",
+    "client.api.subscriber.getUser",
+    "client.api.subscriber.isActive",
+    "client.api.subscriber.retrieve",
+    "client.api.subscriber.search",
+    "client.api.subscriber.service.dynamic.create",
+    "client.api.subscriber.service.dynamic.pending.create",
+    "client.api.subscriber.service.dynamic.pending.list",
+    "client.api.subscriber.service.dynamic.pending.process",
+    "client.api.subscriber.swap.msisdn",
+    "client.api.user.activate",
+    "client.api.user.hasAccount",
+    "client.api.user.list",
+    "client.api.user.register",
+    "client.api.user.updateSimDescription",
+    "client.api.warehouse.tracking.getEvents",
+    "client.api.warehouse.tracking.getPod",
+    "client.api.warehouse.tracking.msisdn.getEvents",
+    "client.health.check",
+    "client.health.checkDB"
   ],
   { threshold: 1, shouldSort: true },
 );
@@ -256,12 +256,7 @@ function parseError(code: string, error: unknown): string | undefined {
     // Deno uses V8; the first "<anonymous>:LINE:COLUMN" is the top of stack.
     const lineNumber = error.stack?.match(/<anonymous>:([0-9]+):[0-9]+/)?.[1];
     // -1 for the zero-based indexing
-    const line =
-      lineNumber &&
-      code
-        .split('\n')
-        .at(parseInt(lineNumber, 10) - 1)
-        ?.trim();
+    const line = lineNumber && code.split('\n').at(parseInt(lineNumber, 10) - 1)?.trim();
     return line ? `${message}\n  at line ${lineNumber}\n    ${line}` : message;
   } catch {
     return message;
@@ -273,9 +268,8 @@ const fetch = async (req: Request): Promise<Response> => {
 
   const runFunctionSource = code ? getRunFunctionSource(code) : null;
   if (!runFunctionSource) {
-    const message =
-      code ?
-        'The code is missing a top-level `run` function.'
+    const message = code
+      ? 'The code is missing a top-level `run` function.'
       : 'The code argument is missing. Provide one containing a top-level `run` function.';
     return Response.json(
       {
@@ -320,7 +314,7 @@ const fetch = async (req: Request): Promise<Response> => {
   try {
     let run_ = async (client: any) => {};
     run_ = (await tseval(`${code}\nexport default run;`)).default;
-    const result = await run_(makeSdkProxy(client, { path: ['client'] }));
+    const result = await run_(makeSdkProxy(client, { path: ["client"] }));
     return Response.json({
       is_error: false,
       result,

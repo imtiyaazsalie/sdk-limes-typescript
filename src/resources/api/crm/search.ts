@@ -6,15 +6,8 @@ import { buildHeaders } from '../../../internal/headers';
 import { RequestOptions } from '../../../internal/request-options';
 
 export class Search extends APIResource {
-  listAccounts(
-    query: SearchListAccountsParams | null | undefined = {},
-    options?: RequestOptions,
-  ): APIPromise<void> {
-    return this._client.get('/api/Crm/search/accounts', {
-      query,
-      ...options,
-      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
-    });
+  listAccounts(query: SearchListAccountsParams | null | undefined = {}, options?: RequestOptions): APIPromise<void> {
+    return this._client.get('/api/Crm/search/accounts', { query, ...options, headers: buildHeaders([{Accept: '*/*'}, options?.headers]) });
   }
 }
 
@@ -49,5 +42,7 @@ export interface SearchListAccountsParams {
 }
 
 export declare namespace Search {
-  export { type SearchListAccountsParams as SearchListAccountsParams };
+  export {
+    type SearchListAccountsParams as SearchListAccountsParams
+  };
 }

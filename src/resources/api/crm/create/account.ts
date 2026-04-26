@@ -8,15 +8,8 @@ import { buildHeaders } from '../../../../internal/headers';
 import { RequestOptions } from '../../../../internal/request-options';
 
 export class Account extends APIResource {
-  createCustomer(
-    body: AccountCreateCustomerParams | null | undefined = {},
-    options?: RequestOptions,
-  ): APIPromise<void> {
-    return this._client.post('/api/Crm/create/account/customer', {
-      body,
-      ...options,
-      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
-    });
+  createCustomer(body: AccountCreateCustomerParams | null | undefined = {}, options?: RequestOptions): APIPromise<void> {
+    return this._client.post('/api/Crm/create/account/customer', { body, ...options, headers: buildHeaders([{Accept: '*/*'}, options?.headers]) });
   }
 }
 
@@ -99,5 +92,7 @@ export namespace AccountCreateCustomerParams {
 }
 
 export declare namespace Account {
-  export { type AccountCreateCustomerParams as AccountCreateCustomerParams };
+  export {
+    type AccountCreateCustomerParams as AccountCreateCustomerParams
+  };
 }

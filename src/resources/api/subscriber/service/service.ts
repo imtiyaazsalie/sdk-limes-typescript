@@ -11,5 +11,8 @@ export class Service extends APIResource {
 Service.Dynamic = Dynamic;
 
 export declare namespace Service {
-  export { Dynamic as Dynamic, type DynamicCreateParams as DynamicCreateParams };
+  export {
+    Dynamic as Dynamic,
+    type DynamicCreateParams as DynamicCreateParams
+  };
 }

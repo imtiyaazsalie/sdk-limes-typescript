@@ -8,12 +8,8 @@ import { path } from '../../../internal/utils/path';
 
 export class Swap extends APIResource {
   msisdn(toMsisdn: string, params: SwapMsisdnParams, options?: RequestOptions): APIPromise<void> {
-    const { msisdn, port } = params;
-    return this._client.post(path`/api/Subscriber/${msisdn}/swap/msisdn/${toMsisdn}`, {
-      query: { port },
-      ...options,
-      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
-    });
+    const { msisdn, port } = params
+    return this._client.post(path`/api/Subscriber/${msisdn}/swap/msisdn/${toMsisdn}`, { query: { port }, ...options, headers: buildHeaders([{Accept: '*/*'}, options?.headers]) });
   }
 }
 
@@ -30,5 +26,7 @@ export interface SwapMsisdnParams {
 }
 
 export declare namespace Swap {
-  export { type SwapMsisdnParams as SwapMsisdnParams };
+  export {
+    type SwapMsisdnParams as SwapMsisdnParams
+  };
 }

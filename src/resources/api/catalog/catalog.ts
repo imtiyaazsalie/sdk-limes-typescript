@@ -16,15 +16,8 @@ export class Catalog extends APIResource {
   category: CategoryAPI.Category = new CategoryAPI.Category(this._client);
   products: ProductsAPI.Products = new ProductsAPI.Products(this._client);
 
-  listCategories(
-    query: CatalogListCategoriesParams | null | undefined = {},
-    options?: RequestOptions,
-  ): APIPromise<void> {
-    return this._client.get('/api/Catalog/categories', {
-      query,
-      ...options,
-      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
-    });
+  listCategories(query: CatalogListCategoriesParams | null | undefined = {}, options?: RequestOptions): APIPromise<void> {
+    return this._client.get('/api/Catalog/categories', { query, ...options, headers: buildHeaders([{Accept: '*/*'}, options?.headers]) });
   }
 }
 
@@ -39,11 +32,22 @@ Catalog.Category = Category;
 Catalog.Products = Products;
 
 export declare namespace Catalog {
-  export { type CatalogListCategoriesParams as CatalogListCategoriesParams };
+  export {
+    type CatalogListCategoriesParams as CatalogListCategoriesParams
+  };
 
-  export { Search as Search, type SearchListProductsParams as SearchListProductsParams };
+  export {
+    Search as Search,
+    type SearchListProductsParams as SearchListProductsParams
+  };
 
-  export { Category as Category, type CategoryGetTreeParams as CategoryGetTreeParams };
+  export {
+    Category as Category,
+    type CategoryGetTreeParams as CategoryGetTreeParams
+  };
 
-  export { Products as Products, type ProductListByCategoryParams as ProductListByCategoryParams };
+  export {
+    Products as Products,
+    type ProductListByCategoryParams as ProductListByCategoryParams
+  };
 }
