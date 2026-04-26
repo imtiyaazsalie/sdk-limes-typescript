@@ -7,11 +7,7 @@ import { RequestOptions } from '../../../../internal/request-options';
 
 export class Sim extends APIResource {
   search(query: SimSearchParams | null | undefined = {}, options?: RequestOptions): APIPromise<void> {
-    return this._client.get('/api/Resources/inventory/sim/search', {
-      query,
-      ...options,
-      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
-    });
+    return this._client.get('/api/Resources/inventory/sim/search', { query, ...options, headers: buildHeaders([{Accept: '*/*'}, options?.headers]) });
   }
 }
 
@@ -34,5 +30,7 @@ export interface SimSearchParams {
 }
 
 export declare namespace Sim {
-  export { type SimSearchParams as SimSearchParams };
+  export {
+    type SimSearchParams as SimSearchParams
+  };
 }

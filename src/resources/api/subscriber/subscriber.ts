@@ -16,58 +16,31 @@ export class Subscriber extends APIResource {
   swap: SwapAPI.Swap = new SwapAPI.Swap(this._client);
 
   create(body: SubscriberCreateParams | null | undefined = {}, options?: RequestOptions): APIPromise<void> {
-    return this._client.post('/api/Subscriber/create', {
-      body,
-      ...options,
-      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
-    });
+    return this._client.post('/api/Subscriber/create', { body, ...options, headers: buildHeaders([{Accept: '*/*'}, options?.headers]) });
   }
 
   retrieve(msisdn: string, options?: RequestOptions): APIPromise<void> {
-    return this._client.get(path`/api/Subscriber/${msisdn}`, {
-      ...options,
-      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
-    });
+    return this._client.get(path`/api/Subscriber/${msisdn}`, { ...options, headers: buildHeaders([{Accept: '*/*'}, options?.headers]) });
   }
 
   activate(msisdn: string, options?: RequestOptions): APIPromise<void> {
-    return this._client.post(path`/api/Subscriber/${msisdn}/activate`, {
-      ...options,
-      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
-    });
+    return this._client.post(path`/api/Subscriber/${msisdn}/activate`, { ...options, headers: buildHeaders([{Accept: '*/*'}, options?.headers]) });
   }
 
   getBalance(msisdn: string, options?: RequestOptions): APIPromise<void> {
-    return this._client.get(path`/api/Subscriber/${msisdn}/balance`, {
-      ...options,
-      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
-    });
+    return this._client.get(path`/api/Subscriber/${msisdn}/balance`, { ...options, headers: buildHeaders([{Accept: '*/*'}, options?.headers]) });
   }
 
-  getUser(
-    query: SubscriberGetUserParams | null | undefined = {},
-    options?: RequestOptions,
-  ): APIPromise<void> {
-    return this._client.get('/api/Subscriber/user', {
-      query,
-      ...options,
-      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
-    });
+  getUser(query: SubscriberGetUserParams | null | undefined = {}, options?: RequestOptions): APIPromise<void> {
+    return this._client.get('/api/Subscriber/user', { query, ...options, headers: buildHeaders([{Accept: '*/*'}, options?.headers]) });
   }
 
   isActive(msisdn: string, options?: RequestOptions): APIPromise<void> {
-    return this._client.get(path`/api/Subscriber/${msisdn}/is-active`, {
-      ...options,
-      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
-    });
+    return this._client.get(path`/api/Subscriber/${msisdn}/is-active`, { ...options, headers: buildHeaders([{Accept: '*/*'}, options?.headers]) });
   }
 
   search(query: SubscriberSearchParams | null | undefined = {}, options?: RequestOptions): APIPromise<void> {
-    return this._client.get('/api/Subscriber/search', {
-      query,
-      ...options,
-      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
-    });
+    return this._client.get('/api/Subscriber/search', { query, ...options, headers: buildHeaders([{Accept: '*/*'}, options?.headers]) });
   }
 }
 
@@ -228,10 +201,15 @@ export declare namespace Subscriber {
   export {
     type SubscriberCreateParams as SubscriberCreateParams,
     type SubscriberGetUserParams as SubscriberGetUserParams,
-    type SubscriberSearchParams as SubscriberSearchParams,
+    type SubscriberSearchParams as SubscriberSearchParams
   };
 
-  export { Service as Service };
+  export {
+    Service as Service
+  };
 
-  export { Swap as Swap, type SwapMsisdnParams as SwapMsisdnParams };
+  export {
+    Swap as Swap,
+    type SwapMsisdnParams as SwapMsisdnParams
+  };
 }

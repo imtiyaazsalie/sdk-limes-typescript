@@ -8,9 +8,6 @@ import { path } from '../../../../internal/utils/path';
 
 export class Msisdn extends APIResource {
   getEvents(msisdn: string, options?: RequestOptions): APIPromise<void> {
-    return this._client.get(path`/api/Warehouse/tracking/msisdn/${msisdn}/events`, {
-      ...options,
-      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
-    });
+    return this._client.get(path`/api/Warehouse/tracking/msisdn/${msisdn}/events`, { ...options, headers: buildHeaders([{Accept: '*/*'}, options?.headers]) });
   }
 }

@@ -7,16 +7,10 @@ import { RequestOptions } from '../internal/request-options';
 
 export class Health extends APIResource {
   check(options?: RequestOptions): APIPromise<void> {
-    return this._client.get('/health', {
-      ...options,
-      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
-    });
+    return this._client.get('/health', { ...options, headers: buildHeaders([{Accept: '*/*'}, options?.headers]) });
   }
 
   checkDB(options?: RequestOptions): APIPromise<void> {
-    return this._client.get('/health/db', {
-      ...options,
-      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
-    });
+    return this._client.get('/health/db', { ...options, headers: buildHeaders([{Accept: '*/*'}, options?.headers]) });
   }
 }

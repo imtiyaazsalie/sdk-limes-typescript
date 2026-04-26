@@ -12,97 +12,53 @@ export class Paystack extends APIResource {
   cards: CardsAPI.Cards = new CardsAPI.Cards(this._client);
 
   cancelSubscription(body: PaystackCancelSubscriptionParams, options?: RequestOptions): APIPromise<void> {
-    return this._client.post('/api/Payment/paystack/cancel-subscription', {
-      body,
-      ...options,
-      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
-    });
+    return this._client.post('/api/Payment/paystack/cancel-subscription', { body, ...options, headers: buildHeaders([{Accept: '*/*'}, options?.headers]) });
   }
 
   charge(body: PaystackChargeParams, options?: RequestOptions): APIPromise<void> {
-    return this._client.post('/api/Payment/paystack/charge', {
-      body,
-      ...options,
-      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
-    });
+    return this._client.post('/api/Payment/paystack/charge', { body, ...options, headers: buildHeaders([{Accept: '*/*'}, options?.headers]) });
   }
 
   initialize(body: PaystackInitializeParams, options?: RequestOptions): APIPromise<void> {
-    return this._client.post('/api/Payment/paystack/initialize', {
-      body,
-      ...options,
-      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
-    });
+    return this._client.post('/api/Payment/paystack/initialize', { body, ...options, headers: buildHeaders([{Accept: '*/*'}, options?.headers]) });
   }
 
   /**
    * @deprecated
    */
   initializeCombo(body: PaystackInitializeComboParams, options?: RequestOptions): APIPromise<void> {
-    return this._client.post('/api/Payment/paystack/initialize-combo', {
-      body,
-      ...options,
-      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
-    });
+    return this._client.post('/api/Payment/paystack/initialize-combo', { body, ...options, headers: buildHeaders([{Accept: '*/*'}, options?.headers]) });
   }
 
   linkTransaction(body: PaystackLinkTransactionParams, options?: RequestOptions): APIPromise<void> {
-    return this._client.post('/api/Payment/paystack/link-transaction', {
-      body,
-      ...options,
-      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
-    });
+    return this._client.post('/api/Payment/paystack/link-transaction', { body, ...options, headers: buildHeaders([{Accept: '*/*'}, options?.headers]) });
   }
 
-  linkTransactionToServices(
-    body: PaystackLinkTransactionToServicesParams,
-    options?: RequestOptions,
-  ): APIPromise<void> {
-    return this._client.post('/api/Payment/paystack/link-transaction-to-services', {
-      body,
-      ...options,
-      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
-    });
+  linkTransactionToServices(body: PaystackLinkTransactionToServicesParams, options?: RequestOptions): APIPromise<void> {
+    return this._client.post('/api/Payment/paystack/link-transaction-to-services', { body, ...options, headers: buildHeaders([{Accept: '*/*'}, options?.headers]) });
   }
 
   listSubscriptions(options?: RequestOptions): APIPromise<void> {
-    return this._client.get('/api/Payment/paystack/subscriptions', {
-      ...options,
-      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
-    });
+    return this._client.get('/api/Payment/paystack/subscriptions', { ...options, headers: buildHeaders([{Accept: '*/*'}, options?.headers]) });
   }
 
   retrieveSubscription(id: string, options?: RequestOptions): APIPromise<void> {
-    return this._client.get(path`/api/Payment/paystack/subscription/${id}`, {
-      ...options,
-      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
-    });
+    return this._client.get(path`/api/Payment/paystack/subscription/${id}`, { ...options, headers: buildHeaders([{Accept: '*/*'}, options?.headers]) });
   }
 
   /**
    * @deprecated
    */
   subscribe(body: PaystackSubscribeParams, options?: RequestOptions): APIPromise<void> {
-    return this._client.post('/api/Payment/paystack/subscribe', {
-      body,
-      ...options,
-      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
-    });
+    return this._client.post('/api/Payment/paystack/subscribe', { body, ...options, headers: buildHeaders([{Accept: '*/*'}, options?.headers]) });
   }
 
   verify(body: PaystackVerifyParams, options?: RequestOptions): APIPromise<void> {
-    return this._client.post('/api/Payment/paystack/verify', {
-      body,
-      ...options,
-      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
-    });
+    return this._client.post('/api/Payment/paystack/verify', { body, ...options, headers: buildHeaders([{Accept: '*/*'}, options?.headers]) });
   }
 
   webhook(options?: RequestOptions): APIPromise<void> {
-    return this._client.post('/api/Payment/paystack/webhook', {
-      ...options,
-      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
-    });
+    return this._client.post('/api/Payment/paystack/webhook', { ...options, headers: buildHeaders([{Accept: '*/*'}, options?.headers]) });
   }
 }
 
@@ -189,8 +145,10 @@ export declare namespace Paystack {
     type PaystackLinkTransactionParams as PaystackLinkTransactionParams,
     type PaystackLinkTransactionToServicesParams as PaystackLinkTransactionToServicesParams,
     type PaystackSubscribeParams as PaystackSubscribeParams,
-    type PaystackVerifyParams as PaystackVerifyParams,
+    type PaystackVerifyParams as PaystackVerifyParams
   };
 
-  export { Cards as Cards };
+  export {
+    Cards as Cards
+  };
 }

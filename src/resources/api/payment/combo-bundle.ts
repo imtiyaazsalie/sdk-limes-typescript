@@ -7,11 +7,7 @@ import { RequestOptions } from '../../../internal/request-options';
 
 export class ComboBundle extends APIResource {
   recurring(body: ComboBundleRecurringParams, options?: RequestOptions): APIPromise<void> {
-    return this._client.post('/api/Payment/combo-bundle/recurring', {
-      body,
-      ...options,
-      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
-    });
+    return this._client.post('/api/Payment/combo-bundle/recurring', { body, ...options, headers: buildHeaders([{Accept: '*/*'}, options?.headers]) });
   }
 }
 
@@ -26,5 +22,7 @@ export interface ComboBundleRecurringParams {
 }
 
 export declare namespace ComboBundle {
-  export { type ComboBundleRecurringParams as ComboBundleRecurringParams };
+  export {
+    type ComboBundleRecurringParams as ComboBundleRecurringParams
+  };
 }

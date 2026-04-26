@@ -20,12 +20,7 @@ import { Resources } from './resources/resources';
 import * as RicaAPI from './rica/rica';
 import { Rica } from './rica/rica';
 import * as SubscriberAPI from './subscriber/subscriber';
-import {
-  Subscriber,
-  SubscriberCreateParams,
-  SubscriberGetUserParams,
-  SubscriberSearchParams,
-} from './subscriber/subscriber';
+import { Subscriber, SubscriberCreateParams, SubscriberGetUserParams, SubscriberSearchParams } from './subscriber/subscriber';
 import * as WarehouseAPI from './warehouse/warehouse';
 import { Warehouse } from './warehouse/warehouse';
 
@@ -56,42 +51,59 @@ API.User = User;
 API.Warehouse = Warehouse;
 
 export declare namespace API {
-  export { Auth as Auth, type AuthCreateTokenParams as AuthCreateTokenParams };
+  export {
+    Auth as Auth,
+    type AuthCreateTokenParams as AuthCreateTokenParams
+  };
 
-  export { Catalog as Catalog, type CatalogListCategoriesParams as CatalogListCategoriesParams };
+  export {
+    Catalog as Catalog,
+    type CatalogListCategoriesParams as CatalogListCategoriesParams
+  };
 
-  export { CRM as CRM };
+  export {
+    CRM as CRM
+  };
 
   export {
     Mvnx as Mvnx,
     type MvnxCreatePortParams as MvnxCreatePortParams,
-    type MvnxCreateWebhookParams as MvnxCreateWebhookParams,
+    type MvnxCreateWebhookParams as MvnxCreateWebhookParams
   };
 
-  export { Order as Order, type OrderCreateParams as OrderCreateParams };
+  export {
+    Order as Order,
+    type OrderCreateParams as OrderCreateParams
+  };
 
   export {
     Payment as Payment,
     type PaymentListTransactionsParams as PaymentListTransactionsParams,
-    type PaymentRefundParams as PaymentRefundParams,
+    type PaymentRefundParams as PaymentRefundParams
   };
 
-  export { Resources as Resources };
+  export {
+    Resources as Resources
+  };
 
-  export { Rica as Rica };
+  export {
+    Rica as Rica
+  };
 
   export {
     Subscriber as Subscriber,
     type SubscriberCreateParams as SubscriberCreateParams,
     type SubscriberGetUserParams as SubscriberGetUserParams,
-    type SubscriberSearchParams as SubscriberSearchParams,
+    type SubscriberSearchParams as SubscriberSearchParams
   };
 
   export {
     User as User,
     type UserRegisterParams as UserRegisterParams,
-    type UserUpdateSimDescriptionParams as UserUpdateSimDescriptionParams,
+    type UserUpdateSimDescriptionParams as UserUpdateSimDescriptionParams
   };
 
-  export { Warehouse as Warehouse };
+  export {
+    Warehouse as Warehouse
+  };
 }

@@ -8,15 +8,8 @@ import { buildHeaders } from '../../../../internal/headers';
 import { RequestOptions } from '../../../../internal/request-options';
 
 export class AccountResource extends APIResource {
-  createCustomer(
-    body: AccountCreateCustomerParams | null | undefined = {},
-    options?: RequestOptions,
-  ): APIPromise<void> {
-    return this._client.post('/api/Crm/store/account/customer', {
-      body,
-      ...options,
-      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
-    });
+  createCustomer(body: AccountCreateCustomerParams | null | undefined = {}, options?: RequestOptions): APIPromise<void> {
+    return this._client.post('/api/Crm/store/account/customer', { body, ...options, headers: buildHeaders([{Accept: '*/*'}, options?.headers]) });
   }
 }
 
@@ -116,9 +109,9 @@ export interface AccountAddress {
   suburb?: string | null;
 }
 
-export type AddressType = 'POSTAL' | 'BILLING' | 'CORRESPONDENCE' | 'REGISTERED' | 'INSTALLATION';
+export type AddressType = 'POSTAL' | 'BILLING' | 'CORRESPONDENCE' | 'REGISTERED' | 'INSTALLATION'
 
-export type ContactType = 'MOBILE_NO' | 'HOME_NO' | 'BUSINESS' | 'FAX_NO';
+export type ContactType = 'MOBILE_NO' | 'HOME_NO' | 'BUSINESS' | 'FAX_NO'
 
 export interface AccountCreateCustomerParams {
   address?: Array<AccountAddress> | null;
@@ -204,6 +197,6 @@ export declare namespace AccountResource {
     type AccountAddress as AccountAddress,
     type AddressType as AddressType,
     type ContactType as ContactType,
-    type AccountCreateCustomerParams as AccountCreateCustomerParams,
+    type AccountCreateCustomerParams as AccountCreateCustomerParams
   };
 }

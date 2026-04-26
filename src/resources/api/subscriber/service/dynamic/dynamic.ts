@@ -12,16 +12,8 @@ import { path } from '../../../../../internal/utils/path';
 export class Dynamic extends APIResource {
   pending: PendingAPI.Pending = new PendingAPI.Pending(this._client);
 
-  create(
-    msisdn: string,
-    body: DynamicCreateParams | null | undefined = {},
-    options?: RequestOptions,
-  ): APIPromise<void> {
-    return this._client.post(path`/api/Subscriber/${msisdn}/service/dynamic`, {
-      body,
-      ...options,
-      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
-    });
+  create(msisdn: string, body: DynamicCreateParams | null | undefined = {}, options?: RequestOptions): APIPromise<void> {
+    return this._client.post(path`/api/Subscriber/${msisdn}/service/dynamic`, { body, ...options, headers: buildHeaders([{Accept: '*/*'}, options?.headers]) });
   }
 }
 
@@ -32,7 +24,12 @@ export interface DynamicCreateParams {
 Dynamic.Pending = Pending;
 
 export declare namespace Dynamic {
-  export { type DynamicCreateParams as DynamicCreateParams };
+  export {
+    type DynamicCreateParams as DynamicCreateParams
+  };
 
-  export { Pending as Pending, type PendingCreateParams as PendingCreateParams };
+  export {
+    Pending as Pending,
+    type PendingCreateParams as PendingCreateParams
+  };
 }
