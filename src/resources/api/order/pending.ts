@@ -8,15 +8,25 @@ import { path } from '../../../internal/utils/path';
 
 export class Pending extends APIResource {
   create(body: PendingCreateParams | null | undefined = {}, options?: RequestOptions): APIPromise<void> {
-    return this._client.post('/api/Order/pending', { body, ...options, headers: buildHeaders([{Accept: '*/*'}, options?.headers]) });
+    return this._client.post('/api/Order/pending', {
+      body,
+      ...options,
+      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
+    });
   }
 
   process(msisdn: string, options?: RequestOptions): APIPromise<void> {
-    return this._client.post(path`/api/Order/pending/${msisdn}/process`, { ...options, headers: buildHeaders([{Accept: '*/*'}, options?.headers]) });
+    return this._client.post(path`/api/Order/pending/${msisdn}/process`, {
+      ...options,
+      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
+    });
   }
 
   retrieveByMsisdn(msisdn: string, options?: RequestOptions): APIPromise<void> {
-    return this._client.get(path`/api/Order/pending/${msisdn}`, { ...options, headers: buildHeaders([{Accept: '*/*'}, options?.headers]) });
+    return this._client.get(path`/api/Order/pending/${msisdn}`, {
+      ...options,
+      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
+    });
   }
 }
 
@@ -31,7 +41,5 @@ export interface PendingCreateParams {
 }
 
 export declare namespace Pending {
-  export {
-    type PendingCreateParams as PendingCreateParams
-  };
+  export { type PendingCreateParams as PendingCreateParams };
 }

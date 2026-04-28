@@ -7,16 +7,30 @@ import { RequestOptions } from '../../../../../internal/request-options';
 import { path } from '../../../../../internal/utils/path';
 
 export class Pending extends APIResource {
-  create(msisdn: string, body: PendingCreateParams | null | undefined = {}, options?: RequestOptions): APIPromise<void> {
-    return this._client.post(path`/api/Subscriber/${msisdn}/service/dynamic/pending`, { body, ...options, headers: buildHeaders([{Accept: '*/*'}, options?.headers]) });
+  create(
+    msisdn: string,
+    body: PendingCreateParams | null | undefined = {},
+    options?: RequestOptions,
+  ): APIPromise<void> {
+    return this._client.post(path`/api/Subscriber/${msisdn}/service/dynamic/pending`, {
+      body,
+      ...options,
+      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
+    });
   }
 
   list(msisdn: string, options?: RequestOptions): APIPromise<void> {
-    return this._client.get(path`/api/Subscriber/${msisdn}/service/dynamic/pending`, { ...options, headers: buildHeaders([{Accept: '*/*'}, options?.headers]) });
+    return this._client.get(path`/api/Subscriber/${msisdn}/service/dynamic/pending`, {
+      ...options,
+      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
+    });
   }
 
   process(msisdn: string, options?: RequestOptions): APIPromise<void> {
-    return this._client.post(path`/api/Subscriber/${msisdn}/service/dynamic/pending/process`, { ...options, headers: buildHeaders([{Accept: '*/*'}, options?.headers]) });
+    return this._client.post(path`/api/Subscriber/${msisdn}/service/dynamic/pending/process`, {
+      ...options,
+      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
+    });
   }
 }
 
@@ -33,7 +47,5 @@ export interface PendingCreateParams {
 }
 
 export declare namespace Pending {
-  export {
-    type PendingCreateParams as PendingCreateParams
-  };
+  export { type PendingCreateParams as PendingCreateParams };
 }

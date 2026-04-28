@@ -11,7 +11,5 @@ export class Resources extends APIResource {
 Resources.Inventory = Inventory;
 
 export declare namespace Resources {
-  export {
-    Inventory as Inventory
-  };
+  export { Inventory as Inventory };
 }

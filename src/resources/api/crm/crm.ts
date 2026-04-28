@@ -27,27 +27,17 @@ CRM.Account = Account;
 CRM.Update = Update;
 
 export declare namespace CRM {
-  export {
-    Search as Search,
-    type SearchListAccountsParams as SearchListAccountsParams
-  };
+  export { Search as Search, type SearchListAccountsParams as SearchListAccountsParams };
 
-  export {
-    Create as Create,
-    type CreateCreateContactParams as CreateCreateContactParams
-  };
+  export { Create as Create, type CreateCreateContactParams as CreateCreateContactParams };
 
-  export {
-    Store as Store
-  };
+  export { Store as Store };
 
-  export {
-    Account as Account
-  };
+  export { Account as Account };
 
   export {
     Update as Update,
     type AccountCustomer as AccountCustomer,
-    type UpdateUpdateCustomerParams as UpdateUpdateCustomerParams
+    type UpdateUpdateCustomerParams as UpdateUpdateCustomerParams,
   };
 }

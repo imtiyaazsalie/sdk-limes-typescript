@@ -8,11 +8,18 @@ import { path } from '../../../internal/utils/path';
 
 export class Category extends APIResource {
   retrieve(categoryID: string, options?: RequestOptions): APIPromise<void> {
-    return this._client.get(path`/api/Catalog/category/${categoryID}`, { ...options, headers: buildHeaders([{Accept: '*/*'}, options?.headers]) });
+    return this._client.get(path`/api/Catalog/category/${categoryID}`, {
+      ...options,
+      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
+    });
   }
 
   getTree(query: CategoryGetTreeParams | null | undefined = {}, options?: RequestOptions): APIPromise<void> {
-    return this._client.get('/api/Catalog/category/tree', { query, ...options, headers: buildHeaders([{Accept: '*/*'}, options?.headers]) });
+    return this._client.get('/api/Catalog/category/tree', {
+      query,
+      ...options,
+      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
+    });
   }
 }
 
@@ -23,7 +30,5 @@ export interface CategoryGetTreeParams {
 }
 
 export declare namespace Category {
-  export {
-    type CategoryGetTreeParams as CategoryGetTreeParams
-  };
+  export { type CategoryGetTreeParams as CategoryGetTreeParams };
 }

@@ -10,9 +10,7 @@ const config: JestConfigWithTsJest = {
     '^sdk-limes-mcp$': '<rootDir>/src/index.ts',
     '^sdk-limes-mcp/(.*)$': '<rootDir>/src/$1',
   },
-  modulePathIgnorePatterns: [
-    '<rootDir>/dist/',
-  ],
+  modulePathIgnorePatterns: ['<rootDir>/dist/'],
   testPathIgnorePatterns: ['scripts'],
 };
 

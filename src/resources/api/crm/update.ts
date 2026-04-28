@@ -7,8 +7,15 @@ import { buildHeaders } from '../../../internal/headers';
 import { RequestOptions } from '../../../internal/request-options';
 
 export class Update extends APIResource {
-  updateCustomer(body: UpdateUpdateCustomerParams | null | undefined = {}, options?: RequestOptions): APIPromise<void> {
-    return this._client.patch('/api/Crm/update/customer', { body, ...options, headers: buildHeaders([{Accept: '*/*'}, options?.headers]) });
+  updateCustomer(
+    body: UpdateUpdateCustomerParams | null | undefined = {},
+    options?: RequestOptions,
+  ): APIPromise<void> {
+    return this._client.patch('/api/Crm/update/customer', {
+      body,
+      ...options,
+      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
+    });
   }
 }
 
@@ -51,6 +58,6 @@ export namespace UpdateUpdateCustomerParams {
 export declare namespace Update {
   export {
     type AccountCustomer as AccountCustomer,
-    type UpdateUpdateCustomerParams as UpdateUpdateCustomerParams
+    type UpdateUpdateCustomerParams as UpdateUpdateCustomerParams,
   };
 }
