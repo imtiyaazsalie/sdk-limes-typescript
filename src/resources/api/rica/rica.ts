@@ -12,7 +12,10 @@ export class Rica extends APIResource {
   upload: UploadAPI.Upload = new UploadAPI.Upload(this._client);
 
   retrieveDocument(type: string, options?: RequestOptions): APIPromise<void> {
-    return this._client.get(path`/api/Rica/document/${type}`, { ...options, headers: buildHeaders([{Accept: '*/*'}, options?.headers]) });
+    return this._client.get(path`/api/Rica/document/${type}`, {
+      ...options,
+      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
+    });
   }
 }
 
@@ -22,6 +25,6 @@ export declare namespace Rica {
   export {
     Upload as Upload,
     type UploadUploadIDParams as UploadUploadIDParams,
-    type UploadUploadPoaParams as UploadUploadPoaParams
+    type UploadUploadPoaParams as UploadUploadPoaParams,
   };
 }

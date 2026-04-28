@@ -8,10 +8,16 @@ import { path } from '../../../internal/utils/path';
 
 export class History extends APIResource {
   list(options?: RequestOptions): APIPromise<void> {
-    return this._client.get('/api/Mvnx/history', { ...options, headers: buildHeaders([{Accept: '*/*'}, options?.headers]) });
+    return this._client.get('/api/Mvnx/history', {
+      ...options,
+      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
+    });
   }
 
   retrieveByMsisdn(msisdn: string, options?: RequestOptions): APIPromise<void> {
-    return this._client.get(path`/api/Mvnx/history/${msisdn}`, { ...options, headers: buildHeaders([{Accept: '*/*'}, options?.headers]) });
+    return this._client.get(path`/api/Mvnx/history/${msisdn}`, {
+      ...options,
+      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
+    });
   }
 }

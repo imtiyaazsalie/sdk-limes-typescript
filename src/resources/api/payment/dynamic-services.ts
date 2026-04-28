@@ -7,11 +7,19 @@ import { RequestOptions } from '../../../internal/request-options';
 
 export class DynamicServices extends APIResource {
   initialize(body: DynamicServiceInitializeParams, options?: RequestOptions): APIPromise<void> {
-    return this._client.post('/api/Payment/dynamic-services/initialize', { body, ...options, headers: buildHeaders([{Accept: '*/*'}, options?.headers]) });
+    return this._client.post('/api/Payment/dynamic-services/initialize', {
+      body,
+      ...options,
+      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
+    });
   }
 
   recurring(body: DynamicServiceRecurringParams, options?: RequestOptions): APIPromise<void> {
-    return this._client.post('/api/Payment/dynamic-services/recurring', { body, ...options, headers: buildHeaders([{Accept: '*/*'}, options?.headers]) });
+    return this._client.post('/api/Payment/dynamic-services/recurring', {
+      body,
+      ...options,
+      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
+    });
   }
 }
 
@@ -47,6 +55,6 @@ export declare namespace DynamicServices {
   export {
     type DynamicServiceRequest as DynamicServiceRequest,
     type DynamicServiceInitializeParams as DynamicServiceInitializeParams,
-    type DynamicServiceRecurringParams as DynamicServiceRecurringParams
+    type DynamicServiceRecurringParams as DynamicServiceRecurringParams,
   };
 }

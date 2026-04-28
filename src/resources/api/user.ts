@@ -7,23 +7,40 @@ import { RequestOptions } from '../../internal/request-options';
 
 export class User extends APIResource {
   list(options?: RequestOptions): APIPromise<void> {
-    return this._client.get('/api/User', { ...options, headers: buildHeaders([{Accept: '*/*'}, options?.headers]) });
+    return this._client.get('/api/User', {
+      ...options,
+      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
+    });
   }
 
   activate(options?: RequestOptions): APIPromise<void> {
-    return this._client.get('/api/User/activate', { ...options, headers: buildHeaders([{Accept: '*/*'}, options?.headers]) });
+    return this._client.get('/api/User/activate', {
+      ...options,
+      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
+    });
   }
 
   hasAccount(options?: RequestOptions): APIPromise<void> {
-    return this._client.get('/api/User/has-account', { ...options, headers: buildHeaders([{Accept: '*/*'}, options?.headers]) });
+    return this._client.get('/api/User/has-account', {
+      ...options,
+      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
+    });
   }
 
   register(body: UserRegisterParams | null | undefined = {}, options?: RequestOptions): APIPromise<void> {
-    return this._client.post('/api/User/register', { body, ...options, headers: buildHeaders([{Accept: '*/*'}, options?.headers]) });
+    return this._client.post('/api/User/register', {
+      body,
+      ...options,
+      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
+    });
   }
 
   updateSimDescription(body: UserUpdateSimDescriptionParams, options?: RequestOptions): APIPromise<void> {
-    return this._client.patch('/api/User/sim-description', { body, ...options, headers: buildHeaders([{Accept: '*/*'}, options?.headers]) });
+    return this._client.patch('/api/User/sim-description', {
+      body,
+      ...options,
+      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
+    });
   }
 }
 
@@ -48,6 +65,6 @@ export interface UserUpdateSimDescriptionParams {
 export declare namespace User {
   export {
     type UserRegisterParams as UserRegisterParams,
-    type UserUpdateSimDescriptionParams as UserUpdateSimDescriptionParams
+    type UserUpdateSimDescriptionParams as UserUpdateSimDescriptionParams,
   };
 }

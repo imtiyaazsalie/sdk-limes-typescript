@@ -11,8 +11,15 @@ import { RequestOptions } from '../../../../internal/request-options';
 export class Create extends APIResource {
   account: AccountAPI.Account = new AccountAPI.Account(this._client);
 
-  createContact(body: CreateCreateContactParams | null | undefined = {}, options?: RequestOptions): APIPromise<void> {
-    return this._client.post('/api/Crm/create/contact', { body, ...options, headers: buildHeaders([{Accept: '*/*'}, options?.headers]) });
+  createContact(
+    body: CreateCreateContactParams | null | undefined = {},
+    options?: RequestOptions,
+  ): APIPromise<void> {
+    return this._client.post('/api/Crm/create/contact', {
+      body,
+      ...options,
+      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
+    });
   }
 }
 
@@ -143,12 +150,7 @@ export namespace CreateCreateContactParams {
 Create.Account = Account;
 
 export declare namespace Create {
-  export {
-    type CreateCreateContactParams as CreateCreateContactParams
-  };
+  export { type CreateCreateContactParams as CreateCreateContactParams };
 
-  export {
-    Account as Account,
-    type AccountCreateCustomerParams as AccountCreateCustomerParams
-  };
+  export { Account as Account, type AccountCreateCustomerParams as AccountCreateCustomerParams };
 }

@@ -11,11 +11,22 @@ export class Mvnx extends APIResource {
   history: HistoryAPI.History = new HistoryAPI.History(this._client);
 
   createPort(body: MvnxCreatePortParams, options?: RequestOptions): APIPromise<void> {
-    return this._client.post('/api/Mvnx/port', { body, ...options, headers: buildHeaders([{Accept: '*/*'}, options?.headers]) });
+    return this._client.post('/api/Mvnx/port', {
+      body,
+      ...options,
+      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
+    });
   }
 
-  createWebhook(body: MvnxCreateWebhookParams | null | undefined = {}, options?: RequestOptions): APIPromise<void> {
-    return this._client.post('/api/Mvnx/webhook', { body, ...options, headers: buildHeaders([{Accept: '*/*'}, options?.headers]) });
+  createWebhook(
+    body: MvnxCreateWebhookParams | null | undefined = {},
+    options?: RequestOptions,
+  ): APIPromise<void> {
+    return this._client.post('/api/Mvnx/webhook', {
+      body,
+      ...options,
+      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
+    });
   }
 }
 
@@ -68,10 +79,8 @@ Mvnx.History = History;
 export declare namespace Mvnx {
   export {
     type MvnxCreatePortParams as MvnxCreatePortParams,
-    type MvnxCreateWebhookParams as MvnxCreateWebhookParams
+    type MvnxCreateWebhookParams as MvnxCreateWebhookParams,
   };
 
-  export {
-    History as History
-  };
+  export { History as History };
 }
