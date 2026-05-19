@@ -1,6 +1,6 @@
 {
   "name": "sdk-limes-mcp",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "The official MCP Server for the SDK Limes API",
   "author": "SDK Limes <>",
   "types": "dist/index.d.ts",

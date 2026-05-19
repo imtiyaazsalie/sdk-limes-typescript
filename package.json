@@ -1,6 +1,6 @@
 {
   "name": "sdk-limes",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "The official TypeScript library for the SDK Limes API",
   "author": "SDK Limes <>",
   "types": "dist/index.d.ts",
